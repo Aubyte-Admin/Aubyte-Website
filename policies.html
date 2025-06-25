@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-GB">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,11 +7,13 @@
     <style>
         /* --- Google Font --- */
         @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+        /* --- Icon Library for Hamburger Menu --- */
+        @import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css');
 
-        /* --- CSS Variables (Theme Colors) --- */
+        /* --- CSS Variables (Theme Colours) --- */
         :root {
-            --primary-color: #005A9C;
-            --secondary-color: #00AEEF;
+            --primary-colour: #005A9C;
+            --secondary-colour: #00AEEF;
             --dark-grey: #333333;
             --medium-grey: #555555;
             --light-grey: #f4f7f6;
@@ -19,16 +21,8 @@
         }
 
         /* --- Global Styles --- */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        html {
-            scroll-behavior: smooth;
-        }
-
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
         body {
             font-family: 'Poppins', sans-serif;
             color: var(--dark-grey);
@@ -37,32 +31,11 @@
         }
 
         /* --- Layout & Helpers --- */
-        .container {
-            max-width: 1100px;
-            margin: auto;
-            padding: 0 20px;
-        }
-
-        section {
-            padding: 60px 0;
-        }
-        
-        .page-content {
-             min-height: 70vh; /* Ensures footer doesn't ride up on short content */
-        }
-
-        h2 { 
-            font-size: 2.2rem; 
-            text-align: center; 
-            color: var(--primary-color);
-            font-weight: 600;
-            margin-bottom: 20px;
-        }
-        
-        p { 
-            margin-bottom: 15px; 
-            color: var(--medium-grey); 
-        }
+        .container { max-width: 1100px; margin: auto; padding: 0 20px; }
+        section { padding: 60px 0; }
+        .page-content { min-height: 70vh; }
+        h2 { font-size: 2.2rem; text-align: center; color: var(--primary-colour); font-weight: 600; margin-bottom: 20px; }
+        p { margin-bottom: 15px; color: var(--medium-grey); }
 
         /* --- Navigation Bar --- */
         .navbar {
@@ -75,90 +48,71 @@
             z-index: 1000;
             box-shadow: 0 2px 10px rgba(0,0,0,0.1);
         }
+        .navbar .container { display: flex; justify-content: space-between; align-items: center; }
+        .navbar .logo { font-size: 1.5rem; font-weight: 700; color: var(--primary-colour); text-decoration: none; }
+        .navbar .nav-links { list-style: none; display: flex; }
+        .navbar .nav-links li { margin-left: 25px; }
+        .navbar .nav-links li a { color: var(--dark-grey); text-decoration: none; font-weight: 600; transition: color 0.3s ease; }
+        .navbar .nav-links li a:hover { color: var(--secondary-colour); }
 
-        .navbar .container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .navbar .logo {
-            font-size: 1.5rem;
-            font-weight: 700;
-            color: var(--primary-color);
-            text-decoration: none;
-        }
-
-        .navbar ul {
-            list-style: none;
-            display: flex;
-        }
-
-        .navbar ul li {
-            margin-left: 25px;
-        }
-
-        .navbar ul li a {
-            color: var(--dark-grey);
-            text-decoration: none;
-            font-weight: 600;
-            transition: color 0.3s ease;
-        }
-
-        .navbar ul li a:hover {
-            color: var(--secondary-color);
-        }
+        /* --- CHANGE: Mobile Hamburger Menu --- */
+        .hamburger { display: none; cursor: pointer; font-size: 1.5rem; }
         
         /* --- Document List Styling --- */
         .document-list {
-            list-style: none;
-            margin-top: 30px;
-            max-width: 800px;
-            margin-left: auto;
-            margin-right: auto;
+            list-style: none; margin-top: 30px; max-width: 800px;
+            margin-left: auto; margin-right: auto;
         }
         .document-list li {
-            background: var(--light-grey);
-            border-left: 5px solid var(--secondary-color);
-            margin-bottom: 15px;
-            padding: 20px;
-            border-radius: 5px;
+            background: var(--light-grey); border-left: 5px solid var(--secondary-colour);
+            margin-bottom: 15px; padding: 20px; border-radius: 5px;
             transition: box-shadow 0.3s ease, transform 0.3s ease;
         }
-        .document-list li:hover {
-            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-            transform: translateY(-3px);
-        }
+        .document-list li:hover { box-shadow: 0 4px 15px rgba(0,0,0,0.1); transform: translateY(-3px); }
         .document-list a {
-            text-decoration: none;
-            color: var(--primary-color);
-            font-size: 1.2rem;
-            font-weight: 600;
-            display: block; /* Makes the whole area clickable */
+            text-decoration: none; color: var(--primary-colour); font-size: 1.2rem;
+            font-weight: 600; display: block;
         }
-        .document-list a:hover {
-            text-decoration: underline;
-        }
+        .document-list a:hover { text-decoration: underline; }
 
-        /* --- Footer --- */
-        footer {
-            background: var(--dark-grey);
-            color: var(--white);
-            text-align: center;
-            padding: 20px 0;
+        /* --- CHANGE: New Expanded Footer --- */
+        .site-footer {
+            background: var(--dark-grey); color: #ccc;
+            padding: 50px 0; font-size: 0.9rem;
+        }
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+        }
+        .footer-column h4 {
+            color: var(--white); font-size: 1.1rem;
+            margin-bottom: 20px; font-weight: 600;
+        }
+        .footer-column p { color: #ccc; margin-bottom: 10px; }
+        .footer-column ul { list-style: none; }
+        .footer-column ul li { margin-bottom: 10px; }
+        .footer-column ul li a {
+            color: #ccc; text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        .footer-column ul li a:hover { color: var(--secondary-colour); }
+        .footer-bottom {
+            text-align: center; margin-top: 40px;
+            padding-top: 20px; border-top: 1px solid var(--medium-grey);
         }
 
         /* --- Responsive Design --- */
         @media (max-width: 768px) {
-            .navbar .container {
-                flex-direction: column;
+            /* Mobile Menu Styles */
+            .hamburger { display: block; }
+            .navbar .nav-links {
+                display: none; flex-direction: column; width: 100%;
+                background: var(--white); position: absolute; top: 60px;
+                left: 0; padding: 20px 0; box-shadow: 0 4px 10px rgba(0,0,0,0.1);
             }
-            .navbar ul {
-                padding: 1rem 0;
-            }
-            .navbar ul li {
-                margin: 0 10px;
-            }
+            .navbar .nav-links.active { display: flex; }
+            .navbar .nav-links li { margin: 10px 0; text-align: center; }
         }
     </style>
 </head>
@@ -168,13 +122,17 @@
     <header class="navbar">
         <div class="container">
             <a href="index.html" class="logo">AUNIX</a>
+            <!-- CHANGE: Hamburger Icon Added -->
+            <div class="hamburger" id="hamburger-icon">
+                <i class="fas fa-bars"></i>
+            </div>
+            <!-- CHANGE: 'nav-links' ID added for JavaScript -->
             <nav>
-                <ul>
+                <ul class="nav-links" id="nav-links">
                     <li><a href="index.html#home">Home</a></li>
                     <li><a href="index.html#services">Services</a></li>
                     <li><a href="index.html#partner">MSP Partner</a></li>
                     <li><a href="index.html#about">About</a></li>
-                    <li><a href="policies.html">Policies</a></li>
                     <li><a href="index.html#contact">Contact</a></li>
                 </ul>
             </nav>
@@ -188,15 +146,12 @@
             <p style="text-align: center; max-width: 700px; margin: auto;">Here you can find all our official company documents, policies, and procedural guidelines. Click a link to view or download the document.</p>
             
             <ul class="document-list">
-                <!-- 
-                  CORRECTED LINKS: The "/docs/" part has been removed from each link
-                  to match your file structure.
-                -->
                 <li>
                     <a href="ethics-code-of-conduct.pdf" target="_blank">Ethics and code of conduct policy</a>
                 </li>
                 <li>
-                    <a href="labor-human-resources.pdf" target="_blank">Labor and human resources policy</a>
+                    <!-- CHANGE: UK Spelling -->
+                    <a href="labor-human-resources.pdf" target="_blank">Labour and human resources policy</a>
                 </li>
                 <li>
                     <a href="data-security-privacy.pdf" target="_blank">Data security and privacy policy</a>
@@ -205,12 +160,63 @@
         </div>
     </section>
 
-    <!-- ======== FOOTER ======== -->
-    <footer>
+    <!-- ======== CHANGE: NEW EXPANDED FOOTER ======== -->
+    <footer class="site-footer">
         <div class="container">
-            <p>© 2025 Aunix. All Rights Reserved. | Your Trusted IT Field Partner</p>
+            <div class="footer-grid">
+                <!-- Column 1: Contact Info -->
+                <div class="footer-column">
+                    <h4>Aunix IT Services</h4>
+                    <!-- **ACTION**: Update your company address and phone numbers here -->
+                    <p>
+                        Gauteng, South Africa<br>
+                        Serving MSPs Nationwide
+                    </p>
+                    <p>
+                        <strong>Phone:</strong> 012 345 6789<br>
+                        <strong>Email:</strong> partner@aunix.co.za
+                    </p>
+                </div>
+
+                <!-- Column 2: Useful Links -->
+                <div class="footer-column">
+                    <h4>Useful Links</h4>
+                    <ul>
+                        <li><a href="index.html#home">Home</a></li>
+                        <li><a href="index.html#about">About Us</a></li>
+                        <li><a href="index.html#partner">MSP Partner Programme</a></li>
+                        <li><a href="index.html#contact">Contact Us</a></li>
+                        <li><a href="policies.html">Policies & Procedures</a></li>
+                    </ul>
+                </div>
+
+                <!-- Column 3: Our Services -->
+                <div class="footer-column">
+                    <h4>Our Services</h4>
+                    <ul>
+                        <li><a href="index.html#services">Outsourced Engineers</a></li>
+                        <li><a href="index.html#services">Hands & Feet Support</a></li>
+                        <li><a href="index.html#services">Network Support</a></li>
+                        <li><a href="index.html#services">Security Camera Installation</a></li>
+                        <li><a href="index.html#services">IT Asset Disposal</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2025 Aunix. All Rights Reserved. | Your Trusted IT Field Partner</p>
+            </div>
         </div>
     </footer>
+
+    <!-- CHANGE: JavaScript for Mobile Menu Toggle -->
+    <script>
+        const hamburger = document.getElementById('hamburger-icon');
+        const navLinks = document.getElementById('nav-links');
+
+        hamburger.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+    </script>
 
 </body>
 </html>

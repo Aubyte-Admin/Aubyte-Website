@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aunix - Message Sent</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+        :root {
+            --primary-colour: #005A9C;
+            --secondary-colour: #00AEEF;
+            --dark-grey: #333333;
+            --medium-grey: #555555;
+            --light-grey: #f4f7f6;
+            --white: #ffffff;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Poppins', sans-serif;
+            color: var(--dark-grey);
+            line-height: 1.6;
+            background-color: var(--white);
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+        .container { max-width: 1100px; margin: auto; padding: 0 20px; }
+        .thank-you-section {
+            text-align: center;
+            padding: 80px 20px;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        .thank-you-section h1 {
+            font-size: 3rem;
+            color: var(--primary-colour);
+            margin-bottom: 20px;
+        }
+        .thank-you-section p {
+            font-size: 1.2rem;
+            color: var(--medium-grey);
+            margin-bottom: 30px;
+            max-width: 500px;
+        }
+        .btn {
+            display: inline-block; padding: 12px 28px; border-radius: 5px;
+            text-decoration: none; font-weight: 600; transition: all 0.3s ease;
+            margin: 5px; border: 2px solid transparent;
+        }
+        .btn-primary { background: var(--secondary-colour); color: var(--white); }
+        .btn-primary:hover { background: #0095c7; transform: translateY(-2px); }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <div class="thank-you-section">
+            <h1>Thank You!</h1>
+            <p>Your message has been successfully sent. We will review your request and get back to you shortly.</p>
+            <a href="index.html" class="btn btn-primary">Return to Homepage</a>
+        </div>
+    </div>
+
+</body>
+</html>

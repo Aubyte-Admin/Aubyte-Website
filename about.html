@@ -8,8 +8,24 @@
 </head>
 <body>
 
-    <!-- ======== NAVIGATION BAR ======== -->
-    <header class="navbar"><!-- ... (navbar content is the same as index.html) ... --></header>
+    <!-- ======== CORRECTED NAVIGATION BAR ======== -->
+    <header class="navbar">
+        <div class="container">
+            <a href="index.html" class="logo">AUNIX</a>
+            <div class="hamburger" id="hamburger-icon">
+                <i class="fas fa-bars"></i>
+            </div>
+            <nav>
+                <ul class="nav-links" id="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="msp-partner.html">MSP Partner</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
 
     <!-- ======== ABOUT PAGE CONTENT ======== -->
     <main>
@@ -21,7 +37,7 @@
 
         <section id="about">
             <div class="container">
-                <div class="about-content" style="text-align: left;">
+                <div class="about-content" style="text-align: left; max-width: 800px; margin: auto;">
                     <h3>Our Story</h3>
                     <p>Aunix was founded by Bernu Britz after years of working within and alongside Managed Service Providers. We saw a recurring, critical challenge for MSPs of all sizes: the difficulty and high cost of providing fast, reliable, and professional on-site support across a wide geographical area. Projects were delayed, and potential clients were turned away because of logistical constraints.</p>
                     <p>We built this company to be the perfect solution to that problem. We are not another MSP; we are a dedicated, expert field services team that MSPs can rely on as their own. Our entire business model is built around empowering you to do more.</p>
@@ -30,7 +46,7 @@
                     <p>To empower South African MSPs with exceptional, reliable, and scalable outsourced IT services. We measure our success by the success and growth of our partners. We handle the hands-on work so you can focus on building relationships and recurring revenue.</p>
 
                     <h3 style="margin-top: 40px;">Our Core Values</h3>
-                    <ul>
+                    <ul style="list-style-position: inside;">
                         <li><strong>Partnership:</strong> We function as an extension of your team, not a third-party vendor. Your goals are our goals.</li>
                         <li><strong>Reliability:</strong> When we accept a job, it gets done right. You can count on us to be there on time and prepared.</li>
                         <li><strong>Professionalism:</strong> Every interaction with your client reflects on your brand. Our technicians are courteous, skilled, and professional at all times.</li>
@@ -44,7 +60,33 @@
     <!-- ======== FOOTER ======== -->
     <footer class="site-footer">
         <div class="container">
-            <div class="footer-grid"><!-- ... (footer content is the same as index.html) ... --></div>
+            <div class="footer-grid">
+                 <div class="footer-column">
+                    <h4>Aunix IT Services</h4>
+                    <p>Gauteng, South Africa<br>Serving MSPs Nationwide</p>
+                    <p><strong>Phone:</strong> 012 345 6789<br><strong>Email:</strong> partner@aunix.co.za</p>
+                </div>
+                <div class="footer-column">
+                    <h4>Useful Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="msp-partner.html">MSP Partner Programme</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
+                        <li><a href="policies.html">Policies & Procedures</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Our Services</h4>
+                    <ul>
+                        <li><a href="services.html">Outsourced Engineers</a></li>
+                        <li><a href="services.html">Onsite Support</a></li>
+                        <li><a href="services.html">Network Support</a></li>
+                        <li><a href="services.html">Security Camera Installation</a></li>
+                        <li><a href="services.html">IT Asset Disposal</a></li>
+                    </ul>
+                </div>
+            </div>
             <div class="footer-bottom"><p>© 2025 Aunix. All Rights Reserved. | Your Trusted IT Field Partner</p></div>
         </div>
     </footer>

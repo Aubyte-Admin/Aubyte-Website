@@ -1,473 +1,8 @@
-
-Generated html
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Aunix - IT Field Services for MSPs</title>
-    <style>
-        /* --- Google Font --- */
-        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
-
-        /* --- CSS Variables (Theme Colors) --- */
-        :root {
-            --primary-color: #005A9C; /* A professional, trustworthy blue */
-            --secondary-color: #00AEEF; /* A brighter, modern blue for accents */
-            --dark-grey: #333333;
-            --medium-grey: #555555;
-            --light-grey: #f4f7f6;
-            --white: #ffffff;
-        }
-
-        /* --- Global Styles --- */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        html {
-            scroll-behavior: smooth;
-        }
-
-        body {
-            font-family: 'Poppins', sans-serif;
-            color: var(--dark-grey);
-            line-height: 1.6;
-            background-color: var(--white);
-        }
-
-        /* --- Layout & Helpers --- */
-        .container {
-            max-width: 1100px;
-            margin: auto;
-            padding: 0 20px;
-        }
-
-        section {
-            padding: 60px 0;
-        }
-
-        section:nth-child(even) {
-            background-color: var(--light-grey);
-        }
-
-        h1, h2, h3 {
-            font-weight: 600;
-            margin-bottom: 20px;
-            color: var(--primary-color);
-        }
-
-        h1 { font-size: 2.8rem; }
-        h2 { font-size: 2.2rem; text-align: center; }
-        h3 { font-size: 1.4rem; color: var(--dark-grey); }
-        p { margin-bottom: 15px; color: var(--medium-grey); }
-
-        /* --- Navigation Bar --- */
-        .navbar {
-            background: var(--white);
-            color: var(--dark-grey);
-            padding: 1rem 0;
-            position: sticky;
-            top: 0;
-            width: 100%;
-            z-index: 1000;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-        }
-
-        .navbar .container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .navbar .logo {
-            font-size: 1.5rem;
-            font-weight: 700;
-            color: var(--primary-color);
-            text-decoration: none;
-        }
-
-        .navbar ul {
-            list-style: none;
-            display: flex;
-        }
-
-        .navbar ul li {
-            margin-left: 25px;
-        }
-
-        .navbar ul li a {
-            color: var(--dark-grey);
-            text-decoration: none;
-            font-weight: 600;
-            transition: color 0.3s ease;
-        }
-
-        .navbar ul li a:hover {
-            color: var(--secondary-color);
-        }
-
-        /* --- Hero Section --- */
-        .hero {
-            background: linear-gradient(rgba(0, 90, 156, 0.8), rgba(0, 90, 156, 0.8)), url('https://images.unsplash.com/photo-1521737711867-e3b97375f902?q=80&w=1974&auto=format&fit=crop') no-repeat center center/cover;
-            color: var(--white);
-            height: 85vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-        }
-
-        .hero h1 {
-            color: var(--white);
-            font-size: 3.5rem;
-        }
-
-        .hero p {
-            font-size: 1.2rem;
-            max-width: 600px;
-            margin: 20px auto 30px;
-            color: rgba(255,255,255,0.9);
-        }
-
-        .btn {
-            display: inline-block;
-            padding: 12px 28px;
-            border-radius: 5px;
-            text-decoration: none;
-            font-weight: 600;
-            transition: all 0.3s ease;
-            margin: 5px;
-            border: 2px solid transparent;
-        }
-
-        .btn-primary {
-            background: var(--secondary-color);
-            color: var(--white);
-        }
-
-        .btn-primary:hover {
-            background: #0095c7;
-            transform: translateY(-2px);
-        }
-
-        .btn-secondary {
-            background: transparent;
-            color: var(--white);
-            border-color: var(--white);
-        }
-
-        .btn-secondary:hover {
-            background: var(--white);
-            color: var(--primary-color);
-        }
-
-        /* --- Services Section --- */
-        .services-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 25px;
-            margin-top: 40px;
-        }
-
-        .service-card {
-            background: var(--white);
-            padding: 30px;
-            border-radius: 8px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
-            text-align: center;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-
-        .service-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 8px 25px rgba(0,0,0,0.12);
-        }
-        
-        .service-card .icon {
-            font-size: 2.5rem;
-            color: var(--secondary-color);
-            margin-bottom: 15px;
-        }
-
-        /* --- Partner Program Section --- */
-        .partner-content {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 50px;
-            align-items: center;
-            margin-top: 40px;
-        }
-
-        .partner-content ul {
-            list-style: none;
-        }
-
-        .partner-content li {
-            font-size: 1.1rem;
-            margin-bottom: 15px;
-            padding-left: 30px;
-            position: relative;
-        }
-
-        .partner-content li::before {
-            content: '✓';
-            color: var(--secondary-color);
-            font-weight: 700;
-            position: absolute;
-            left: 0;
-            top: 0;
-        }
-
-        /* --- About Section --- */
-        .about-content {
-            max-width: 800px;
-            margin: 40px auto;
-            text-align: center;
-        }
-
-        /* --- Contact Section --- */
-        .contact-grid {
-            display: grid;
-            grid-template-columns: 1fr 1.5fr;
-            gap: 50px;
-            margin-top: 40px;
-        }
-
-        .contact-info p {
-            font-size: 1.1rem;
-        }
-
-        .contact-form .form-group {
-            margin-bottom: 20px;
-        }
-
-        .contact-form input,
-        .contact-form textarea {
-            width: 100%;
-            padding: 12px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-            font-family: 'Poppins', sans-serif;
-        }
-
-        .contact-form input:focus,
-        .contact-form textarea:focus {
-            outline: none;
-            border-color: var(--primary-color);
-        }
-
-        .btn-submit {
-            width: 100%;
-            background: var(--primary-color);
-            color: var(--white);
-            border: none;
-            cursor: pointer;
-        }
-
-        .btn-submit:hover {
-            background: #004a7f;
-        }
-
-        /* --- Footer --- */
-        footer {
-            background: var(--dark-grey);
-            color: var(--white);
-            text-align: center;
-            padding: 20px 0;
-        }
-
-        /* --- Responsive Design --- */
-        @media (max-width: 768px) {
-            h1 { font-size: 2.5rem; }
-            h2 { font-size: 1.8rem; }
-            .hero h1 { font-size: 2.8rem; }
-
-            .navbar .container {
-                flex-direction: column;
-            }
-
-            .navbar ul {
-                padding: 1rem 0;
-            }
-
-            .navbar ul li {
-                margin: 0 10px;
-            }
-
-            .partner-content, .contact-grid {
-                grid-template-columns: 1fr;
-            }
-            
-            .contact-info {
-                text-align: center;
-            }
-        }
-    </style>
-</head>
-<body>
-
-    <!-- ======== NAVIGATION BAR ======== -->
-    <header class="navbar">
-        <div class="container">
-            <!-- The link for the logo now correctly points to the main page -->
-            <a href="index.html" class="logo">AUNIX</a>
-            <nav>
-                <ul>
-                    <li><a href="index.html#home">Home</a></li>
-                    <li><a href="index.html#services">Services</a></li>
-                    <li><a href="index.html#partner">MSP Partner</a></li>
-                    <li><a href="index.html#about">About</a></li>
-                    <!-- CHANGE 1: New link to the policies.html page -->
-                    <li><a href="policies.html">Policies</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                </ul>
-            </nav>
-        </div>
-    </header>
-
-    <!-- ======== HOME / HERO SECTION ======== -->
-    <section id="home" class="hero">
-        <div class="hero-content">
-            <h1>Scale Your MSP. Nationwide.</h1>
-            <p>We are the reliable, on-demand field team for MSPs in South Africa. Extend your reach and delight your clients with our white-label technical services.</p>
-            <a href="#partner" class="btn btn-primary">Become a Partner</a>
-            <a href="#services" class="btn btn-secondary">See Our Services</a>
-        </div>
-    </section>
-
-    <!-- ======== SERVICES SECTION ======== -->
-    <section id="services">
-        <div class="container">
-            <h2>Our Core Services</h2>
-            <div class="services-grid">
-                <div class="service-card">
-                    <div class="icon">💻</div>
-                    <h3>Outsourced Engineers</h3>
-                    <p>Embed our certified engineers into your team for short or long-term projects.</p>
-                </div>
-                <div class="service-card">
-                    <div class="icon">🛠️</div>
-                    <h3>Hands & Feet Support</h3>
-                    <p>Fast, reliable on-site hardware and troubleshooting support.</p>
-                </div>
-                <div class="service-card">
-                    <div class="icon">🌐</div>
-                    <h3>Network Support</h3>
-                    <p>Expert network deployment, cabling, and management.</p>
-                </div>
-                <div class="service-card">
-                    <div class="icon">📹</div>
-                    <h3>Security Cameras</h3>
-                    <p>Professional installation and maintenance of CCTV systems.</p>
-                </div>
-                <div class="service-card">
-                    <div class="icon">♻️</div>
-                    <h3>IT Asset Disposal</h3>
-                    <p>Secure and eco-friendly disposal of retired IT equipment.</p>
-                </div>
-                 <div class="service-card">
-                    <div class="icon">🤝</div>
-                    <h3>White-Label Partnership</h3>
-                    <p>All services are performed under your brand, seamlessly.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- ======== MSP PARTNER SECTION ======== -->
-    <section id="partner">
-        <div class="container">
-            <h2>Grow Your MSP with Aunix</h2>
-            <div class="partner-content">
-                <div class="partner-text">
-                    <h3>Your Strategic Advantage</h3>
-                    <p>Our MSP Partner Program is designed to make you more successful. By handling your on-site needs, we free you to focus on strategy and growing your recurring revenue. We become an invisible extension of your team.</p>
-                     <a href="#contact" class="btn btn-primary" style="margin-top: 20px;">Request a Consultation</a>
-                </div>
-                <div class="partner-benefits">
-                    <ul>
-                        <li><strong>Increase Your Margins:</strong> Reduce travel and staffing costs. Service clients profitably, anywhere.</li>
-                        <li><strong>Purely White-Label:</strong> We are your invisible team, always representing your brand professionally.</li>
-                        <li><strong>Expand Your Service Area:</strong> Confidently say "yes" to clients anywhere in South Africa.</li>
-                        <li><strong>Focus on Your Strengths:</strong> Let us handle the physical tasks while your team focuses on high-value remote services.</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- ======== ABOUT US SECTION ======== -->
-    <section id="about">
-        <div class="container">
-            <h2>The Team Behind Your Team</h2>
-            <div class="about-content">
-                <h3>Our Story</h3>
-                <p>Aunix was founded by Bernu Britz after years of working within the IT industry. We saw a recurring challenge for MSPs: the difficulty of providing fast, cost-effective on-site support across a wide area. We built this company to be the perfect solution—a dedicated, expert field team that MSPs can rely on as their own.</p>
-                <h3>Our Mission</h3>
-                <p>To empower South African MSPs with exceptional, reliable, and scalable outsourced IT services. We succeed when our partners succeed.</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- ======== CONTACT SECTION ======== -->
-    <section id="contact">
-        <div class="container">
-            <h2>Get in Touch</h2>
-            <div class="contact-grid">
-                <div class="contact-info">
-                    <h3>Start the Conversation</h3>
-                    <p>Whether you're ready to partner, have a project, or just want to learn more, we're here to help.</p>
-                    <br>
-                    <p><strong>Email:</strong> partner@aunix.co.za</p>
-                    <p><strong>Phone:</strong> 012 345 6789</p>
-                    <p><strong>Service Area:</strong> Nationwide, South Africa</p>
-                </div>
-                <!-- CHANGE 2: The form tag is updated to send emails -->
-                <form class="contact-form" action="https://formsubmit.co/bernubritz@gmail.com" method="POST">
-                    <div class="form-group">
-                        <input type="text" name="name" placeholder="Your Full Name" required>
-                    </div>
-                    <div class="form-group">
-                        <input type="text" name="company" placeholder="Your Company Name" required>
-                    </div>
-                    <div class="form-group">
-                        <input type="email" name="email" placeholder="Your Email Address" required>
-                    </div>
-                    <div class="form-group">
-                        <textarea name="message" rows="5" placeholder="How can we help you?" required></textarea>
-                    </div>
-                    <!-- This hidden field prevents the FormSubmit captcha for a better user experience -->
-                    <input type="hidden" name="_captcha" value="false">
-                    <button type="submit" class="btn btn-submit">Send Message</button>
-                </form>
-            </div>
-        </div>
-    </section>
-
-    <!-- ======== FOOTER ======== -->
-    <footer>
-        <div class="container">
-            <p>© 2025 Aunix. All Rights Reserved. | Your Trusted IT Field Partner</p>
-        </div>
-    </footer>
-
-</body>
-</html>
-
-Block 2: Code for the New policies.html Page
-
-Create a new file named exactly policies.html and paste this code into it.
-
-Generated html
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- Changed title for the new page -->
     <title>Aunix - Policies and Procedures</title>
     <style>
         /* --- Google Font --- */
@@ -512,20 +47,22 @@ Generated html
             padding: 60px 0;
         }
         
-        /* Specific style for this page content */
         .page-content {
-             min-height: 60vh; /* Ensures the page content takes up space */
+             min-height: 70vh; /* Ensures footer doesn't ride up on short content */
         }
 
-        h1, h2, h3 {
+        h2 { 
+            font-size: 2.2rem; 
+            text-align: center; 
+            color: var(--primary-color);
             font-weight: 600;
             margin-bottom: 20px;
-            color: var(--primary-color);
         }
-
-        h2 { font-size: 2.2rem; text-align: center; }
-        h3 { font-size: 1.4rem; color: var(--dark-grey); }
-        p { margin-bottom: 15px; color: var(--medium-grey); }
+        
+        p { 
+            margin-bottom: 15px; 
+            color: var(--medium-grey); 
+        }
 
         /* --- Navigation Bar --- */
         .navbar {
@@ -576,6 +113,9 @@ Generated html
         .document-list {
             list-style: none;
             margin-top: 30px;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
         }
         .document-list li {
             background: var(--light-grey);
@@ -583,16 +123,18 @@ Generated html
             margin-bottom: 15px;
             padding: 20px;
             border-radius: 5px;
-            transition: box-shadow 0.3s ease;
+            transition: box-shadow 0.3s ease, transform 0.3s ease;
         }
         .document-list li:hover {
             box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            transform: translateY(-3px);
         }
         .document-list a {
             text-decoration: none;
             color: var(--primary-color);
             font-size: 1.2rem;
             font-weight: 600;
+            display: block; /* Makes the whole area clickable */
         }
         .document-list a:hover {
             text-decoration: underline;
@@ -625,16 +167,15 @@ Generated html
     <!-- ======== NAVIGATION BAR ======== -->
     <header class="navbar">
         <div class="container">
-            <!-- The link for the logo now correctly points to the main page -->
             <a href="index.html" class="logo">AUNIX</a>
             <nav>
                 <ul>
-                    <!-- These links now point back to the sections on the main index.html page -->
+                    <!-- These links point back to the main index.html page -->
                     <li><a href="index.html#home">Home</a></li>
                     <li><a href="index.html#services">Services</a></li>
                     <li><a href="index.html#partner">MSP Partner</a></li>
                     <li><a href="index.html#about">About</a></li>
-                    <!-- This is the current page, so no link is needed, but we keep it for consistency -->
+                    <!-- This is the current page, so it links to itself -->
                     <li><a href="policies.html">Policies</a></li>
                     <li><a href="index.html#contact">Contact</a></li>
                 </ul>
@@ -643,7 +184,7 @@ Generated html
     </header>
 
     <!-- ======== POLICIES SECTION ======== -->
-    <section id="policies" class="page-content">
+    <section class="page-content">
         <div class="container">
             <h2>Policies and Procedures</h2>
             <p style="text-align: center; max-width: 700px; margin: auto;">Here you can find all our official company documents, policies, and procedural guidelines. Click a link to view or download the document.</p>
@@ -654,8 +195,8 @@ Generated html
                   1. Upload your PDF or document file to your Vercel project.
                   2. Copy one of the <li>...</li> blocks below.
                   3. Change the href="..." to the path of your new file (e.g., "/docs/my-new-policy.pdf").
-                  4. Change the text inside the <a> tag to the name of your document (e.g., "My New Policy").
-                  The target="_blank" will make sure it opens in a new tab.
+                  4. Change the text inside the <a> tag to the name of your document.
+                  The target="_blank" will open it in a new tab.
                 -->
                 <li>
                     <a href="/path-to-your/privacy-policy.pdf" target="_blank">Privacy Policy</a>
@@ -666,7 +207,12 @@ Generated html
                 <li>
                     <a href="/path-to-your/acceptable-use-policy.pdf" target="_blank">Acceptable Use Policy</a>
                 </li>
-
+                <!-- Example of another one -->
+                <!-- 
+                <li>
+                    <a href="/path-to-your/service-level-agreement.pdf" target="_blank">Service Level Agreement (SLA)</a>
+                </li>
+                -->
             </ul>
         </div>
     </section>
@@ -680,11 +226,3 @@ Generated html
 
 </body>
 </html>
-IGNORE_WHEN_COPYING_START
-content_copy
-download
-Use code with caution.
-Html
-IGNORE_WHEN_COPYING_END
-
-After you upload these updated and new files to Vercel, your website will be updated with the new page and the fully functional contact form. Let me know if you have any other questions

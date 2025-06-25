@@ -75,7 +75,7 @@
         }
         .navbar .nav-links li a:hover { color: var(--secondary-colour); }
 
-        /* --- CHANGE: Mobile Hamburger Menu --- */
+        /* --- Mobile Hamburger Menu --- */
         .hamburger { display: none; cursor: pointer; font-size: 1.5rem; }
 
         /* --- Hero Section --- */
@@ -155,7 +155,7 @@
         }
         .btn-submit:hover { background: #004a7f; }
 
-        /* --- CHANGE: New Expanded Footer --- */
+        /* --- New Expanded Footer --- */
         .site-footer {
             background: var(--dark-grey);
             color: #ccc;
@@ -224,11 +224,9 @@
     <header class="navbar">
         <div class="container">
             <a href="index.html" class="logo">AUNIX</a>
-            <!-- CHANGE: Hamburger Icon Added -->
             <div class="hamburger" id="hamburger-icon">
                 <i class="fas fa-bars"></i>
             </div>
-            <!-- CHANGE: 'nav-links' ID added for JavaScript -->
             <nav>
                 <ul class="nav-links" id="nav-links">
                     <li><a href="#home">Home</a></li>
@@ -293,12 +291,10 @@
     <!-- ======== MSP PARTNER SECTION ======== -->
     <section id="partner">
         <div class="container">
-            <!-- CHANGE: UK Spelling -->
             <h2>Grow Your MSP with the Aunix Partner Programme</h2>
             <div class="partner-content">
                 <div class="partner-text">
                     <h3>Your Strategic Advantage</h3>
-                    <!-- CHANGE: UK Spelling -->
                     <p>Our MSP Partner Programme is designed to make you more successful. By handling your on-site needs, we free you to focus on strategy and growing your recurring revenue. We become an invisible extension of your team.</p>
                      <a href="#contact" class="btn btn-primary" style="margin-top: 20px;">Request a Consultation</a>
                 </div>
@@ -307,7 +303,6 @@
                         <li><strong>Increase Your Margins:</strong> Reduce travel and staffing costs. Service clients profitably, anywhere.</li>
                         <li><strong>Purely White-Label:</strong> We are your invisible team, always representing your brand professionally.</li>
                         <li><strong>Expand Your Service Area:</strong> Confidently say "yes" to clients anywhere in South Africa.</li>
-                        <!-- CHANGE: UK Spelling -->
                         <li><strong>Focus on Your Strengths:</strong> Let us handle the physical tasks while your team focuses on high-value remote services.</li>
                     </ul>
                 </div>
@@ -323,7 +318,6 @@
                 <h3>Our Story</h3>
                 <p>Aunix was founded by Bernu Britz after years of working within the IT industry. We saw a recurring challenge for MSPs: the difficulty of providing fast, cost-effective on-site support across a wide area. We built this company to be the perfect solution—a dedicated, expert field team that MSPs can rely on as their own.</p>
                 <h3>Our Mission</h3>
-                <!-- CHANGE: UK Spelling -->
                 <p>To empower South African MSPs with exceptional, reliable, and scalable outsourced IT services. We succeed when our partners succeed.</p>
             </div>
         </div>
@@ -355,6 +349,10 @@
                     <div class="form-group">
                         <textarea name="message" rows="5" placeholder="How can we help you?" required></textarea>
                     </div>
+                    
+                    <!-- THIS IS THE FIX - It tells the form where to go after submitting -->
+                    <input type="hidden" name="_next" value="https://aunix-26d38ngo5-bernus-projects.vercel.app/thankyou.html">
+                    
                     <input type="hidden" name="_captcha" value="false">
                     <button type="submit" class="btn btn-submit">Send Message</button>
                 </form>
@@ -362,14 +360,13 @@
         </div>
     </section>
 
-    <!-- ======== CHANGE: NEW EXPANDED FOOTER ======== -->
+    <!-- ======== NEW EXPANDED FOOTER ======== -->
     <footer class="site-footer">
         <div class="container">
             <div class="footer-grid">
                 <!-- Column 1: Contact Info -->
                 <div class="footer-column">
                     <h4>Aunix IT Services</h4>
-                    <!-- **ACTION**: Update your company address and phone numbers here -->
                     <p>
                         Gauteng, South Africa<br>
                         Serving MSPs Nationwide
@@ -410,7 +407,7 @@
         </div>
     </footer>
 
-    <!-- CHANGE: JavaScript for Mobile Menu Toggle -->
+    <!-- JavaScript for Mobile Menu Toggle -->
     <script>
         const hamburger = document.getElementById('hamburger-icon');
         const navLinks = document.getElementById('nav-links');

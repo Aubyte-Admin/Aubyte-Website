@@ -231,10 +231,10 @@ p { margin-bottom: 15px; color: var(--medium-grey); }
     justify-items: center;
     max-width: 900px;
     margin: 40px auto 0;
-    position: relative; /* REQUIRED for the pseudo-element */
+    position: relative; 
 }
 
-/* NEW - CSS-only radial lines */
+/* CSS-only radial lines */
 .values-grid-container::before {
     content: '';
     position: absolute;
@@ -243,13 +243,12 @@ p { margin-bottom: 15px; color: var(--medium-grey); }
     width: 100%;
     height: 100%;
     background-image: repeating-conic-gradient(
-        from -30deg, /* Rotates the pattern to align with bubbles */
-        var(--secondary-colour) 0deg 0.25deg, /* A thin gold line */
-        transparent 0.25deg 60deg /* The transparent gap between lines */
+        from -30deg,
+        var(--secondary-colour) 0deg 0.25deg,
+        transparent 0.25deg 60deg
     );
-    z-index: 1; /* Sits behind everything else */
+    z-index: 1;
 }
-/* END NEW */
 
 .values-hub {
     grid-column: 2 / 4;
@@ -285,16 +284,18 @@ p { margin-bottom: 15px; color: var(--medium-grey); }
     height: 200px;
     border-radius: 50%;
     background: var(--white);
-    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
     padding: 20px;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     position: relative;
     border: 3px solid var(--secondary-colour);
     z-index: 5;
+    /* UPDATED: This combined box-shadow creates a "blocking" outline */
+    box-shadow: 0 0 0 10px var(--light-grey), 0 4px 15px rgba(0,0,0,0.08);
 }
 .value-bubble:hover {
     transform: scale(1.05);
-    box-shadow: 0 8px 25px rgba(0,0,0,0.12);
+    /* UPDATED: We keep the blocking outline on hover as well */
+    box-shadow: 0 0 0 10px var(--light-grey), 0 8px 25px rgba(0,0,0,0.12);
 }
 .value-bubble h4 {
     color: var(--primary-colour);
@@ -426,7 +427,7 @@ p { margin-bottom: 15px; color: var(--medium-grey); }
     .value-bubble .bubble-front { display: none; }
     .value-bubble .bubble-back { display: flex; }
     
-    /* NEW - Hide radial lines on mobile */
+    /* Hide radial lines on mobile */
     .values-grid-container::before {
         display: none;
     }

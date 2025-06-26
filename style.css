@@ -6,7 +6,7 @@
 /* --- CSS Variables (UPDATED GOLD STANDARD THEME) --- */
 :root {
     --primary-colour: #1a1a1a;   /* A very dark, near-black for headers and footer */
-    --secondary-colour: #ffd700; /* UPDATED - A brighter, more vibrant gold */
+    --secondary-colour: #F5BD02; /* UPDATED - The new, vibrant gold */
     --dark-grey: #333333;       /* For primary body text */
     --medium-grey: #6c757d;     /* For secondary text and borders */
     --light-grey: #f8f9fa;      /* For alternating section backgrounds */
@@ -115,7 +115,7 @@ p { margin-bottom: 15px; color: var(--medium-grey); }
     color: var(--primary-colour);
 }
 .btn-primary:hover { 
-    background: #DAB545; /* UPDATED - Darker shade of the new gold */
+    background: #E0AC02; /* UPDATED - Darker shade of the new gold */
     transform: translateY(-2px); 
 }
 .btn-secondary { 
@@ -223,22 +223,24 @@ p { margin-bottom: 15px; color: var(--medium-grey); }
     box-shadow: 0 8px 25px rgba(0,0,0,0.1);
 }
 
-/* Values Grid Section */
+/* UPDATED - Values Grid Section (3x2 Circles) */
 .values-grid {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(3, 1fr); /* 3 columns on desktop */
     gap: 30px;
+    justify-items: center; /* Center the circles in their grid cells */
     margin-top: 40px;
 }
 .value-card {
     background: var(--white);
-    padding: 30px;
-    border-radius: 8px;
     box-shadow: 0 4px 15px rgba(0,0,0,0.08);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    min-height: 220px;
     position: relative;
     overflow: hidden; 
+    /* NEW - Making it a circle */
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
 }
 .value-card:hover {
     transform: translateY(-5px);
@@ -257,7 +259,7 @@ p { margin-bottom: 15px; color: var(--medium-grey); }
     justify-content: center;
     align-items: center;
     text-align: center;
-    padding: 20px;
+    padding: 30px; /* Increased padding for circle shape */
 }
 .value-card-front { opacity: 1; }
 .value-card-back { opacity: 0; }
@@ -265,6 +267,7 @@ p { margin-bottom: 15px; color: var(--medium-grey); }
 .value-card:hover .value-card-back { opacity: 1; }
 .value-card h4 { font-size: 1.5rem; }
 .value-card p { font-size: 0.95rem; margin: 10px 0 0; }
+/* END UPDATED */
 
 
 /* --- Contact Section --- */
@@ -289,7 +292,7 @@ p { margin-bottom: 15px; color: var(--medium-grey); }
     cursor: pointer;
 }
 .btn-submit:hover { 
-    background: #DAB545; /* UPDATED - Darker shade of the new gold */
+    background: #E0AC02; /* UPDATED - Darker shade of the new gold */
 }
 
 /* --- Footer --- */
@@ -327,6 +330,13 @@ p { margin-bottom: 15px; color: var(--medium-grey); }
 }
 
 /* --- Responsive Design --- */
+@media (max-width: 992px) {
+    /* UPDATED - Tablet view for values grid */
+    .values-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
 @media (max-width: 768px) {
     h1 { font-size: 2.5rem; }
     h2 { font-size: 1.8rem; }
@@ -339,11 +349,16 @@ p { margin-bottom: 15px; color: var(--medium-grey); }
         grid-template-columns: 1fr;
         gap: 40px;
     }
+    /* UPDATED - Values Grid on Mobile */
     .values-grid {
         grid-template-columns: 1fr;
     }
     .value-card {
         min-height: auto;
+        width: 100%; /* Go back to full width */
+        height: auto;
+        border-radius: 8px; /* Go back to rounded corners */
+        padding: 40px 30px;
     }
     .value-card-front, .value-card-back {
         position: static;
@@ -352,8 +367,8 @@ p { margin-bottom: 15px; color: var(--medium-grey); }
     }
     .value-card-front { display: none; }
     .value-card-back { display: flex; }
+    /* END UPDATED */
     
-
     /* Mobile Menu Styles */
     .hamburger { display: block; }
     .navbar .nav-links {

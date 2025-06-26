@@ -231,12 +231,8 @@ p { margin-bottom: 15px; color: var(--medium-grey); }
     justify-items: center;
     max-width: 900px;
     margin: 40px auto 0;
-    position: relative; 
-    /* NEW - Using a background image for the connecting lines */
-    background-image: url('https://i.ibb.co/hZxtS0Q/lines-only.png');
-    background-size: contain;
-    background-position: center;
-    background-repeat: no-repeat;
+    position: relative;
+    /* The background image has been removed from this rule */
 }
 
 .values-hub {
@@ -393,7 +389,6 @@ p { margin-bottom: 15px; color: var(--medium-grey); }
         display: flex;
         flex-direction: column;
         gap: 20px;
-        background-image: none; /* Hide the background image on mobile */
     }
     .values-hub, .value-bubble {
         width: 100%;

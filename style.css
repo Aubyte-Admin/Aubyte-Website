@@ -269,50 +269,48 @@ p { margin-bottom: 15px; color: var(--medium-grey); }
 .value-card h4 { font-size: 1.5rem; }
 .value-card p { font-size: 0.95rem; margin: 10px 0 0; }
 
-/* MSP Partner Page 'How it Works' Customization */
-.process-step-onboarding {
-    background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('https://images.pexels.com/photos/5313361/pexels-photo-5313361.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1');
+/* Image-backed Circle Customizations */
+.process-step-onboarding, .process-step-request, .process-step-execution,
+.value-card-partnership, .value-card-reliable {
     background-size: cover;
     background-position: center;
     border-color: transparent !important;
 }
-.process-step-onboarding:hover {
+.process-step-onboarding:hover, .process-step-request:hover, .process-step-execution:hover,
+.value-card-partnership:hover, .value-card-reliable:hover {
     border-color: var(--secondary-colour) !important;
 }
-/* NEW - Request Step Image */
-.process-step-request {
-    background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('https://images.pexels.com/photos/845451/pexels-photo-845451.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1');
-    background-size: cover;
-    background-position: center;
-    border-color: transparent !important;
-}
-.process-step-request:hover {
-    border-color: var(--secondary-colour) !important;
-}
-/* NEW - Execution Step Image */
-.process-step-execution {
-    background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('https://images.pexels.com/photos/442150/pexels-photo-442150.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1');
-    background-size: cover;
-    background-position: center;
-    border-color: transparent !important;
-}
-.process-step-execution:hover {
-    border-color: var(--secondary-colour) !important;
-}
-/* Styling for all image-backed cards */
 .process-step-onboarding .value-card-front h4,
 .process-step-request .value-card-front h4,
-.process-step-execution .value-card-front h4 {
+.process-step-execution .value-card-front h4,
+.value-card-partnership .value-card-front h4,
+.value-card-reliable .value-card-front h4 {
     color: var(--white); 
     text-shadow: 1px 1px 3px rgba(0,0,0,0.8);
 }
 .process-step-onboarding .value-card-back,
 .process-step-request .value-card-back,
-.process-step-execution .value-card-back {
+.process-step-execution .value-card-back,
+.value-card-partnership .value-card-back,
+.value-card-reliable .value-card-back {
     background: var(--white); 
     border-radius: 50%; 
 }
-/* END NEW */
+.process-step-onboarding {
+    background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('https://images.pexels.com/photos/5313361/pexels-photo-5313361.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1');
+}
+.process-step-request {
+    background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('https://images.pexels.com/photos/845451/pexels-photo-845451.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1');
+}
+.process-step-execution {
+    background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('https://images.pexels.com/photos/442150/pexels-photo-442150.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1');
+}
+.value-card-partnership {
+    background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('https://images.pexels.com/photos/3184429/pexels-photo-3184429.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1');
+}
+.value-card-reliable {
+    background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('https://images.pexels.com/photos/7873550/pexels-photo-7873550.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1');
+}
 
 
 /* --- Contact Section --- */

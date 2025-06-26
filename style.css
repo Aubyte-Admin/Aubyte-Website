@@ -237,15 +237,15 @@ p { margin-bottom: 15px; color: var(--medium-grey); }
     transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.4s ease;
     position: relative;
     overflow: hidden; 
-    width: 280px; /* UPDATED - Increased size */
-    height: 280px; /* UPDATED - Increased size */
+    width: 280px;
+    height: 280px;
     border-radius: 50%;
-    border: 3px solid transparent; /* UPDATED - No border initially */
+    border: 3px solid transparent;
 }
 .value-card:hover {
     transform: translateY(-5px);
     box-shadow: 0 8px 25px rgba(0,0,0,0.12);
-    border-color: var(--secondary-colour); /* UPDATED - Golden border appears on hover */
+    border-color: var(--secondary-colour);
 }
 .value-card-front, .value-card-back {
     position: absolute;
@@ -274,19 +274,45 @@ p { margin-bottom: 15px; color: var(--medium-grey); }
     background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('https://images.pexels.com/photos/5313361/pexels-photo-5313361.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1');
     background-size: cover;
     background-position: center;
-    border-color: transparent !important; /* UPDATED - Ensure no border initially */
+    border-color: transparent !important;
 }
 .process-step-onboarding:hover {
-    border-color: var(--secondary-colour) !important; /* UPDATED - Golden border appears on hover */
+    border-color: var(--secondary-colour) !important;
 }
-.process-step-onboarding .value-card-front h4 {
+/* NEW - Request Step Image */
+.process-step-request {
+    background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('https://images.pexels.com/photos/845451/pexels-photo-845451.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1');
+    background-size: cover;
+    background-position: center;
+    border-color: transparent !important;
+}
+.process-step-request:hover {
+    border-color: var(--secondary-colour) !important;
+}
+/* NEW - Execution Step Image */
+.process-step-execution {
+    background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('https://images.pexels.com/photos/442150/pexels-photo-442150.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1');
+    background-size: cover;
+    background-position: center;
+    border-color: transparent !important;
+}
+.process-step-execution:hover {
+    border-color: var(--secondary-colour) !important;
+}
+/* Styling for all image-backed cards */
+.process-step-onboarding .value-card-front h4,
+.process-step-request .value-card-front h4,
+.process-step-execution .value-card-front h4 {
     color: var(--white); 
     text-shadow: 1px 1px 3px rgba(0,0,0,0.8);
 }
-.process-step-onboarding .value-card-back {
+.process-step-onboarding .value-card-back,
+.process-step-request .value-card-back,
+.process-step-execution .value-card-back {
     background: var(--white); 
     border-radius: 50%; 
 }
+/* END NEW */
 
 
 /* --- Contact Section --- */
@@ -374,7 +400,7 @@ p { margin-bottom: 15px; color: var(--medium-grey); }
     .value-card {
         min-height: auto;
         width: 100%;
-        height: 280px; /* Give it a fixed height on mobile for consistency */
+        height: 280px; 
         border-radius: 8px;
         padding: 40px 30px;
     }

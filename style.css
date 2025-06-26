@@ -26,26 +26,29 @@ body {
 /* --- Layout & Helpers --- */
 .container { max-width: 1100px; margin: auto; padding: 0 20px; }
 section { padding: 60px 0; }
-section.page-header {
+section:nth-child(even) { background-color: var(--light-grey); }
+
+.page-header {
     background: var(--primary-colour);
     color: var(--white);
     padding: 40px 0;
     text-align: center;
 }
-section.page-header h1 {
+.page-header h1 {
     color: var(--white);
     font-size: 2.8rem;
     margin-bottom: 0;
 }
-section:nth-child(even) { background-color: var(--light-grey); }
+.text-center { text-align: center; }
+.cta-button-container { text-align: center; margin-top: 40px; }
+
+
+/* --- Typography --- */
 h1, h2, h3 { font-weight: 600; margin-bottom: 20px; color: var(--primary-colour); }
 h1 { font-size: 2.8rem; }
 h2 { font-size: 2.2rem; text-align: center; }
 h3 { font-size: 1.4rem; color: var(--dark-grey); }
 p { margin-bottom: 15px; color: var(--medium-grey); }
-.text-center { text-align: center; }
-.cta-button-container { text-align: center; margin-top: 40px; }
-
 
 /* --- Navigation Bar --- */
 .navbar {
@@ -123,9 +126,57 @@ p { margin-bottom: 15px; color: var(--medium-grey); }
     background: var(--white); padding: 30px; border-radius: 8px;
     box-shadow: 0 4px 15px rgba(0,0,0,0.08); text-align: center;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    min-height: 280px; /* Give card a minimum height */
+    display: flex;
+    flex-direction: column;
 }
 .service-card:hover { transform: translateY(-5px); box-shadow: 0 8px 25px rgba(0,0,0,0.12); }
 .service-card .icon { font-size: 2.5rem; color: var(--secondary-colour); margin-bottom: 15px; }
+
+/* --- Service Card Hover Effect --- */
+.service-card .card-content {
+    position: relative;
+    flex-grow: 1; /* Allows this container to fill the available space */
+}
+.service-card .card-front,
+.service-card .card-back {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden; /* Prevents flickering during transition */
+    transition: opacity 0.4s ease-in-out;
+    padding: 0 10px; /* Add some padding for the content */
+}
+.service-card .card-front { opacity: 1; }
+.service-card .card-back {
+    opacity: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Center the details vertically */
+}
+.service-card:hover .card-front { opacity: 0; }
+.service-card:hover .card-back { opacity: 1; }
+.service-card .card-back ul {
+    list-style: none;
+    padding: 0;
+    text-align: left;
+    font-size: 0.9rem;
+}
+.service-card .card-back li {
+    margin-bottom: 8px;
+    padding-left: 20px;
+    position: relative;
+}
+.service-card .card-back li::before {
+    content: '✓';
+    color: var(--secondary-colour);
+    font-weight: 700;
+    position: absolute;
+    left: 0;
+    top: 1px;
+}
 
 /* --- Partner Programme Section --- */
 .partner-content {
@@ -221,5 +272,30 @@ p { margin-bottom: 15px; color: var(--medium-grey); }
     .navbar .nav-links li {
         margin: 10px 0;
         text-align: center;
+    }
+
+    /* --- Mobile-Friendly Fix for Service Cards --- */
+    .service-card {
+        min-height: auto; /* Let card height be natural on mobile */
+        padding-bottom: 20px;
+    }
+    .service-card .card-content,
+    .service-card .card-front,
+    .service-card .card-back {
+        position: static;
+        opacity: 1;
+        height: auto;
+    }
+    /* On mobile, HIDE the brief summary and just show the detailed list */
+    .service-card .card-front {
+        display: none;
+    }
+    .service-card .card-back {
+        text-align: center;
+    }
+    .service-card .card-back ul {
+        text-align: left;
+        display: inline-block; /* Helps center the list container */
+        margin-top: 15px;
     }
 }

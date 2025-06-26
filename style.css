@@ -3,10 +3,10 @@
 /* --- Icon Library for Hamburger Menu --- */
 @import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css');
 
-/* --- CSS Variables (GOLD STANDARD THEME) --- */
+/* --- CSS Variables (UPDATED GOLD STANDARD THEME) --- */
 :root {
     --primary-colour: #1a1a1a;   /* A very dark, near-black for headers and footer */
-    --secondary-colour: #D4AF37; /* A rich gold for accents, buttons, and links */
+    --secondary-colour: #F2C94C; /* UPDATED - A brighter, more vibrant gold */
     --dark-grey: #333333;       /* For primary body text */
     --medium-grey: #6c757d;     /* For secondary text and borders */
     --light-grey: #f8f9fa;      /* For alternating section backgrounds */
@@ -115,7 +115,7 @@ p { margin-bottom: 15px; color: var(--medium-grey); }
     color: var(--primary-colour);
 }
 .btn-primary:hover { 
-    background: #b89b3c;
+    background: #DAB545; /* UPDATED - Darker shade of the new gold */
     transform: translateY(-2px); 
 }
 .btn-secondary { 
@@ -223,7 +223,7 @@ p { margin-bottom: 15px; color: var(--medium-grey); }
     box-shadow: 0 8px 25px rgba(0,0,0,0.1);
 }
 
-/* NEW - Values Grid Section */
+/* Values Grid Section */
 .values-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -238,7 +238,7 @@ p { margin-bottom: 15px; color: var(--medium-grey); }
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     min-height: 220px;
     position: relative;
-    overflow: hidden; /* Important for the front/back effect */
+    overflow: hidden; 
 }
 .value-card:hover {
     transform: translateY(-5px);
@@ -265,7 +265,6 @@ p { margin-bottom: 15px; color: var(--medium-grey); }
 .value-card:hover .value-card-back { opacity: 1; }
 .value-card h4 { font-size: 1.5rem; }
 .value-card p { font-size: 0.95rem; margin: 10px 0 0; }
-/* END NEW */
 
 
 /* --- Contact Section --- */
@@ -290,7 +289,7 @@ p { margin-bottom: 15px; color: var(--medium-grey); }
     cursor: pointer;
 }
 .btn-submit:hover { 
-    background: #b89b3c;
+    background: #DAB545; /* UPDATED - Darker shade of the new gold */
 }
 
 /* --- Footer --- */
@@ -340,7 +339,6 @@ p { margin-bottom: 15px; color: var(--medium-grey); }
         grid-template-columns: 1fr;
         gap: 40px;
     }
-    /* NEW - Values Grid on Mobile */
     .values-grid {
         grid-template-columns: 1fr;
     }
@@ -354,7 +352,6 @@ p { margin-bottom: 15px; color: var(--medium-grey); }
     }
     .value-card-front { display: none; }
     .value-card-back { display: flex; }
-    /* END NEW */
     
 
     /* Mobile Menu Styles */

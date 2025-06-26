@@ -8,8 +8,24 @@
 </head>
 <body>
 
-    <!-- ======== NAVIGATION BAR ======== -->
-    <header class="navbar"><!-- ... a-like nav code ... --></header>
+    <!-- ======== CORRECT AND COMPLETE NAVIGATION BAR ======== -->
+    <header class="navbar">
+        <div class="container">
+            <a href="index.html" class="logo">AUNIX</a>
+            <div class="hamburger" id="hamburger-icon">
+                <i class="fas fa-bars"></i>
+            </div>
+            <nav>
+                <ul class="nav-links" id="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="msp-partner.html">MSP Partner</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
 
     <!-- ======== ABOUT PAGE CONTENT ======== -->
     <main>
@@ -42,7 +58,6 @@
                 <h2 class="text-center">Our Core Values</h2>
                 <div class="values-grid-container">
                     
-                    <!-- NEW SVG LAYER FOR ARROWS - Sits behind the bubbles -->
                     <svg class="values-arrows-svg">
                         <defs>
                             <marker id="arrowhead" viewBox="0 0 10 10" refX="8" refY="5"
@@ -54,8 +69,8 @@
                         <!-- Lines from center to each bubble's general area -->
                         <line x1="50%" y1="50%" x2="37.5%" y2="28%" stroke="#D4AF37" stroke-width="2" marker-end="url(#arrowhead)" />
                         <line x1="50%" y1="50%" x2="62.5%" y2="28%" stroke="#D4AF37" stroke-width="2" marker-end="url(#arrowhead)" />
-                        <line x1="50%" y1="50%" x2="25%" y2="50%" stroke="#D4AF37" stroke-width="2" marker-end="url(#arrowhead)" />
-                        <line x1="50%" y1="50%" x2="75%" y2="50%" stroke="#D4AF37" stroke-width="2" marker-end="url(#arrowhead)" />
+                        <line x1="50%" y1="50%" x2="16%" y2="50%" stroke="#D4AF37" stroke-width="2" marker-end="url(#arrowhead)" />
+                        <line x1="50%" y1="50%" x2="84%" y2="50%" stroke="#D4AF37" stroke-width="2" marker-end="url(#arrowhead)" />
                         <line x1="50%" y1="50%" x2="37.5%" y2="72%" stroke="#D4AF37" stroke-width="2" marker-end="url(#arrowhead)" />
                         <line x1="50%" y1="50%" x2="62.5%" y2="72%" stroke="#D4AF37" stroke-width="2" marker-end="url(#arrowhead)" />
                     </svg>
@@ -107,7 +122,38 @@
     </main>
     
     <!-- ======== FOOTER ======== -->
-    <footer class="site-footer"><!-- ... your footer code remains the same ... --></footer>
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-grid">
+                 <div class="footer-column">
+                    <h4>Aunix IT Services</h4>
+                    <p>Gauteng, South Africa<br>Serving MSPs Nationwide</p>
+                    <p><strong>Phone:</strong> 012 345 6789<br><strong>Email:</strong> partner@aunix.co.za</p>
+                </div>
+                <div class="footer-column">
+                    <h4>Useful Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="msp-partner.html">MSP Partner Programme</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
+                        <li><a href="policies.html">Policies & Procedures</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Our Services</h4>
+                    <ul>
+                        <li><a href="services.html">Outsourced Engineers</a></li>
+                        <li><a href="services.html">Onsite Support</a></li>
+                        <li><a href="services.html">Network Support</a></li>
+                        <li><a href="services.html">Security Camera Installation</a></li>
+                        <li><a href="services.html">IT Asset Disposal</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom"><p>© 2025 Aunix. All Rights Reserved. | Your Trusted IT Field Partner</p></div>
+        </div>
+    </footer>
 
     <!-- JavaScript for Mobile Menu Toggle -->
     <script>

@@ -3,7 +3,7 @@
 /* --- Icon Library for Hamburger Menu --- */
 @import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css');
 
-/* --- CSS Variables (NEW GOLD STANDARD THEME) --- */
+/* --- CSS Variables (GOLD STANDARD THEME) --- */
 :root {
     --primary-colour: #1a1a1a;   /* A very dark, near-black for headers and footer */
     --secondary-colour: #D4AF37; /* A rich gold for accents, buttons, and links */
@@ -112,10 +112,10 @@ p { margin-bottom: 15px; color: var(--medium-grey); }
 }
 .btn-primary { 
     background: var(--secondary-colour); 
-    color: var(--primary-colour); /* Black text on gold button */
+    color: var(--primary-colour);
 }
 .btn-primary:hover { 
-    background: #b89b3c; /* Darker gold on hover */
+    background: #b89b3c;
     transform: translateY(-2px); 
 }
 .btn-secondary { 
@@ -209,7 +209,7 @@ p { margin-bottom: 15px; color: var(--medium-grey); }
     position: absolute; left: 0; top: 0;
 }
 
-/* --- About Page Section --- */
+/* --- About Page Section (VALUES HUB LAYOUT) --- */
 .about-grid {
     display: grid;
     grid-template-columns: 1.2fr 1fr;
@@ -222,21 +222,71 @@ p { margin-bottom: 15px; color: var(--medium-grey); }
     border-radius: 8px;
     box-shadow: 0 8px 25px rgba(0,0,0,0.1);
 }
-.value-card {
-    background: var(--white);
-    padding: 30px;
-    border-radius: 8px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
-    text-align: left;
+.values-grid-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    gap: 20px;
+    align-items: center;
+    justify-items: center;
+    max-width: 900px;
+    margin: 40px auto 0;
 }
-.value-card h4 {
+.values-hub {
+    grid-column: 2 / 4;
+    grid-row: 2 / 3;
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    background: var(--white);
+    border: 5px solid var(--secondary-colour);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    flex-direction: column;
+    box-shadow: 0 0 20px rgba(212, 175, 55, 0.4);
+    z-index: 10;
+}
+.values-hub .logo {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--primary-colour);
+    line-height: 1;
+}
+.values-hub p {
+    font-size: 0.9rem;
+    color: var(--primary-colour);
+    margin-bottom: 0;
+    font-weight: 600;
+}
+.value-bubble {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    background: var(--white);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.value-bubble:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.12);
+}
+.value-bubble h4 {
     color: var(--primary-colour);
     font-size: 1.2rem;
     margin-bottom: 10px;
 }
-.value-card p {
-    font-size: 0.95rem;
+.value-bubble p {
+    font-size: 0.85rem;
     margin-bottom: 0;
+    line-height: 1.4;
 }
 
 /* --- Contact Section --- */
@@ -251,17 +301,17 @@ p { margin-bottom: 15px; color: var(--medium-grey); }
     border-radius: 5px; font-family: 'Poppins', sans-serif;
 }
 .contact-form input:focus, .contact-form textarea:focus {
-    outline: none; border-color: var(--secondary-colour); /* Focus color is gold */
+    outline: none; border-color: var(--secondary-colour);
 }
 .btn-submit {
     width: 100%; 
-    background: var(--secondary-colour); /* Gold button */
-    color: var(--primary-colour); /* Black text */
+    background: var(--secondary-colour); 
+    color: var(--primary-colour);
     border: none; 
     cursor: pointer;
 }
 .btn-submit:hover { 
-    background: #b89b3c; /* Darker gold */
+    background: #b89b3c;
 }
 
 /* --- Footer --- */
@@ -303,9 +353,30 @@ p { margin-bottom: 15px; color: var(--medium-grey); }
     h1 { font-size: 2.5rem; }
     h2 { font-size: 1.8rem; }
     .hero h1 { font-size: 2.8rem; }
-    .partner-content, .contact-grid, .about-grid { grid-template-columns: 1fr; }
-    .about-grid { gap: 40px; }
+    .partner-content, .contact-grid { grid-template-columns: 1fr; }
     .contact-info { text-align: center; }
+
+    /* Responsive rules for the About Page layout */
+    .about-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+    .values-grid-container {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+    .values-hub, .value-bubble {
+        width: 100%;
+        height: auto;
+        border-radius: 8px; /* Square corners */
+        padding: 30px;
+    }
+    .values-hub {
+        width: 90%; 
+        margin-bottom: 20px;
+        order: -1; /* Place the hub at the top on mobile */
+    }
 
     /* Mobile Menu Styles */
     .hamburger { display: block; }

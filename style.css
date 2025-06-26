@@ -3,10 +3,10 @@
 /* --- Icon Library for Hamburger Menu --- */
 @import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css');
 
-/* --- CSS Variables (UPDATED GOLD STANDARD THEME) --- */
+/* --- CSS Variables (GOLD STANDARD THEME) --- */
 :root {
     --primary-colour: #1a1a1a;   /* A very dark, near-black for headers and footer */
-    --secondary-colour: #F5BD02; /* UPDATED - The new, vibrant gold */
+    --secondary-colour: #F5BD02; /* The vibrant gold */
     --dark-grey: #333333;       /* For primary body text */
     --medium-grey: #6c757d;     /* For secondary text and borders */
     --light-grey: #f8f9fa;      /* For alternating section backgrounds */
@@ -115,7 +115,7 @@ p { margin-bottom: 15px; color: var(--medium-grey); }
     color: var(--primary-colour);
 }
 .btn-primary:hover { 
-    background: #E0AC02; /* UPDATED - Darker shade of the new gold */
+    background: #E0AC02;
     transform: translateY(-2px); 
 }
 .btn-secondary { 
@@ -223,12 +223,12 @@ p { margin-bottom: 15px; color: var(--medium-grey); }
     box-shadow: 0 8px 25px rgba(0,0,0,0.1);
 }
 
-/* UPDATED - Values Grid Section (3x2 Circles) */
+/* Values Grid Section (3x2 Circles) */
 .values-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr); /* 3 columns on desktop */
+    grid-template-columns: repeat(3, 1fr);
     gap: 30px;
-    justify-items: center; /* Center the circles in their grid cells */
+    justify-items: center;
     margin-top: 40px;
 }
 .value-card {
@@ -237,7 +237,6 @@ p { margin-bottom: 15px; color: var(--medium-grey); }
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     position: relative;
     overflow: hidden; 
-    /* NEW - Making it a circle */
     width: 250px;
     height: 250px;
     border-radius: 50%;
@@ -259,7 +258,7 @@ p { margin-bottom: 15px; color: var(--medium-grey); }
     justify-content: center;
     align-items: center;
     text-align: center;
-    padding: 30px; /* Increased padding for circle shape */
+    padding: 30px;
 }
 .value-card-front { opacity: 1; }
 .value-card-back { opacity: 0; }
@@ -267,7 +266,45 @@ p { margin-bottom: 15px; color: var(--medium-grey); }
 .value-card:hover .value-card-back { opacity: 1; }
 .value-card h4 { font-size: 1.5rem; }
 .value-card p { font-size: 0.95rem; margin: 10px 0 0; }
-/* END UPDATED */
+
+/* NEW - MSP Partner Page 'How it Works' Circles */
+.how-it-works-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    justify-items: center;
+    margin-top: 40px;
+}
+.process-step-card {
+    background: var(--white);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    width: 280px;
+    height: 280px;
+    border-radius: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 30px;
+}
+.process-step-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.12);
+}
+.process-step-card h3 {
+    font-size: 1.3rem;
+    color: var(--primary-colour);
+    margin-bottom: 15px;
+}
+.process-step-card p {
+    font-size: 0.9rem;
+    margin-bottom: 0;
+    color: var(--medium-grey);
+    line-height: 1.5;
+}
+/* END NEW */
 
 
 /* --- Contact Section --- */
@@ -292,7 +329,7 @@ p { margin-bottom: 15px; color: var(--medium-grey); }
     cursor: pointer;
 }
 .btn-submit:hover { 
-    background: #E0AC02; /* UPDATED - Darker shade of the new gold */
+    background: #E0AC02;
 }
 
 /* --- Footer --- */
@@ -331,7 +368,7 @@ p { margin-bottom: 15px; color: var(--medium-grey); }
 
 /* --- Responsive Design --- */
 @media (max-width: 992px) {
-    /* UPDATED - Tablet view for values grid */
+    /* Tablet view for values grid */
     .values-grid {
         grid-template-columns: repeat(2, 1fr);
     }
@@ -349,15 +386,14 @@ p { margin-bottom: 15px; color: var(--medium-grey); }
         grid-template-columns: 1fr;
         gap: 40px;
     }
-    /* UPDATED - Values Grid on Mobile */
     .values-grid {
         grid-template-columns: 1fr;
     }
     .value-card {
         min-height: auto;
-        width: 100%; /* Go back to full width */
+        width: 100%;
         height: auto;
-        border-radius: 8px; /* Go back to rounded corners */
+        border-radius: 8px;
         padding: 40px 30px;
     }
     .value-card-front, .value-card-back {
@@ -367,7 +403,18 @@ p { margin-bottom: 15px; color: var(--medium-grey); }
     }
     .value-card-front { display: none; }
     .value-card-back { display: flex; }
-    /* END UPDATED */
+    
+    /* NEW - 'How it works' grid on mobile */
+    .how-it-works-grid {
+        grid-template-columns: 1fr;
+    }
+    .process-step-card {
+        width: 100%;
+        height: auto;
+        border-radius: 8px; /* back to a card */
+        padding: 40px 30px;
+    }
+    /* END NEW */
     
     /* Mobile Menu Styles */
     .hamburger { display: block; }

@@ -126,7 +126,7 @@ p { margin-bottom: 15px; color: var(--medium-grey); }
     background: var(--white); padding: 30px; border-radius: 8px;
     box-shadow: 0 4px 15px rgba(0,0,0,0.08); text-align: center;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    min-height: 280px; /* Give card a minimum height */
+    min-height: 320px; /* Increased height to prevent overflow */
     display: flex;
     flex-direction: column;
 }
@@ -136,7 +136,7 @@ p { margin-bottom: 15px; color: var(--medium-grey); }
 /* --- Service Card Hover Effect --- */
 .service-card .card-content {
     position: relative;
-    flex-grow: 1; /* Allows this container to fill the available space */
+    flex-grow: 1; 
 }
 .service-card .card-front,
 .service-card .card-back {
@@ -145,16 +145,23 @@ p { margin-bottom: 15px; color: var(--medium-grey); }
     left: 0;
     width: 100%;
     height: 100%;
-    backface-visibility: hidden; /* Prevents flickering during transition */
+    backface-visibility: hidden; 
     transition: opacity 0.4s ease-in-out;
-    padding: 0 10px; /* Add some padding for the content */
-}
-.service-card .card-front { opacity: 1; }
-.service-card .card-back {
-    opacity: 0;
+    padding: 0 10px; 
     display: flex;
     flex-direction: column;
-    justify-content: center; /* Center the details vertically */
+    align-items: center;
+}
+.service-card .card-front { 
+    opacity: 1;
+    justify-content: flex-start;
+}
+.service-card .card-front p {
+    font-size: 0.95rem; /* Slightly smaller font to help with fitting */
+}
+.service-card .card-back {
+    opacity: 0;
+    justify-content: center;
 }
 .service-card:hover .card-front { opacity: 0; }
 .service-card:hover .card-back { opacity: 1; }
@@ -163,6 +170,7 @@ p { margin-bottom: 15px; color: var(--medium-grey); }
     padding: 0;
     text-align: left;
     font-size: 0.9rem;
+    width: 100%; /* Ensure ul takes full width */
 }
 .service-card .card-back li {
     margin-bottom: 8px;
@@ -276,7 +284,7 @@ p { margin-bottom: 15px; color: var(--medium-grey); }
 
     /* --- Mobile-Friendly Fix for Service Cards --- */
     .service-card {
-        min-height: auto; /* Let card height be natural on mobile */
+        min-height: auto; 
         padding-bottom: 20px;
     }
     .service-card .card-content,
@@ -285,8 +293,9 @@ p { margin-bottom: 15px; color: var(--medium-grey); }
         position: static;
         opacity: 1;
         height: auto;
+        justify-content: center;
     }
-    /* On mobile, HIDE the brief summary and just show the detailed list */
+    /* On mobile, HIDE the front and just show the details */
     .service-card .card-front {
         display: none;
     }
@@ -295,7 +304,10 @@ p { margin-bottom: 15px; color: var(--medium-grey); }
     }
     .service-card .card-back ul {
         text-align: left;
-        display: inline-block; /* Helps center the list container */
-        margin-top: 15px;
+        display: inline-block; 
+        margin-top: 0;
+    }
+    .service-card .card-back h3 {
+        display: block; /* Ensure heading is visible on mobile */
     }
 }

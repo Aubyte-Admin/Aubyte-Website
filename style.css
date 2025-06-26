@@ -3,13 +3,13 @@
 /* --- Icon Library for Hamburger Menu --- */
 @import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css');
 
-/* --- CSS Variables (Theme Colours) --- */
+/* --- CSS Variables (NEW GOLD STANDARD THEME) --- */
 :root {
-    --primary-colour: #005A9C;
-    --secondary-colour: #00AEEF;
-    --dark-grey: #333333;
-    --medium-grey: #555555;
-    --light-grey: #f4f7f6;
+    --primary-colour: #1a1a1a;   /* A very dark, near-black for headers and footer */
+    --secondary-colour: #D4AF37; /* A rich gold for accents, buttons, and links */
+    --dark-grey: #333333;       /* For primary body text */
+    --medium-grey: #6c757d;     /* For secondary text and borders */
+    --light-grey: #f8f9fa;      /* For alternating section backgrounds */
     --white: #ffffff;
 }
 
@@ -90,7 +90,7 @@ p { margin-bottom: 15px; color: var(--medium-grey); }
 
 /* --- Hero Section --- */
 .hero {
-    background: linear-gradient(rgba(0, 90, 156, 0.8), rgba(0, 90, 156, 0.8)), url('https://images.unsplash.com/photo-1521737711867-e3b97375f902?q=80&w=1974&auto=format&fit=crop') no-repeat center center/cover;
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1521737711867-e3b97375f902?q=80&w=1974&auto=format&fit=crop') no-repeat center center/cover;
     color: var(--white);
     height: 85vh;
     display: flex;
@@ -110,10 +110,23 @@ p { margin-bottom: 15px; color: var(--medium-grey); }
     text-decoration: none; font-weight: 600; transition: all 0.3s ease;
     margin: 5px; border: 2px solid transparent;
 }
-.btn-primary { background: var(--secondary-colour); color: var(--white); }
-.btn-primary:hover { background: #0095c7; transform: translateY(-2px); }
-.btn-secondary { background: transparent; color: var(--white); border-color: var(--white); }
-.btn-secondary:hover { background: var(--white); color: var(--primary-colour); }
+.btn-primary { 
+    background: var(--secondary-colour); 
+    color: var(--primary-colour); /* Black text on gold button */
+}
+.btn-primary:hover { 
+    background: #b89b3c; /* Darker gold on hover */
+    transform: translateY(-2px); 
+}
+.btn-secondary { 
+    background: transparent; 
+    color: var(--white); 
+    border-color: var(--white); 
+}
+.btn-secondary:hover { 
+    background: var(--white); 
+    color: var(--primary-colour); 
+}
 
 /* --- Services Section --- */
 .services-grid {
@@ -126,14 +139,14 @@ p { margin-bottom: 15px; color: var(--medium-grey); }
     background: var(--white); padding: 30px; border-radius: 8px;
     box-shadow: 0 4px 15px rgba(0,0,0,0.08); text-align: center;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    min-height: 320px; /* Increased height to prevent overflow */
+    min-height: 320px;
     display: flex;
     flex-direction: column;
 }
 .service-card:hover { transform: translateY(-5px); box-shadow: 0 8px 25px rgba(0,0,0,0.12); }
 .service-card .icon { font-size: 2.5rem; color: var(--secondary-colour); margin-bottom: 15px; }
 
-/* --- Service Card Hover Effect --- */
+/* Service Card Hover Effect */
 .service-card .card-content {
     position: relative;
     flex-grow: 1; 
@@ -156,9 +169,7 @@ p { margin-bottom: 15px; color: var(--medium-grey); }
     opacity: 1;
     justify-content: flex-start;
 }
-.service-card .card-front p {
-    font-size: 0.95rem; /* Slightly smaller font to help with fitting */
-}
+.service-card .card-front p { font-size: 0.95rem; }
 .service-card .card-back {
     opacity: 0;
     justify-content: center;
@@ -170,7 +181,7 @@ p { margin-bottom: 15px; color: var(--medium-grey); }
     padding: 0;
     text-align: left;
     font-size: 0.9rem;
-    width: 100%; /* Ensure ul takes full width */
+    width: 100%;
 }
 .service-card .card-back li {
     margin-bottom: 8px;
@@ -198,8 +209,35 @@ p { margin-bottom: 15px; color: var(--medium-grey); }
     position: absolute; left: 0; top: 0;
 }
 
-/* --- About Section --- */
-.about-content { max-width: 800px; margin: 40px auto; text-align: center; }
+/* --- About Page Section --- */
+.about-grid {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    gap: 60px;
+    align-items: center;
+    margin-top: 40px;
+}
+.about-image img {
+    width: 100%;
+    border-radius: 8px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+}
+.value-card {
+    background: var(--white);
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+    text-align: left;
+}
+.value-card h4 {
+    color: var(--primary-colour);
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+}
+.value-card p {
+    font-size: 0.95rem;
+    margin-bottom: 0;
+}
 
 /* --- Contact Section --- */
 .contact-grid {
@@ -213,17 +251,22 @@ p { margin-bottom: 15px; color: var(--medium-grey); }
     border-radius: 5px; font-family: 'Poppins', sans-serif;
 }
 .contact-form input:focus, .contact-form textarea:focus {
-    outline: none; border-color: var(--primary-colour);
+    outline: none; border-color: var(--secondary-colour); /* Focus color is gold */
 }
 .btn-submit {
-    width: 100%; background: var(--primary-colour); color: var(--white);
-    border: none; cursor: pointer;
+    width: 100%; 
+    background: var(--secondary-colour); /* Gold button */
+    color: var(--primary-colour); /* Black text */
+    border: none; 
+    cursor: pointer;
 }
-.btn-submit:hover { background: #004a7f; }
+.btn-submit:hover { 
+    background: #b89b3c; /* Darker gold */
+}
 
 /* --- Footer --- */
 .site-footer {
-    background: var(--dark-grey);
+    background: var(--primary-colour);
     color: #ccc;
     padding: 50px 0;
     font-size: 0.9rem;
@@ -260,7 +303,8 @@ p { margin-bottom: 15px; color: var(--medium-grey); }
     h1 { font-size: 2.5rem; }
     h2 { font-size: 1.8rem; }
     .hero h1 { font-size: 2.8rem; }
-    .partner-content, .contact-grid { grid-template-columns: 1fr; }
+    .partner-content, .contact-grid, .about-grid { grid-template-columns: 1fr; }
+    .about-grid { gap: 40px; }
     .contact-info { text-align: center; }
 
     /* Mobile Menu Styles */
@@ -271,7 +315,7 @@ p { margin-bottom: 15px; color: var(--medium-grey); }
         width: 100%;
         background: var(--white);
         position: absolute;
-        top: 60px; /* Adjust based on navbar height */
+        top: 60px;
         left: 0;
         padding: 20px 0;
         box-shadow: 0 4px 10px rgba(0,0,0,0.1);
@@ -282,7 +326,7 @@ p { margin-bottom: 15px; color: var(--medium-grey); }
         text-align: center;
     }
 
-    /* --- Mobile-Friendly Fix for Service Cards --- */
+    /* Mobile-Friendly Fix for Service Cards */
     .service-card {
         min-height: auto; 
         padding-bottom: 20px;
@@ -295,19 +339,12 @@ p { margin-bottom: 15px; color: var(--medium-grey); }
         height: auto;
         justify-content: center;
     }
-    /* On mobile, HIDE the front and just show the details */
-    .service-card .card-front {
-        display: none;
-    }
-    .service-card .card-back {
-        text-align: center;
-    }
+    .service-card .card-front { display: none; }
+    .service-card .card-back { text-align: center; }
     .service-card .card-back ul {
         text-align: left;
         display: inline-block; 
         margin-top: 0;
     }
-    .service-card .card-back h3 {
-        display: block; /* Ensure heading is visible on mobile */
-    }
+    .service-card .card-back h3 { display: block; }
 }

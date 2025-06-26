@@ -240,7 +240,7 @@ p { margin-bottom: 15px; color: var(--medium-grey); }
     width: 250px;
     height: 250px;
     border-radius: 50%;
-    border: 3px solid var(--secondary-colour); /* THE NEW GOLDEN BORDER */
+    border: 3px solid var(--secondary-colour);
 }
 .value-card:hover {
     transform: translateY(-5px);
@@ -267,6 +267,23 @@ p { margin-bottom: 15px; color: var(--medium-grey); }
 .value-card:hover .value-card-back { opacity: 1; }
 .value-card h4 { font-size: 1.5rem; }
 .value-card p { font-size: 0.95rem; margin: 10px 0 0; }
+
+/* NEW - MSP Partner Page 'How it Works' Customization */
+.process-step-onboarding {
+    /* The handshake image */
+    background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('https://images.pexels.com/photos/5313361/pexels-photo-5313361.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1');
+    background-size: cover;
+    background-position: center;
+}
+.process-step-onboarding .value-card-front h4 {
+    color: var(--white); /* White text for the heading */
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.8); /* Shadow for readability */
+}
+.process-step-onboarding .value-card-back {
+    background: var(--white); /* Solid white background on hover */
+    border-radius: 50%; /* Ensure the background is also a circle */
+}
+/* END NEW */
 
 
 /* --- Contact Section --- */

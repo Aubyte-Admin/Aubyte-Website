@@ -6,7 +6,7 @@
 /* --- CSS Variables (UPDATED GOLD STANDARD THEME) --- */
 :root {
     --primary-colour: #1a1a1a;   /* A very dark, near-black for headers and footer */
-    --secondary-colour: #F2C94C; /* UPDATED - A brighter, more vibrant gold */
+    --secondary-colour: #ffd700; /* UPDATED - A brighter, more vibrant gold */
     --dark-grey: #333333;       /* For primary body text */
     --medium-grey: #6c757d;     /* For secondary text and borders */
     --light-grey: #f8f9fa;      /* For alternating section backgrounds */

@@ -232,6 +232,11 @@ p { margin-bottom: 15px; color: var(--medium-grey); }
     max-width: 900px;
     margin: 40px auto 0;
     position: relative; 
+    /* NEW - Using a background image for the connecting lines */
+    background-image: url('https://i.ibb.co/hZxtS0Q/lines-only.png');
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
 }
 
 .values-hub {
@@ -289,29 +294,6 @@ p { margin-bottom: 15px; color: var(--medium-grey); }
     margin-bottom: 0;
     line-height: 1.4;
 }
-
-/* NEW - Individual line for each bubble */
-.value-bubble::before {
-    content: '';
-    position: absolute;
-    background: var(--secondary-colour);
-    height: 2px;
-    width: 110px; /* The length of the line */
-    z-index: -1;
-    top: 50%;
-    left: 50%; /* Start the line from the bubble's center */
-    transform-origin: left center; /* Rotate around the starting point */
-}
-
-/* NEW - Rotate each line to point towards the center */
-.value-bubble[style*="grid-column: 1"]::before { transform: rotate(0deg); } /* Reliability */
-.value-bubble[style*="grid-column: 4"]::before { transform: rotate(180deg); } /* Integrity */
-.value-bubble[style*="grid-row: 1"][style*="grid-column: 2"]::before { transform: rotate(60deg); } /* Excellence */
-.value-bubble[style*="grid-row: 1"][style*="grid-column: 3"]::before { transform: rotate(120deg); } /* Partnership */
-.value-bubble[style*="grid-row: 3"][style*="grid-column: 2"]::before { transform: rotate(-60deg); } /* Agility */
-.value-bubble[style*="grid-row: 3"][style*="grid-column: 3"]::before { transform: rotate(-120deg); } /* Clarity */
-/* END NEW */
-
 
 /* Value Bubble Hover Effect */
 .value-bubble .bubble-front,
@@ -411,6 +393,7 @@ p { margin-bottom: 15px; color: var(--medium-grey); }
         display: flex;
         flex-direction: column;
         gap: 20px;
+        background-image: none; /* Hide the background image on mobile */
     }
     .values-hub, .value-bubble {
         width: 100%;
@@ -431,11 +414,6 @@ p { margin-bottom: 15px; color: var(--medium-grey); }
     }
     .value-bubble .bubble-front { display: none; }
     .value-bubble .bubble-back { display: flex; }
-    
-    /* NEW - Hide connecting lines on mobile */
-    .value-bubble::before {
-        display: none;
-    }
 
     /* Mobile Menu Styles */
     .hamburger { display: block; }

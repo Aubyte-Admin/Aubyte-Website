@@ -268,7 +268,8 @@ p { margin-bottom: 15px; color: var(--medium-grey); }
     box-shadow: 0 4px 15px rgba(0,0,0,0.08);
     padding: 20px;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    position: relative; /* Needed for the front/back positioning */
+    position: relative;
+    border: 3px solid var(--secondary-colour); /* THIS IS THE NEW LINE */
 }
 .value-bubble:hover {
     transform: scale(1.05);
@@ -285,7 +286,7 @@ p { margin-bottom: 15px; color: var(--medium-grey); }
     line-height: 1.4;
 }
 
-/* NEW - Value Bubble Hover Effect */
+/* Value Bubble Hover Effect */
 .value-bubble .bubble-front,
 .value-bubble .bubble-back {
     position: absolute;
@@ -306,7 +307,6 @@ p { margin-bottom: 15px; color: var(--medium-grey); }
 .value-bubble .bubble-back { opacity: 0; }
 .value-bubble:hover .bubble-front { opacity: 0; }
 .value-bubble:hover .bubble-back { opacity: 1; }
-/* END NEW */
 
 /* --- Contact Section --- */
 .contact-grid {
@@ -390,14 +390,14 @@ p { margin-bottom: 15px; color: var(--medium-grey); }
         height: auto;
         border-radius: 8px; /* Square corners */
         padding: 30px;
-        position: relative; /* Keep this for potential future use */
+        position: relative;
     }
     .values-hub {
         width: 90%; 
         margin-bottom: 20px;
         order: -1; /* Place the hub at the top on mobile */
     }
-    /* NEW - Mobile override for value bubbles */
+    /* Mobile override for value bubbles */
     .value-bubble .bubble-front, .value-bubble .bubble-back {
         position: static;
         opacity: 1;
@@ -405,7 +405,6 @@ p { margin-bottom: 15px; color: var(--medium-grey); }
     }
     .value-bubble .bubble-front { display: none; } /* Hide the front summary */
     .value-bubble .bubble-back { display: flex; } /* Show the full details */
-    /* END NEW */
 
 
     /* Mobile Menu Styles */

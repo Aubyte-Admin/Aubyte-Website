@@ -209,7 +209,7 @@ p { margin-bottom: 15px; color: var(--medium-grey); }
     position: absolute; left: 0; top: 0;
 }
 
-/* --- About Page Section (VALUES HUB LAYOUT) --- */
+/* --- About Page Section --- */
 .about-grid {
     display: grid;
     grid-template-columns: 1.2fr 1fr;
@@ -222,78 +222,29 @@ p { margin-bottom: 15px; color: var(--medium-grey); }
     border-radius: 8px;
     box-shadow: 0 8px 25px rgba(0,0,0,0.1);
 }
-.values-grid-container {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    grid-template-rows: repeat(3, 1fr);
-    gap: 20px;
-    align-items: center;
-    justify-items: center;
-    max-width: 900px;
-    margin: 40px auto 0;
-    position: relative;
-    /* The background image has been removed from this rule */
-}
 
-.values-hub {
-    grid-column: 2 / 4;
-    grid-row: 2 / 3;
-    width: 250px;
-    height: 250px;
-    border-radius: 50%;
+/* NEW - Values Grid Section */
+.values-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+    margin-top: 40px;
+}
+.value-card {
     background: var(--white);
-    border: 5px solid var(--secondary-colour);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    flex-direction: column;
-    box-shadow: 0 0 20px rgba(212, 175, 55, 0.4);
-    z-index: 5;
-    position: relative;
-}
-.values-hub .logo {
-    font-size: 2.5rem;
-    font-weight: 700;
-    color: var(--primary-colour);
-    line-height: 1;
-}
-.values-hub p {
-    font-size: 0.9rem;
-    color: var(--primary-colour);
-    margin-bottom: 0;
-    font-weight: 600;
-}
-.value-bubble {
-    width: 200px;
-    height: 200px;
-    border-radius: 50%;
-    background: var(--white);
+    padding: 30px;
+    border-radius: 8px;
     box-shadow: 0 4px 15px rgba(0,0,0,0.08);
-    padding: 20px;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    min-height: 220px;
     position: relative;
-    border: 3px solid var(--secondary-colour);
-    z-index: 5;
+    overflow: hidden; /* Important for the front/back effect */
 }
-.value-bubble:hover {
-    transform: scale(1.05);
+.value-card:hover {
+    transform: translateY(-5px);
     box-shadow: 0 8px 25px rgba(0,0,0,0.12);
 }
-.value-bubble h4 {
-    color: var(--primary-colour);
-    font-size: 1.2rem;
-    margin-bottom: 10px;
-}
-.value-bubble p {
-    font-size: 0.85rem;
-    margin-bottom: 0;
-    line-height: 1.4;
-}
-
-/* Value Bubble Hover Effect */
-.value-bubble .bubble-front,
-.value-bubble .bubble-back {
+.value-card-front, .value-card-back {
     position: absolute;
     top: 0;
     left: 0;
@@ -308,10 +259,14 @@ p { margin-bottom: 15px; color: var(--medium-grey); }
     text-align: center;
     padding: 20px;
 }
-.value-bubble .bubble-front { opacity: 1; }
-.value-bubble .bubble-back { opacity: 0; }
-.value-bubble:hover .bubble-front { opacity: 0; }
-.value-bubble:hover .bubble-back { opacity: 1; }
+.value-card-front { opacity: 1; }
+.value-card-back { opacity: 0; }
+.value-card:hover .value-card-front { opacity: 0; }
+.value-card:hover .value-card-back { opacity: 1; }
+.value-card h4 { font-size: 1.5rem; }
+.value-card p { font-size: 0.95rem; margin: 10px 0 0; }
+/* END NEW */
+
 
 /* --- Contact Section --- */
 .contact-grid {
@@ -385,30 +340,22 @@ p { margin-bottom: 15px; color: var(--medium-grey); }
         grid-template-columns: 1fr;
         gap: 40px;
     }
-    .values-grid-container {
-        display: flex;
-        flex-direction: column;
-        gap: 20px;
+    /* NEW - Values Grid on Mobile */
+    .values-grid {
+        grid-template-columns: 1fr;
     }
-    .values-hub, .value-bubble {
-        width: 100%;
-        height: auto;
-        border-radius: 8px; /* Square corners */
-        padding: 30px;
+    .value-card {
+        min-height: auto;
     }
-    .values-hub {
-        width: 90%; 
-        margin-bottom: 20px;
-        order: -1;
-    }
-    /* Mobile override for value bubbles */
-    .value-bubble .bubble-front, .value-bubble .bubble-back {
+    .value-card-front, .value-card-back {
         position: static;
         opacity: 1;
         height: auto;
     }
-    .value-bubble .bubble-front { display: none; }
-    .value-bubble .bubble-back { display: flex; }
+    .value-card-front { display: none; }
+    .value-card-back { display: flex; }
+    /* END NEW */
+    
 
     /* Mobile Menu Styles */
     .hamburger { display: block; }

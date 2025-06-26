@@ -231,6 +231,7 @@ p { margin-bottom: 15px; color: var(--medium-grey); }
     justify-items: center;
     max-width: 900px;
     margin: 40px auto 0;
+    position: relative; /* REQUIRED for SVG positioning */
 }
 .values-hub {
     grid-column: 2 / 4;
@@ -246,7 +247,8 @@ p { margin-bottom: 15px; color: var(--medium-grey); }
     text-align: center;
     flex-direction: column;
     box-shadow: 0 0 20px rgba(212, 175, 55, 0.4);
-    z-index: 10;
+    z-index: 5; /* Sit on top of the arrows */
+    position: relative; /* Required for z-index to work */
 }
 .values-hub .logo {
     font-size: 2.5rem;
@@ -269,7 +271,8 @@ p { margin-bottom: 15px; color: var(--medium-grey); }
     padding: 20px;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     position: relative;
-    border: 3px solid var(--secondary-colour); /* THIS IS THE NEW LINE */
+    border: 3px solid var(--secondary-colour);
+    z-index: 5; /* Sit on top of the arrows */
 }
 .value-bubble:hover {
     transform: scale(1.05);
@@ -307,6 +310,17 @@ p { margin-bottom: 15px; color: var(--medium-grey); }
 .value-bubble .bubble-back { opacity: 0; }
 .value-bubble:hover .bubble-front { opacity: 0; }
 .value-bubble:hover .bubble-back { opacity: 1; }
+
+/* NEW - SVG Arrow Styles */
+.values-arrows-svg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1; /* Sit behind the bubbles */
+    overflow: visible;
+}
 
 /* --- Contact Section --- */
 .contact-grid {
@@ -390,12 +404,11 @@ p { margin-bottom: 15px; color: var(--medium-grey); }
         height: auto;
         border-radius: 8px; /* Square corners */
         padding: 30px;
-        position: relative;
     }
     .values-hub {
         width: 90%; 
         margin-bottom: 20px;
-        order: -1; /* Place the hub at the top on mobile */
+        order: -1;
     }
     /* Mobile override for value bubbles */
     .value-bubble .bubble-front, .value-bubble .bubble-back {
@@ -403,9 +416,13 @@ p { margin-bottom: 15px; color: var(--medium-grey); }
         opacity: 1;
         height: auto;
     }
-    .value-bubble .bubble-front { display: none; } /* Hide the front summary */
-    .value-bubble .bubble-back { display: flex; } /* Show the full details */
-
+    .value-bubble .bubble-front { display: none; }
+    .value-bubble .bubble-back { display: flex; }
+    
+    /* NEW - Hide SVG arrows on mobile */
+    .values-arrows-svg {
+        display: none;
+    }
 
     /* Mobile Menu Styles */
     .hamburger { display: block; }

@@ -4,49 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Policies & Procedures - Aubyte</title>
-    <!-- Link to the main stylesheet -->
     <link rel="stylesheet" href="style.css">
-    
-    <!-- Page-specific styles for the document list -->
     <style>
-        .document-list {
-            list-style: none; 
-            margin-top: 40px; 
-            max-width: 800px;
-            margin-left: auto; 
-            margin-right: auto;
-        }
-        .document-list li {
-            background: var(--white); 
-            border-left: 5px solid var(--secondary-colour);
-            margin-bottom: 15px; 
-            padding: 20px; 
-            border-radius: 5px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.07);
-            transition: box-shadow 0.3s ease, transform 0.3s ease;
-        }
-        .document-list li:hover { 
-            box-shadow: 0 4px 15px rgba(0,0,0,0.1); 
-            transform: translateY(-3px); 
-        }
-        .document-list a {
-            text-decoration: none; 
-            color: var(--primary-colour); 
-            font-size: 1.2rem;
-            font-weight: 600; 
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-        }
-        .document-list a::after {
-            content: '→'; /* Simple arrow for visual cue */
-            font-size: 1.5rem;
-            color: var(--secondary-colour);
-            transition: transform 0.3s ease;
-        }
-        .document-list a:hover::after {
-            transform: translateX(5px);
-        }
+        .document-list { list-style: none; margin-top: 40px; max-width: 800px; margin-left: auto; margin-right: auto; }
+        .document-list li { background: var(--white); border-left: 5px solid var(--secondary-colour); margin-bottom: 15px; padding: 20px; border-radius: 5px; box-shadow: 0 2px 10px rgba(0,0,0,0.07); transition: box-shadow 0.3s ease, transform 0.3s ease; }
+        .document-list li:hover { box-shadow: 0 4px 15px rgba(0,0,0,0.1); transform: translateY(-3px); }
+        .document-list a { text-decoration: none; color: var(--primary-colour); font-size: 1.2rem; font-weight: 600; display: flex; align-items: center; justify-content: space-between; }
+        .document-list a::after { content: '→'; font-size: 1.5rem; color: var(--secondary-colour); transition: transform 0.3s ease; }
+        .document-list a:hover::after { transform: translateX(5px); }
     </style>
 </head>
 <body>
@@ -54,46 +19,27 @@
     <header class="navbar">
         <div class="container">
             <a href="/" class="logo">AUBYTE</a>
-            <div class="hamburger" id="hamburger-icon"><i class="fas fa-bars"></i></div>
             <nav>
+                <div class="hamburger" id="hamburger-icon"><i class="fas fa-bars"></i></div>
                 <ul class="nav-links" id="nav-links">
-                    <li><a href="/">Home</a></li>
-                    <li><a href="/services">Services</a></li>
-                    <li><a href="/msp-partner">Partner</a></li>
-                    <li><a href="/about">About</a></li>
-                    <li><a href="/why-us">Why Us</a></li>
-                    <li><a href="/contact">Contact</a></li>
+                    <li><a href="/">Home</a></li><li><a href="/services">Services</a></li><li><a href="/msp-partner">Partner</a></li><li><a href="/about">About</a></li><li><a href="/why-us">Why Us</a></li><li><a href="/contact">Contact</a></li>
                 </ul>
             </nav>
         </div>
     </header>
 
     <main>
-        <section class="page-header">
-            <div class="container">
-                <h1>Policies & Procedures</h1>
-            </div>
-        </section>
-
+        <section class="page-header"><div class="container"><h1>Policies & Procedures</h1></div></section>
         <section id="policy-content">
             <div class="container">
                 <p class="text-center" style="max-width: 700px; margin-left:auto; margin-right:auto;">
                     At Aubyte, transparency and professionalism are core to our operations. Here you can find our official company documents and procedural guidelines. Click a link to view or download the document.
                 </p>
-                
                 <ul class="document-list">
-                    <li>
-                        <a href="/docs/ethics-code-of-conduct.pdf" target="_blank">Ethics and Code of Conduct Policy</a>
-                    </li>
-                    <li>
-                        <a href="/docs/labour-human-resources.pdf" target="_blank">Labour and Human Resources Policy</a>
-                    </li>
-                    <li>
-                        <a href="/docs/data-security-privacy.pdf" target="_blank">Data Security and Privacy Policy</a>
-                    </li>
-                     <li>
-                        <a href="/docs/terms-of-service.pdf" target="_blank">Master Service Agreement (Template)</a>
-                    </li>
+                    <li><a href="/docs/ethics-code-of-conduct.pdf" target="_blank">Ethics and Code of Conduct Policy</a></li>
+                    <li><a href="/docs/labour-human-resources.pdf" target="_blank">Labour and Human Resources Policy</a></li>
+                    <li><a href="/docs/data-security-privacy.pdf" target="_blank">Data Security and Privacy Policy</a></li>
+                     <li><a href="/docs/terms-of-service.pdf" target="_blank">Master Service Agreement (Template)</a></li>
                 </ul>
             </div>
         </section>
@@ -102,41 +48,14 @@
     <footer class="site-footer">
         <div class="container">
             <div class="footer-grid">
-                <div class="footer-column">
-                    <h4>Aubyte IT Services</h4>
-                    <p>Western Cape, South Africa<br>Serving MSPs Nationwide</p>
-                    <p><strong>Phone:</strong> 081 045 9523<br><strong>Email:</strong> info@aubyte.co.za</p>
-                </div>
-                <div class="footer-column">
-                    <h4>Company</h4>
-                    <ul>
-                        <li><a href="/policies">Policies & Procedures</a></li>
-                        <li><a href="/faq">FAQ</a></li>
-                    </ul>
-                </div>
-                <div class="footer-column">
-                    <h4>Our Services</h4>
-                    <ul>
-                        <li><a href="/services">Outsourced Engineers</a></li>
-                        <li><a href="/services">Onsite Support</a></li>
-                        <li><a href="/services">Network Support</a></li>
-                        <li><a href="/services">Security Camera Installation</a></li>
-                        <li><a href="/services">IT Asset Disposal</a></li>
-                    </ul>
-                </div>
+                <div class="footer-column"><h4>Aubyte IT Services</h4><p>Western Cape, South Africa<br>Serving MSPs Nationwide</p><p><strong>Phone:</strong> 081 045 9523<br><strong>Email:</strong> info@aubyte.co.za</p></div>
+                <div class="footer-column"><h4>Company</h4><ul><li><a href="/policies">Policies & Procedures</a></li><li><a href="/faq">FAQ</a></li></ul></div>
+                <div class="footer-column"><h4>Our Services</h4><ul><li><a href="/services">Outsourced Engineers</a></li><li><a href="/services">Onsite Support</a></li><li><a href="/services">Network Support</a></li><li><a href="/services">Security Camera Installation</a></li><li><a href="/services">IT Asset Disposal</a></li></ul></div>
             </div>
             <div class="footer-bottom"><p>© 2025 Aubyte. All Rights Reserved. | Your Trusted IT Field Partner</p></div>
         </div>
     </footer>
 
-    <script>
-        const hamburger = document.getElementById('hamburger-icon');
-        const navLinks = document.getElementById('nav-links');
-
-        hamburger.addEventListener('click', () => {
-            navLinks.classList.toggle('active');
-        });
-    </script>
-
+    <script>const hamburger = document.getElementById('hamburger-icon'); const navLinks = document.getElementById('nav-links'); hamburger.addEventListener('click', () => { navLinks.classList.toggle('active'); });</script>
 </body>
 </html>

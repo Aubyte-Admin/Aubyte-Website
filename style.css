@@ -65,6 +65,7 @@ p { margin-bottom: 15px; color: var(--medium-grey); }
     display: flex;
     justify-content: space-between;
     align-items: center;
+    width: 100%; /* UPDATED - Essential for right-alignment */
 }
 .navbar .logo {
     font-size: 1.5rem;
@@ -73,13 +74,13 @@ p { margin-bottom: 15px; color: var(--medium-grey); }
     text-decoration: none;
 }
 .navbar nav {
-    margin-left: auto; /* UPDATED - Pushes the nav to the far right */
+    margin-left: auto; 
 }
 .navbar .nav-links {
     list-style: none;
     display: flex;
 }
-.navbar .nav-links li { margin-left: 30px; } /* Increased spacing */
+.navbar .nav-links li { margin-left: 30px; }
 .navbar .nav-links li a {
     color: var(--dark-grey);
     text-decoration: none;
@@ -313,9 +314,10 @@ p { margin-bottom: 15px; color: var(--medium-grey); }
 }
 .value-card-reliable {
     background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('https://images.pexels.com/photos/7873550/pexels-photo-7873550.jpeg');
+    background-position: center 33%; /* UPDATED - Moves image up */
 }
 
-/* NEW - FAQ Page Accordion */
+/* FAQ Page Accordion */
 .faq-item {
     margin-bottom: 20px;
     border-bottom: 1px solid #eee;
@@ -327,10 +329,10 @@ p { margin-bottom: 15px; color: var(--medium-grey); }
     padding: 15px 0;
     cursor: pointer;
     position: relative;
-    list-style: none; /* Remove default triangle */
+    list-style: none; 
 }
 .faq-item summary::-webkit-details-marker {
-    display: none; /* Chrome/Safari */
+    display: none; 
 }
 .faq-item summary::after {
     content: '+';
@@ -346,7 +348,6 @@ p { margin-bottom: 15px; color: var(--medium-grey); }
 .faq-item div {
     padding: 0 10px 20px;
 }
-/* END NEW */
 
 
 /* --- Contact Section --- */
@@ -446,12 +447,12 @@ p { margin-bottom: 15px; color: var(--medium-grey); }
     .value-card-front { display: none; }
     .value-card-back { display: flex; }
 
-    /* UPDATED - Mobile experience for image-backed cards */
+    /* Mobile experience for image-backed cards */
     .process-step-onboarding, .process-step-request, .process-step-execution,
     .value-card-partnership, .value-card-reliable {
         background-color: transparent;
         box-shadow: none;
-        border: none !important; /* Important to override hover states */
+        border: none !important;
         padding: 20px;
         display: flex;
         justify-content: center;
@@ -475,15 +476,18 @@ p { margin-bottom: 15px; color: var(--medium-grey); }
     }
     
     /* Mobile Menu Styles */
-    .hamburger { display: block; }
+    .hamburger { 
+        display: block;
+        margin-left: auto; /* UPDATED - Pushes hamburger to the far right */
+    }
     .navbar .container {
-        /* UPDATED - Make sure hamburger is on the right */
         display: flex;
         justify-content: space-between;
         align-items: center;
     }
     .navbar nav {
-        display: none; /* Hide the desktop nav wrapper */
+        /* UPDATED - The desktop nav wrapper is hidden, but the hamburger now controls the links directly */
+        position: static; 
     }
     .navbar .nav-links {
         display: none;
@@ -491,7 +495,7 @@ p { margin-bottom: 15px; color: var(--medium-grey); }
         width: 100%;
         background: var(--white);
         position: absolute;
-        top: 60px; /* Adjust based on navbar height */
+        top: 60px;
         left: 0;
         padding: 20px 0;
         box-shadow: 0 4px 10px rgba(0,0,0,0.1);

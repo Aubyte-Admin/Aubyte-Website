@@ -3,66 +3,89 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Aunix - Message Sent</title>
+    <title>Message Sent - Aubyte</title>
+    <link rel="stylesheet" href="style.css">
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
-        :root {
-            --primary-colour: #005A9C;
-            --secondary-colour: #00AEEF;
-            --dark-grey: #333333;
-            --medium-grey: #555555;
-            --light-grey: #f4f7f6;
-            --white: #ffffff;
-        }
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body {
-            font-family: 'Poppins', sans-serif;
-            color: var(--dark-grey);
-            line-height: 1.6;
-            background-color: var(--white);
-            display: flex;
-            flex-direction: column;
-            min-height: 100vh;
-        }
-        .container { max-width: 1100px; margin: auto; padding: 0 20px; }
-        .thank-you-section {
-            text-align: center;
-            padding: 80px 20px;
-            flex-grow: 1;
+        /* Page-specific styles for vertical centering */
+        .thank-you-wrapper {
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
+            text-align: center;
+            flex-grow: 1; /* This makes the section fill the available vertical space */
         }
-        .thank-you-section h1 {
+        .thank-you-wrapper h1 {
             font-size: 3rem;
             color: var(--primary-colour);
             margin-bottom: 20px;
         }
-        .thank-you-section p {
+        .thank-you-wrapper p {
             font-size: 1.2rem;
             color: var(--medium-grey);
             margin-bottom: 30px;
             max-width: 500px;
         }
-        .btn {
-            display: inline-block; padding: 12px 28px; border-radius: 5px;
-            text-decoration: none; font-weight: 600; transition: all 0.3s ease;
-            margin: 5px; border: 2px solid transparent;
-        }
-        .btn-primary { background: var(--secondary-colour); color: var(--white); }
-        .btn-primary:hover { background: #0095c7; transform: translateY(-2px); }
     </style>
 </head>
 <body>
 
-    <div class="container">
-        <div class="thank-you-section">
-            <h1>Thank You!</h1>
-            <p>We received your message. We will get back to you as soon as we can.</p>
-            <a href="index.html" class="btn btn-primary">Return to Homepage</a>
+    <header class="navbar">
+        <div class="container">
+            <a href="/" class="logo">AUBYTE</a>
+            <nav>
+                <div class="hamburger" id="hamburger-icon"><i class="fas fa-bars"></i></div>
+                <ul class="nav-links" id="nav-links">
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/services">Services</a></li>
+                    <li><a href="/msp-partner">Partner</a></li>
+                    <li><a href="/about">About</a></li>
+                    <li><a href="/why-us">Why Us</a></li>
+                    <li><a href="/contact">Contact</a></li>
+                </ul>
+            </nav>
         </div>
-    </div>
+    </header>
+
+    <main class="thank-you-wrapper">
+        <div class="container">
+            <h1>Thank You!</h1>
+            <p>Your message has been successfully sent. Our team will review it and get back to you as soon as possible.</p>
+            <a href="/" class="btn btn-primary">Return to Homepage</a>
+        </div>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-column">
+                    <h4>Aubyte IT Services</h4>
+                    <p>Western Cape, South Africa<br>Serving MSPs Nationwide</p>
+                    <p><strong>Phone:</strong> 081 045 9523<br><strong>Email:</strong> info@aubyte.co.za</p>
+                </div>
+                <div class="footer-column">
+                    <h4>Company</h4>
+                    <ul>
+                        <li><a href="/policies">Policies & Procedures</a></li>
+                        <li><a href="/faq">FAQ</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Our Services</h4>
+                    <ul>
+                        <li><a href="/services">Outsourced Engineers</a></li>
+                        <li><a href="/services">Onsite Support</a></li>
+                        <li><a href="/services">Network Support</a></li>
+                        <li><a href="/services">Security Camera Installation</a></li>
+                        <li><a href="/services">IT Asset Disposal</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom"><p>© 2025 Aubyte. All Rights Reserved. | Your Trusted IT Field Partner</p></div>
+        </div>
+    </footer>
+
+    <script>const hamburger = document.getElementById('hamburger-icon'); const navLinks = document.getElementById('nav-links'); hamburger.addEventListener('click', () => { navLinks.classList.toggle('active'); });</script>
 
 </body>
 </html>

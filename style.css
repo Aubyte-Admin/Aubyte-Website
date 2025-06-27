@@ -275,20 +275,21 @@ p { margin-bottom: 15px; color: var(--medium-grey); }
 
 /* Image-backed Circle Customizations */
 .process-step-onboarding, .process-step-request, .process-step-execution,
-.value-card-partnership, .value-card-reliable {
+.value-card-partnership, .value-card-reliable, .value-card-clarity {
     background-size: cover;
     background-position: center;
     border-color: transparent !important;
 }
 .process-step-onboarding:hover, .process-step-request:hover, .process-step-execution:hover,
-.value-card-partnership:hover, .value-card-reliable:hover {
+.value-card-partnership:hover, .value-card-reliable:hover, .value-card-clarity:hover {
     border-color: var(--secondary-colour) !important;
 }
 .process-step-onboarding .value-card-front h4,
 .process-step-request .value-card-front h4,
 .process-step-execution .value-card-front h4,
 .value-card-partnership .value-card-front h4,
-.value-card-reliable .value-card-front h4 {
+.value-card-reliable .value-card-front h4,
+.value-card-clarity .value-card-front h4 {
     color: var(--white); 
     text-shadow: 1px 1px 3px rgba(0,0,0,0.8);
 }
@@ -296,7 +297,8 @@ p { margin-bottom: 15px; color: var(--medium-grey); }
 .process-step-request .value-card-back,
 .process-step-execution .value-card-back,
 .value-card-partnership .value-card-back,
-.value-card-reliable .value-card-back {
+.value-card-reliable .value-card-back,
+.value-card-clarity .value-card-back {
     background: var(--white); 
     border-radius: 50%; 
 }
@@ -314,7 +316,10 @@ p { margin-bottom: 15px; color: var(--medium-grey); }
 }
 .value-card-reliable {
     background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('https://images.pexels.com/photos/7873550/pexels-photo-7873550.jpeg');
-    background-position: center top; /* UPDATED - Moves image to the top */
+    background-position: center top; 
+}
+.value-card-clarity {
+    background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('https://images.pexels.com/photos/1181719/pexels-photo-1181719.jpeg');
 }
 
 /* FAQ Page Accordion */
@@ -449,7 +454,7 @@ p { margin-bottom: 15px; color: var(--medium-grey); }
 
     /* Mobile experience for image-backed cards */
     .process-step-onboarding, .process-step-request, .process-step-execution,
-    .value-card-partnership, .value-card-reliable {
+    .value-card-partnership, .value-card-reliable, .value-card-clarity {
         background-color: transparent;
         box-shadow: none;
         border: none !important;
@@ -463,14 +468,16 @@ p { margin-bottom: 15px; color: var(--medium-grey); }
     .process-step-request .value-card-back,
     .process-step-execution .value-card-back,
     .value-card-partnership .value-card-back,
-    .value-card-reliable .value-card-back {
+    .value-card-reliable .value-card-back,
+    .value-card-clarity .value-card-back {
         background: transparent;
     }
     .process-step-onboarding .value-card-back h4, .process-step-onboarding .value-card-back p,
     .process-step-request .value-card-back h4, .process-step-request .value-card-back p,
     .process-step-execution .value-card-back h4, .process-step-execution .value-card-back p,
     .value-card-partnership .value-card-back h4, .value-card-partnership .value-card-back p,
-    .value-card-reliable .value-card-back h4, .value-card-reliable .value-card-back p {
+    .value-card-reliable .value-card-back h4, .value-card-reliable .value-card-back p,
+    .value-card-clarity .value-card-back h4, .value-card-clarity .value-card-back p {
         color: var(--white);
         text-shadow: 1px 1px 3px rgba(0,0,0,0.8);
     }

@@ -3,212 +3,132 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Aunix - Policies and Procedures</title>
+    <title>Policies & Procedures - Aubyte</title>
+    <!-- Link to the main stylesheet -->
+    <link rel="stylesheet" href="style.css">
+    
+    <!-- Page-specific styles for the document list -->
     <style>
-        /* --- Google Font --- */
-        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
-        /* --- Icon Library for Hamburger Menu --- */
-        @import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css');
-
-        /* --- CSS Variables (Theme Colours) --- */
-        :root {
-            --primary-colour: #005A9C;
-            --secondary-colour: #00AEEF;
-            --dark-grey: #333333;
-            --medium-grey: #555555;
-            --light-grey: #f4f7f6;
-            --white: #ffffff;
-        }
-
-        /* --- Global Styles --- */
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        html { scroll-behavior: smooth; }
-        body {
-            font-family: 'Poppins', sans-serif;
-            color: var(--dark-grey);
-            line-height: 1.6;
-            background-color: var(--white);
-        }
-
-        /* --- Layout & Helpers --- */
-        .container { max-width: 1100px; margin: auto; padding: 0 20px; }
-        section { padding: 60px 0; }
-        .page-content { min-height: 70vh; }
-        h2 { font-size: 2.2rem; text-align: center; color: var(--primary-colour); font-weight: 600; margin-bottom: 20px; }
-        p { margin-bottom: 15px; color: var(--medium-grey); }
-
-        /* --- Navigation Bar --- */
-        .navbar {
-            background: var(--white);
-            color: var(--dark-grey);
-            padding: 1rem 0;
-            position: sticky;
-            top: 0;
-            width: 100%;
-            z-index: 1000;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-        }
-        .navbar .container { display: flex; justify-content: space-between; align-items: center; }
-        .navbar .logo { font-size: 1.5rem; font-weight: 700; color: var(--primary-colour); text-decoration: none; }
-        .navbar .nav-links { list-style: none; display: flex; }
-        .navbar .nav-links li { margin-left: 25px; }
-        .navbar .nav-links li a { color: var(--dark-grey); text-decoration: none; font-weight: 600; transition: color 0.3s ease; }
-        .navbar .nav-links li a:hover { color: var(--secondary-colour); }
-
-        /* --- CHANGE: Mobile Hamburger Menu --- */
-        .hamburger { display: none; cursor: pointer; font-size: 1.5rem; }
-        
-        /* --- Document List Styling --- */
         .document-list {
-            list-style: none; margin-top: 30px; max-width: 800px;
-            margin-left: auto; margin-right: auto;
+            list-style: none; 
+            margin-top: 40px; 
+            max-width: 800px;
+            margin-left: auto; 
+            margin-right: auto;
         }
         .document-list li {
-            background: var(--light-grey); border-left: 5px solid var(--secondary-colour);
-            margin-bottom: 15px; padding: 20px; border-radius: 5px;
+            background: var(--white); 
+            border-left: 5px solid var(--secondary-colour);
+            margin-bottom: 15px; 
+            padding: 20px; 
+            border-radius: 5px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.07);
             transition: box-shadow 0.3s ease, transform 0.3s ease;
         }
-        .document-list li:hover { box-shadow: 0 4px 15px rgba(0,0,0,0.1); transform: translateY(-3px); }
+        .document-list li:hover { 
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1); 
+            transform: translateY(-3px); 
+        }
         .document-list a {
-            text-decoration: none; color: var(--primary-colour); font-size: 1.2rem;
-            font-weight: 600; display: block;
+            text-decoration: none; 
+            color: var(--primary-colour); 
+            font-size: 1.2rem;
+            font-weight: 600; 
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
         }
-        .document-list a:hover { text-decoration: underline; }
-
-        /* --- CHANGE: New Expanded Footer --- */
-        .site-footer {
-            background: var(--dark-grey); color: #ccc;
-            padding: 50px 0; font-size: 0.9rem;
+        .document-list a::after {
+            content: '→'; /* Simple arrow for visual cue */
+            font-size: 1.5rem;
+            color: var(--secondary-colour);
+            transition: transform 0.3s ease;
         }
-        .footer-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 40px;
-        }
-        .footer-column h4 {
-            color: var(--white); font-size: 1.1rem;
-            margin-bottom: 20px; font-weight: 600;
-        }
-        .footer-column p { color: #ccc; margin-bottom: 10px; }
-        .footer-column ul { list-style: none; }
-        .footer-column ul li { margin-bottom: 10px; }
-        .footer-column ul li a {
-            color: #ccc; text-decoration: none;
-            transition: color 0.3s ease;
-        }
-        .footer-column ul li a:hover { color: var(--secondary-colour); }
-        .footer-bottom {
-            text-align: center; margin-top: 40px;
-            padding-top: 20px; border-top: 1px solid var(--medium-grey);
-        }
-
-        /* --- Responsive Design --- */
-        @media (max-width: 768px) {
-            /* Mobile Menu Styles */
-            .hamburger { display: block; }
-            .navbar .nav-links {
-                display: none; flex-direction: column; width: 100%;
-                background: var(--white); position: absolute; top: 60px;
-                left: 0; padding: 20px 0; box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-            }
-            .navbar .nav-links.active { display: flex; }
-            .navbar .nav-links li { margin: 10px 0; text-align: center; }
+        .document-list a:hover::after {
+            transform: translateX(5px);
         }
     </style>
 </head>
 <body>
 
-    <!-- ======== NAVIGATION BAR ======== -->
     <header class="navbar">
         <div class="container">
-            <a href="index.html" class="logo">AUNIX</a>
-            <!-- CHANGE: Hamburger Icon Added -->
-            <div class="hamburger" id="hamburger-icon">
-                <i class="fas fa-bars"></i>
-            </div>
-            <!-- CHANGE: 'nav-links' ID added for JavaScript -->
+            <a href="/" class="logo">AUBYTE</a>
+            <div class="hamburger" id="hamburger-icon"><i class="fas fa-bars"></i></div>
             <nav>
                 <ul class="nav-links" id="nav-links">
-                    <li><a href="index.html#home">Home</a></li>
-                    <li><a href="index.html#services">Services</a></li>
-                    <li><a href="index.html#partner">MSP Partner</a></li>
-                    <li><a href="index.html#about">About</a></li>
-                    <li><a href="index.html#contact">Contact</a></li>
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/services">Services</a></li>
+                    <li><a href="/msp-partner">Partner</a></li>
+                    <li><a href="/about">About</a></li>
+                    <li><a href="/why-us">Why Us</a></li>
+                    <li><a href="/contact">Contact</a></li>
                 </ul>
             </nav>
         </div>
     </header>
 
-    <!-- ======== POLICIES SECTION ======== -->
-    <section class="page-content">
-        <div class="container">
-            <h2>Policies and Procedures</h2>
-            <p style="text-align: center; max-width: 700px; margin: auto;">Here you can find all our official company documents, policies, and procedural guidelines. Click a link to view or download the document.</p>
-            
-            <ul class="document-list">
-                <li>
-                    <a href="ethics-code-of-conduct.pdf" target="_blank">Ethics and code of conduct policy</a>
-                </li>
-                <li>
-                    <!-- CHANGE: UK Spelling -->
-                    <a href="labor-human-resources.pdf" target="_blank">Labour and human resources policy</a>
-                </li>
-                <li>
-                    <a href="data-security-privacy.pdf" target="_blank">Data security and privacy policy</a>
-                </li>
-            </ul>
-        </div>
-    </section>
+    <main>
+        <section class="page-header">
+            <div class="container">
+                <h1>Policies & Procedures</h1>
+            </div>
+        </section>
 
-    <!-- ======== CHANGE: NEW EXPANDED FOOTER ======== -->
+        <section id="policy-content">
+            <div class="container">
+                <p class="text-center" style="max-width: 700px; margin-left:auto; margin-right:auto;">
+                    At Aubyte, transparency and professionalism are core to our operations. Here you can find our official company documents and procedural guidelines. Click a link to view or download the document.
+                </p>
+                
+                <ul class="document-list">
+                    <li>
+                        <a href="/docs/ethics-code-of-conduct.pdf" target="_blank">Ethics and Code of Conduct Policy</a>
+                    </li>
+                    <li>
+                        <a href="/docs/labour-human-resources.pdf" target="_blank">Labour and Human Resources Policy</a>
+                    </li>
+                    <li>
+                        <a href="/docs/data-security-privacy.pdf" target="_blank">Data Security and Privacy Policy</a>
+                    </li>
+                     <li>
+                        <a href="/docs/terms-of-service.pdf" target="_blank">Master Service Agreement (Template)</a>
+                    </li>
+                </ul>
+            </div>
+        </section>
+    </main>
+    
     <footer class="site-footer">
         <div class="container">
             <div class="footer-grid">
-                <!-- Column 1: Contact Info -->
                 <div class="footer-column">
-                    <h4>Aunix IT Services</h4>
-                    <!-- **ACTION**: Update your company address and phone numbers here -->
-                    <p>
-                        Gauteng, South Africa<br>
-                        Serving MSPs Nationwide
-                    </p>
-                    <p>
-                        <strong>Phone:</strong> 012 345 6789<br>
-                        <strong>Email:</strong> partner@aunix.co.za
-                    </p>
+                    <h4>Aubyte IT Services</h4>
+                    <p>Western Cape, South Africa<br>Serving MSPs Nationwide</p>
+                    <p><strong>Phone:</strong> 081 045 9523<br><strong>Email:</strong> info@aubyte.co.za</p>
                 </div>
-
-                <!-- Column 2: Useful Links -->
                 <div class="footer-column">
-                    <h4>Useful Links</h4>
+                    <h4>Company</h4>
                     <ul>
-                        <li><a href="index.html#home">Home</a></li>
-                        <li><a href="index.html#about">About Us</a></li>
-                        <li><a href="index.html#partner">MSP Partner Programme</a></li>
-                        <li><a href="index.html#contact">Contact Us</a></li>
-                        <li><a href="policies.html">Policies & Procedures</a></li>
+                        <li><a href="/policies">Policies & Procedures</a></li>
+                        <li><a href="/faq">FAQ</a></li>
                     </ul>
                 </div>
-
-                <!-- Column 3: Our Services -->
                 <div class="footer-column">
                     <h4>Our Services</h4>
                     <ul>
-                        <li><a href="index.html#services">Outsourced Engineers</a></li>
-                        <li><a href="index.html#services">Hands & Feet Support</a></li>
-                        <li><a href="index.html#services">Network Support</a></li>
-                        <li><a href="index.html#services">Security Camera Installation</a></li>
-                        <li><a href="index.html#services">IT Asset Disposal</a></li>
+                        <li><a href="/services">Outsourced Engineers</a></li>
+                        <li><a href="/services">Onsite Support</a></li>
+                        <li><a href="/services">Network Support</a></li>
+                        <li><a href="/services">Security Camera Installation</a></li>
+                        <li><a href="/services">IT Asset Disposal</a></li>
                     </ul>
                 </div>
             </div>
-            <div class="footer-bottom">
-                <p>© 2025 Aunix. All Rights Reserved. | Your Trusted IT Field Partner</p>
-            </div>
+            <div class="footer-bottom"><p>© 2025 Aubyte. All Rights Reserved. | Your Trusted IT Field Partner</p></div>
         </div>
     </footer>
 
-    <!-- CHANGE: JavaScript for Mobile Menu Toggle -->
     <script>
         const hamburger = document.getElementById('hamburger-icon');
         const navLinks = document.getElementById('nav-links');

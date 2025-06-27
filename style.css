@@ -72,11 +72,14 @@ p { margin-bottom: 15px; color: var(--medium-grey); }
     color: var(--primary-colour);
     text-decoration: none;
 }
+.navbar nav {
+    margin-left: auto; /* UPDATED - Pushes the nav to the far right */
+}
 .navbar .nav-links {
     list-style: none;
     display: flex;
 }
-.navbar .nav-links li { margin-left: 25px; }
+.navbar .nav-links li { margin-left: 30px; } /* Increased spacing */
 .navbar .nav-links li a {
     color: var(--dark-grey);
     text-decoration: none;
@@ -297,20 +300,53 @@ p { margin-bottom: 15px; color: var(--medium-grey); }
     border-radius: 50%; 
 }
 .process-step-onboarding {
-    background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('https://images.pexels.com/photos/5313361/pexels-photo-5313361.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1');
+    background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('https://images.pexels.com/photos/5313361/pexels-photo-5313361.jpeg');
 }
 .process-step-request {
-    background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('https://images.pexels.com/photos/845451/pexels-photo-845451.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1');
+    background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('https://images.pexels.com/photos/845451/pexels-photo-845451.jpeg');
 }
 .process-step-execution {
-    background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('https://images.pexels.com/photos/442150/pexels-photo-442150.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1');
+    background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('https://images.pexels.com/photos/442150/pexels-photo-442150.jpeg');
 }
 .value-card-partnership {
-    background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('https://images.pexels.com/photos/3184429/pexels-photo-3184429.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1');
+    background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('https://images.pexels.com/photos/3184429/pexels-photo-3184429.jpeg');
 }
 .value-card-reliable {
-    background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('https://images.pexels.com/photos/7873550/pexels-photo-7873550.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1');
+    background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('https://images.pexels.com/photos/7873550/pexels-photo-7873550.jpeg');
 }
+
+/* NEW - FAQ Page Accordion */
+.faq-item {
+    margin-bottom: 20px;
+    border-bottom: 1px solid #eee;
+}
+.faq-item summary {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: var(--primary-colour);
+    padding: 15px 0;
+    cursor: pointer;
+    position: relative;
+    list-style: none; /* Remove default triangle */
+}
+.faq-item summary::-webkit-details-marker {
+    display: none; /* Chrome/Safari */
+}
+.faq-item summary::after {
+    content: '+';
+    position: absolute;
+    right: 10px;
+    font-size: 1.8rem;
+    color: var(--secondary-colour);
+    transition: transform 0.3s ease;
+}
+.faq-item[open] summary::after {
+    transform: rotate(45deg);
+}
+.faq-item div {
+    padding: 0 10px 20px;
+}
+/* END NEW */
 
 
 /* --- Contact Section --- */
@@ -409,17 +445,53 @@ p { margin-bottom: 15px; color: var(--medium-grey); }
     }
     .value-card-front { display: none; }
     .value-card-back { display: flex; }
-    
+
+    /* UPDATED - Mobile experience for image-backed cards */
+    .process-step-onboarding, .process-step-request, .process-step-execution,
+    .value-card-partnership, .value-card-reliable {
+        background-color: transparent;
+        box-shadow: none;
+        border: none !important; /* Important to override hover states */
+        padding: 20px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+    }
+    .process-step-onboarding .value-card-back,
+    .process-step-request .value-card-back,
+    .process-step-execution .value-card-back,
+    .value-card-partnership .value-card-back,
+    .value-card-reliable .value-card-back {
+        background: transparent;
+    }
+    .process-step-onboarding .value-card-back h4, .process-step-onboarding .value-card-back p,
+    .process-step-request .value-card-back h4, .process-step-request .value-card-back p,
+    .process-step-execution .value-card-back h4, .process-step-execution .value-card-back p,
+    .value-card-partnership .value-card-back h4, .value-card-partnership .value-card-back p,
+    .value-card-reliable .value-card-back h4, .value-card-reliable .value-card-back p {
+        color: var(--white);
+        text-shadow: 1px 1px 3px rgba(0,0,0,0.8);
+    }
     
     /* Mobile Menu Styles */
     .hamburger { display: block; }
+    .navbar .container {
+        /* UPDATED - Make sure hamburger is on the right */
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .navbar nav {
+        display: none; /* Hide the desktop nav wrapper */
+    }
     .navbar .nav-links {
         display: none;
         flex-direction: column;
         width: 100%;
         background: var(--white);
         position: absolute;
-        top: 60px;
+        top: 60px; /* Adjust based on navbar height */
         left: 0;
         padding: 20px 0;
         box-shadow: 0 4px 10px rgba(0,0,0,0.1);

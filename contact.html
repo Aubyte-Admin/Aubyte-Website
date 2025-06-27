@@ -11,8 +11,17 @@
     <header class="navbar">
         <div class="container">
             <a href="/" class="logo">AUBYTE</a>
-            <div class="hamburger" id="hamburger-icon"><i class="fas fa-bars"></i></div>
-            <nav><ul class="nav-links" id="nav-links"><li><a href="/">Home</a></li><li><a href="/services">Services</a></li><li><a href="/msp-partner">Partner</a></li><li><a href="/about">About</a></li><li><a href="/why-us">Why Us</a></li><li><a href="/contact">Contact</a></li></ul></nav>
+            <nav>
+                <div class="hamburger" id="hamburger-icon"><i class="fas fa-bars"></i></div>
+                <ul class="nav-links" id="nav-links">
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/services">Services</a></li>
+                    <li><a href="/msp-partner">Partner</a></li>
+                    <li><a href="/about">About</a></li>
+                    <li><a href="/why-us">Why Us</a></li>
+                    <li><a href="/contact">Contact</a></li>
+                </ul>
+            </nav>
         </div>
     </header>
 
@@ -28,12 +37,12 @@
                         <p><strong>Phone:</strong> 081 045 9523</p>
                         <p><strong>Service Area:</strong> Nationwide, South Africa</p>
                     </div>
-                    <form class="contact-form" action="https://formsubmit.co/your-email@example.com" method="POST"> <!-- Remember to update this form action! -->
+                    <form class="contact-form" action="https://formsubmit.co/info@aubyte.co.za" method="POST">
                         <div class="form-group"><input type="text" name="name" placeholder="Your Full Name" required></div>
                         <div class="form-group"><input type="text" name="company" placeholder="Your Company Name" required></div>
                         <div class="form-group"><input type="email" name="email" placeholder="Your Email Address" required></div>
                         <div class="form-group"><textarea name="message" rows="5" placeholder="How can we help you?" required></textarea></div>
-                        <input type="hidden" name="_next" value="https://yourdomain.co.za/thankyou"> <!-- And update this! -->
+                        <input type="hidden" name="_next" value="https://aubyte.co.za/thankyou"> <!-- Remember to create a thankyou.html page! -->
                         <input type="hidden" name="_captcha" value="false">
                         <button type="submit" class="btn btn-submit">Send Message</button>
                     </form>

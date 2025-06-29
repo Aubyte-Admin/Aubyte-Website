@@ -94,7 +94,6 @@ p { margin-bottom: 15px; color: var(--medium-grey); }
 
 /* --- Hero Section --- */
 .hero {
-    /* UPDATED IMAGE URL */
     background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://images.pexels.com/photos/1261728/pexels-photo-1261728.jpeg') no-repeat center center/cover;
     color: var(--white);
     height: 85vh;
@@ -150,6 +149,13 @@ p { margin-bottom: 15px; color: var(--medium-grey); }
 }
 .service-card:hover { transform: translateY(-5px); box-shadow: 0 8px 25px rgba(0,0,0,0.12); }
 .service-card .icon { font-size: 2.5rem; color: var(--secondary-colour); margin-bottom: 15px; }
+
+/* NEW - Style for image-based icons */
+.service-card .icon-image {
+    height: 2.5rem; /* Matches the font-size of other icons */
+    width: auto;
+}
+/* END NEW */
 
 /* Service Card Hover Effect */
 .service-card .card-content {

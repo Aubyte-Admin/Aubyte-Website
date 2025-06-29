@@ -94,7 +94,8 @@ p { margin-bottom: 15px; color: var(--medium-grey); }
 
 /* --- Hero Section --- */
 .hero {
-    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1521737711867-e3b97375f902?q=80&w=1974&auto=format&fit=crop') no-repeat center center/cover;
+    /* UPDATED IMAGE URL */
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://images.pexels.com/photos/1261728/pexels-photo-1261728.jpeg') no-repeat center center/cover;
     color: var(--white);
     height: 85vh;
     display: flex;
@@ -316,8 +317,6 @@ p { margin-bottom: 15px; color: var(--medium-grey); }
 .value-card-partnership { background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('https://images.pexels.com/photos/3184429/pexels-photo-3184429.jpeg'); }
 .value-card-reliable { background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('https://images.pexels.com/photos/7873550/pexels-photo-7873550.jpeg'); background-position: center top; }
 .value-card-clarity { background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('https://images.pexels.com/photos/1181719/pexels-photo-1181719.jpeg'); }
-
-/* NEW Images */
 .value-card-excellence { background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('https://images.pexels.com/photos/4508748/pexels-photo-4508748.jpeg'); }
 .value-card-agility { background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('https://images.pexels.com/photos/4974922/pexels-photo-4974922.jpeg'); }
 .value-card-integrity { background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('https://images.pexels.com/photos/11929395/pexels-photo-11929395.jpeg'); }

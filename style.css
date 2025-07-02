@@ -146,52 +146,59 @@ p { margin-bottom: 15px; color: var(--medium-grey); }
     min-height: 320px;
     display: flex;
     flex-direction: column;
-    position: relative; /* For the new hover effect */
 }
-.service-card:hover { 
-    transform: translateY(-5px); 
-    box-shadow: 0 8px 25px rgba(0,0,0,0.12);
-}
-.service-card .icon { 
-    font-size: 2.5rem; 
-    color: var(--secondary-colour); 
-    margin-bottom: 15px;
-    transition: opacity 0.3s ease;
-}
-.service-card .card-content {
-    transition: opacity 0.3s ease;
-}
+.service-card:hover { transform: translateY(-5px); box-shadow: 0 8px 25px rgba(0,0,0,0.12); }
+.service-card .icon { font-size: 2.5rem; color: var(--secondary-colour); margin-bottom: 15px; }
 
-/* "Learn More" hover effect for service cards */
-.service-card-link {
-    text-decoration: none;
-    color: inherit;
-    display: block;
-    height: 100%;
+/* Service Card Hover Effect */
+.service-card .card-content {
+    position: relative;
+    flex-grow: 1; 
 }
-.service-card .learn-more {
+.service-card .card-front,
+.service-card .card-back {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
+    backface-visibility: hidden; 
+    transition: opacity 0.4s ease-in-out;
+    padding: 0 10px; 
     display: flex;
-    justify-content: center;
+    flex-direction: column;
     align-items: center;
-    background: rgba(245, 189, 2, 0.9);
-    color: var(--primary-colour);
-    font-size: 1.3rem;
-    font-weight: 600;
-    opacity: 0;
-    transition: opacity 0.3s ease;
-    border-radius: 8px;
 }
-.service-card:hover .card-content, 
-.service-card:hover .icon {
-    opacity: 0.2;
-}
-.service-card:hover .learn-more {
+.service-card .card-front { 
     opacity: 1;
+    justify-content: flex-start;
+}
+.service-card .card-front p { font-size: 0.95rem; }
+.service-card .card-back {
+    opacity: 0;
+    justify-content: center;
+}
+.service-card:hover .card-front { opacity: 0; }
+.service-card:hover .card-back { opacity: 1; }
+.service-card .card-back ul {
+    list-style: none;
+    padding: 0;
+    text-align: left;
+    font-size: 0.9rem;
+    width: 100%;
+}
+.service-card .card-back li {
+    margin-bottom: 8px;
+    padding-left: 20px;
+    position: relative;
+}
+.service-card .card-back li::before {
+    content: '✓';
+    color: var(--secondary-colour);
+    font-weight: 700;
+    position: absolute;
+    left: 0;
+    top: 1px;
 }
 
 /* --- Partner Programme Section --- */
@@ -362,6 +369,6 @@ p { margin-bottom: 15px; color: var(--medium-grey); }
     .navbar .nav-links.active { display: flex; }
     .navbar .nav-links li { margin: 10px 0; text-align: center; }
     .service-card { min-height: auto; padding-bottom: 20px; }
-    .service-card .card-content, .service-card .icon { opacity: 1 !important; /* Mobile doesn't have hover, so always show content */ }
-    .service-card .learn-more { display: none; } /* Hide "Learn More" on mobile */
+    .service-card .card-content, .service-card .icon { opacity: 1 !important; }
+    .service-card .learn-more { display: none; }
 }

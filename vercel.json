@@ -1,4 +1,11 @@
 {
+  "redirects": [
+    {
+      "source": "/msp-partner",
+      "destination": "/partner",
+      "permanent": true
+    }
+  ],
   "rewrites": [
     {
       "source": "/:path((?!api/).*)",

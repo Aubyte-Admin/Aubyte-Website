@@ -338,9 +338,9 @@ p { margin-bottom: 15px; color: var(--medium-grey); }
 .process-step-request { background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('images/process-request.jpg'); }
 .process-step-execution { background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('images/process-execution.jpg'); }
 .value-card-partnership { background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('images/value-partnership.jpg'); }
-.value-card-reliable { background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('images/value-reliable.jpg'); background-position: center top; }
+.value-card-reliable { background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('images/value-reliable.jpeg'); background-position: center top; }
 .value-card-clarity { background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('images/value-clarity.jpg'); }
-.value-card-excellence { background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('images/value-excellence.jpg'); }
+.value-card-excellence { background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('images/value-excellence.jpeg'); }
 .value-card-agility { background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('images/value-agility.jpg'); }
 .value-card-integrity { background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('images/value-integrity.jpg'); }
 

@@ -310,6 +310,16 @@ p { margin-bottom: 15px; color: var(--medium-grey); }
 .service-card a:hover {
   color: var(--secondary-colour); /* Optional hover effect */
 }
+.service-card-link {
+  text-decoration: none;
+  color: inherit;
+}
+
+.service-card-link h3,
+.service-card-link p {
+  color: white;
+  text-decoration: none;
+}
 
 
 /* --- Partner Programme Section --- */

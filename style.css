@@ -302,6 +302,14 @@ p { margin-bottom: 15px; color: var(--medium-grey); }
   background: transparent;
 }
 
+.service-card a {
+  text-decoration: none;
+  color: white;
+}
+
+.service-card a:hover {
+  color: var(--secondary-colour); /* Optional hover effect */
+}
 
 
 /* --- Partner Programme Section --- */

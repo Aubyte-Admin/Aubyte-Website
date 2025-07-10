@@ -498,25 +498,25 @@ p { margin-bottom: 15px; color: var(--medium-grey); }
 /* Container inside footer to control width and flex */
 .footer-container {
   display: flex;
-  justify-content: flex-start;  /* Align columns left */
+  justify-content: flex-start;  /* Align left */
   max-width: 1100px;
   margin: 0 auto;
   padding: 0 20px;
   width: 100%;
 }
 
-/* Flexbox layout for footer columns */
 .footer-grid {
   display: flex;
   gap: 40px;
-  width: 100%;
+  width: 60%;           /* Limit columns to 60% width */
+  min-width: 300px;     /* Optional: avoid too narrow on small screens */
 }
 
-/* Individual columns */
 .footer-column {
   flex: 1;
-  max-width: 300px;
+  max-width: none;      /* Let columns share the 60% equally */
 }
+
 
 /* Headings */
 .footer-column h4 {

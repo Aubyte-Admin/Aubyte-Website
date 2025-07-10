@@ -320,7 +320,12 @@ p { margin-bottom: 15px; color: var(--medium-grey); }
   color: white;
   text-decoration: none;
 }
-
+.service-card .card-content {
+  flex: 1; /* take up remaining height */
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* vertical center */
+}
 
 /* --- Partner Programme Section --- */
 .partner-content {

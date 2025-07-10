@@ -147,7 +147,6 @@ p { margin-bottom: 15px; color: var(--medium-grey); }
 }
 
 .service-card {
-    background: var(--white);
     padding: 30px;
     border-radius: 8px;
     box-shadow: 0 4px 15px rgba(0,0,0,0.08);
@@ -157,7 +156,8 @@ p { margin-bottom: 15px; color: var(--medium-grey); }
     display: flex;
     flex-direction: column;
     position: relative; 
-    color: black;
+    color: white;
+    cursor: pointer;
 }
 
 .service-card:hover { 
@@ -165,36 +165,23 @@ p { margin-bottom: 15px; color: var(--medium-grey); }
     box-shadow: 0 8px 25px rgba(0,0,0,0.12);
 }
 
-.service-card .icon { 
-    font-size: 2.5rem; 
-    color: var(--secondary-colour); 
-    margin-bottom: 15px;
-    transition: color 0.3s ease;
-}
-
-.service-card .card-content {
-    transition: color 0.3s ease;
+/* Hide heading and paragraph on hover */
+.service-card:hover .card-content {
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
 }
 
 /* "Learn More" overlay */
-.service-card-link {
-    text-decoration: none;
-    color: inherit;
-    display: block;
-    height: 100%;
-}
-
 .service-card .learn-more {
     position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
     display: flex;
-    justify-content: center; /* horizontally center */
-    align-items: center;     /* vertically center */
-    background: rgba(245, 189, 2, 0.95); /* stronger opacity */
-    color: white; /* white text */
+    justify-content: center;
+    align-items: center;
+    background: rgba(245, 189, 2, 0.95);
+    color: white;
     font-size: 1.3rem;
     font-weight: 600;
     opacity: 0;
@@ -202,15 +189,11 @@ p { margin-bottom: 15px; color: var(--medium-grey); }
     border-radius: 8px;
     text-transform: uppercase;
     letter-spacing: 1px;
+    user-select: none;
 }
 
 .service-card:hover .learn-more {
     opacity: 1;
-}
-
-/* Ensure heading and text remain white on hover and fully visible */
-.service-card:hover {
-    color: white;
 }
 
 /* Service Desk Card */
@@ -219,7 +202,6 @@ p { margin-bottom: 15px; color: var(--medium-grey); }
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    color: white;
     position: relative;
     border-radius: 8px;
 }
@@ -228,32 +210,25 @@ p { margin-bottom: 15px; color: var(--medium-grey); }
     content: "";
     position: absolute;
     inset: 0;
-    background: rgba(0, 0, 0, 0.3); /* dark overlay */
+    background: rgba(0,0,0,0.3);
     border-radius: 8px;
     z-index: 0;
 }
 
-.service-desk-card .icon,
 .service-desk-card .card-content,
 .service-desk-card .learn-more {
     position: relative;
     z-index: 1;
 }
 
+/* Remove background image on hover and show yellow */
 .service-desk-card:hover {
     background-image: none;
-    background-color: rgba(245, 189, 2, 0.95); /* strong yellow overlay */
-    color: white;
+    background-color: rgba(245, 189, 2, 0.95);
 }
 
 .service-desk-card:hover::before {
     background: transparent;
-}
-
-.service-desk-card:hover .card-content {
-    color: white;
-    opacity: 1;
-    pointer-events: auto;
 }
 
 /* Onsite Support Card */
@@ -262,7 +237,6 @@ p { margin-bottom: 15px; color: var(--medium-grey); }
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    color: white;
     position: relative;
     border-radius: 8px;
 }
@@ -271,12 +245,11 @@ p { margin-bottom: 15px; color: var(--medium-grey); }
     content: "";
     position: absolute;
     inset: 0;
-    background: rgba(0, 0, 0, 0.3);
+    background: rgba(0,0,0,0.3);
     border-radius: 8px;
     z-index: 0;
 }
 
-.onsite-support-card .icon,
 .onsite-support-card .card-content,
 .onsite-support-card .learn-more {
     position: relative;
@@ -286,26 +259,18 @@ p { margin-bottom: 15px; color: var(--medium-grey); }
 .onsite-support-card:hover {
     background-image: none;
     background-color: rgba(245, 189, 2, 0.95);
-    color: white;
 }
 
 .onsite-support-card:hover::before {
     background: transparent;
 }
 
-.onsite-support-card:hover .card-content {
-    color: white;
-    opacity: 1;
-    pointer-events: auto;
-}
-
 /* Network Support Card */
 .network-support-card {
-    background-image: url('/images/network.jpg');
+    background-image: url('/images/networksupport.jpg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    color: white;
     position: relative;
     border-radius: 8px;
 }
@@ -314,12 +279,11 @@ p { margin-bottom: 15px; color: var(--medium-grey); }
     content: "";
     position: absolute;
     inset: 0;
-    background: rgba(0, 0, 0, 0.3);
+    background: rgba(0,0,0,0.3);
     border-radius: 8px;
     z-index: 0;
 }
 
-.network-support-card .icon,
 .network-support-card .card-content,
 .network-support-card .learn-more {
     position: relative;
@@ -329,18 +293,12 @@ p { margin-bottom: 15px; color: var(--medium-grey); }
 .network-support-card:hover {
     background-image: none;
     background-color: rgba(245, 189, 2, 0.95);
-    color: white;
 }
 
 .network-support-card:hover::before {
     background: transparent;
 }
 
-.network-support-card:hover .card-content {
-    color: white;
-    opacity: 1;
-    pointer-events: auto;
-}
 
 
 /* --- Partner Programme Section --- */

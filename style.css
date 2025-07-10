@@ -157,6 +157,7 @@ p { margin-bottom: 15px; color: var(--medium-grey); }
     display: flex;
     flex-direction: column;
     position: relative; 
+    color: black;
 }
 
 .service-card:hover { 
@@ -164,18 +165,18 @@ p { margin-bottom: 15px; color: var(--medium-grey); }
     box-shadow: 0 8px 25px rgba(0,0,0,0.12);
 }
 
-.service-card:hover .card-content, 
-.service-card:hover .icon {
-    opacity: 0;
-    pointer-events: none;
+.service-card .icon { 
+    font-size: 2.5rem; 
+    color: var(--secondary-colour); 
+    margin-bottom: 15px;
+    transition: color 0.3s ease;
 }
 
-.service-card:hover .learn-more {
-    opacity: 1;
+.service-card .card-content {
+    transition: color 0.3s ease;
 }
 
-
-/* "Learn More" hover effect for service cards */
+/* "Learn More" overlay */
 .service-card-link {
     text-decoration: none;
     color: inherit;
@@ -190,40 +191,44 @@ p { margin-bottom: 15px; color: var(--medium-grey); }
     width: 100%;
     height: 100%;
     display: flex;
-    justify-content: center;
-    align-items: center;
-    background: rgba(245, 189, 2, 0.9);
-    color: var(--primary-colour);
+    justify-content: center; /* horizontally center */
+    align-items: center;     /* vertically center */
+    background: rgba(245, 189, 2, 0.95); /* stronger opacity */
+    color: white; /* white text */
     font-size: 1.3rem;
     font-weight: 600;
     opacity: 0;
     transition: opacity 0.3s ease;
     border-radius: 8px;
-}
-
-.service-card:hover .card-content, 
-.service-card:hover .icon {
-    opacity: 0.2;
+    text-transform: uppercase;
+    letter-spacing: 1px;
 }
 
 .service-card:hover .learn-more {
     opacity: 1;
 }
 
-/* --- Service Desk card specific styles --- */
+/* Ensure heading and text remain white on hover and fully visible */
+.service-card:hover {
+    color: white;
+}
+
+/* Service Desk Card */
 .service-desk-card {
     background-image: url('/images/servicedesk.jpg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
     color: white;
+    position: relative;
+    border-radius: 8px;
 }
 
 .service-desk-card::before {
     content: "";
     position: absolute;
     inset: 0;
-    background: rgba(0, 0, 0, 0.3); /* dark overlay for readability */
+    background: rgba(0, 0, 0, 0.3); /* dark overlay */
     border-radius: 8px;
     z-index: 0;
 }
@@ -237,28 +242,36 @@ p { margin-bottom: 15px; color: var(--medium-grey); }
 
 .service-desk-card:hover {
     background-image: none;
-    background-color: rgba(245, 189, 2, 0.9); /* yellow overlay */
-    color: var(--primary-colour);
+    background-color: rgba(245, 189, 2, 0.95); /* strong yellow overlay */
+    color: white;
 }
 
 .service-desk-card:hover::before {
     background: transparent;
 }
 
-/* --- Onsite Support card specific styles --- */
+.service-desk-card:hover .card-content {
+    color: white;
+    opacity: 1;
+    pointer-events: auto;
+}
+
+/* Onsite Support Card */
 .onsite-support-card {
     background-image: url('/images/onsitesupport.jpg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
     color: white;
+    position: relative;
+    border-radius: 8px;
 }
 
 .onsite-support-card::before {
     content: "";
     position: absolute;
     inset: 0;
-    background: rgba(0, 0, 0, 0.3); /* dark overlay for readability */
+    background: rgba(0, 0, 0, 0.3);
     border-radius: 8px;
     z-index: 0;
 }
@@ -272,12 +285,61 @@ p { margin-bottom: 15px; color: var(--medium-grey); }
 
 .onsite-support-card:hover {
     background-image: none;
-    background-color: rgba(245, 189, 2, 0.9); /* yellow overlay */
-    color: var(--primary-colour);
+    background-color: rgba(245, 189, 2, 0.95);
+    color: white;
 }
 
 .onsite-support-card:hover::before {
     background: transparent;
+}
+
+.onsite-support-card:hover .card-content {
+    color: white;
+    opacity: 1;
+    pointer-events: auto;
+}
+
+/* Network Support Card */
+.network-support-card {
+    background-image: url('/images/network.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: white;
+    position: relative;
+    border-radius: 8px;
+}
+
+.network-support-card::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.3);
+    border-radius: 8px;
+    z-index: 0;
+}
+
+.network-support-card .icon,
+.network-support-card .card-content,
+.network-support-card .learn-more {
+    position: relative;
+    z-index: 1;
+}
+
+.network-support-card:hover {
+    background-image: none;
+    background-color: rgba(245, 189, 2, 0.95);
+    color: white;
+}
+
+.network-support-card:hover::before {
+    background: transparent;
+}
+
+.network-support-card:hover .card-content {
+    color: white;
+    opacity: 1;
+    pointer-events: auto;
 }
 
 

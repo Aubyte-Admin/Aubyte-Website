@@ -145,25 +145,32 @@ p { margin-bottom: 15px; color: var(--medium-grey); }
     gap: 25px;
     margin-top: 40px;
 }
+
 .service-card {
-    background: var(--white); padding: 30px; border-radius: 8px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.08); text-align: center;
+    background: var(--white);
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+    text-align: center;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     min-height: 320px;
     display: flex;
     flex-direction: column;
     position: relative; 
 }
+
 .service-card:hover { 
     transform: translateY(-5px); 
     box-shadow: 0 8px 25px rgba(0,0,0,0.12);
 }
+
 .service-card .icon { 
     font-size: 2.5rem; 
     color: var(--secondary-colour); 
     margin-bottom: 15px;
     transition: opacity 0.3s ease;
 }
+
 .service-card .card-content {
     transition: opacity 0.3s ease;
 }
@@ -175,6 +182,7 @@ p { margin-bottom: 15px; color: var(--medium-grey); }
     display: block;
     height: 100%;
 }
+
 .service-card .learn-more {
     position: absolute;
     top: 0;
@@ -192,13 +200,86 @@ p { margin-bottom: 15px; color: var(--medium-grey); }
     transition: opacity 0.3s ease;
     border-radius: 8px;
 }
+
 .service-card:hover .card-content, 
 .service-card:hover .icon {
     opacity: 0.2;
 }
+
 .service-card:hover .learn-more {
     opacity: 1;
 }
+
+/* --- Service Desk card specific styles --- */
+.service-desk-card {
+    background-image: url('/images/servicedesk.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: white;
+}
+
+.service-desk-card::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.3); /* dark overlay for readability */
+    border-radius: 8px;
+    z-index: 0;
+}
+
+.service-desk-card .icon,
+.service-desk-card .card-content,
+.service-desk-card .learn-more {
+    position: relative;
+    z-index: 1;
+}
+
+.service-desk-card:hover {
+    background-image: none;
+    background-color: rgba(245, 189, 2, 0.9); /* yellow overlay */
+    color: var(--primary-colour);
+}
+
+.service-desk-card:hover::before {
+    background: transparent;
+}
+
+/* --- Onsite Support card specific styles --- */
+.onsite-support-card {
+    background-image: url('/images/onsitesupport.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: white;
+}
+
+.onsite-support-card::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.3); /* dark overlay for readability */
+    border-radius: 8px;
+    z-index: 0;
+}
+
+.onsite-support-card .icon,
+.onsite-support-card .card-content,
+.onsite-support-card .learn-more {
+    position: relative;
+    z-index: 1;
+}
+
+.onsite-support-card:hover {
+    background-image: none;
+    background-color: rgba(245, 189, 2, 0.9); /* yellow overlay */
+    color: var(--primary-colour);
+}
+
+.onsite-support-card:hover::before {
+    background: transparent;
+}
+
 
 /* --- Partner Programme Section --- */
 .partner-content {

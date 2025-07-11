@@ -372,7 +372,7 @@ p { margin-bottom: 15px; color: var(--medium-grey); }
 
 /* ITAD Card */
 .itad-card {
-  background-image: url('/images/ITAD.jpg');
+  background-image: url('/images/itad.jpg');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;

@@ -28,19 +28,6 @@ body {
 section { padding: 60px 0; }
 section:nth-child(even) { background-color: var(--light-grey); }
 
-.page-header {
-    padding-bottom: 30px; /* reduce space below the header */
-}
-
-#services h2 {
-    margin-top: 0;
-    margin-bottom: 30px;
-}
-
-#services p {
-    margin-top: 30px;     /* same spacing as h2 bottom */
-    margin-bottom: 30px;  /* same spacing to services grid */
-}
 
 .text-center { text-align: center; }
 .cta-button-container { text-align: center; margin-top: 40px; }

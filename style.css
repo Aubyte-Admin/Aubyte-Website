@@ -31,7 +31,7 @@ section:nth-child(even) { background-color: var(--light-grey); }
 .page-header {
     background: url('/images/page-header-bg.jpg') no-repeat center center/cover;
     color: var(--white);
-    padding: 60px 0;
+    padding: 42px 0;
     text-align: center;
 }
 

@@ -656,15 +656,21 @@ p { margin-bottom: 15px; color: var(--medium-grey); }
   color: #ccc;
 }
 
-.section-paragraph {
-    margin: 10px auto 40px auto; /* top 10px, left/right auto, bottom 40px */
-}
 .wide-section {
   width: 100%;
   max-width: 1000px;
   margin: 0 auto;
-  padding: 0 40px; /* adjust padding as needed */
+  padding: 0 40px; /* keeps 40px padding on both sides */
 }
+
+.section-paragraph {
+  max-width: 1000px;  /* same max-width as .wide-section */
+  margin: 10px auto 40px auto; /* vertical margin, horizontal centered */
+  padding: 0 40px; /* same horizontal padding as .wide-section */
+  text-align: center; /* center the text inside paragraph */
+  box-sizing: border-box; /* include padding in width calculation */
+}
+
 .wide-section h3 {
   text-align: left; /* left headings */
   margin-top: 30px;   /* add spacing between items */

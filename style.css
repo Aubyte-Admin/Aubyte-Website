@@ -450,30 +450,6 @@ p { margin-bottom: 15px; color: var(--medium-grey); }
     position: absolute; left: 0; top: 0;
 }
 
-/* --- "Why Choose Us" List Styling --- */
-.why-choose-list {
-    max-width: 600px; 
-    margin: 30px auto; 
-    text-align: left; 
-    list-style: none; 
-    padding: 0;
-}
-.why-choose-list li {
-    font-size: 1.1rem; 
-    margin-bottom: 15px; 
-    padding-left: 35px; 
-    position: relative;
-    color: var(--medium-grey);
-}
-.why-choose-list li::before {
-    content: '✓'; 
-    color: var(--secondary-colour); 
-    font-weight: 700;
-    font-size: 1.2rem;
-    position: absolute; 
-    left: 0; 
-    top: 0;
-}
 
 /* --- About Page Section --- */
 .about-grid {

@@ -336,6 +336,107 @@ p { margin-bottom: 15px; color: var(--medium-grey); }
   justify-content: center;
   z-index: 1;
 }
+/* Certified Engineers Card */
+.certified-engineers-card {
+  background-image: url('/images/certified-engineers.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
+  border-radius: 8px;
+}
+
+.certified-engineers-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.3);
+  border-radius: 8px;
+  z-index: 0;
+}
+
+.certified-engineers-card .card-content,
+.certified-engineers-card .learn-more {
+  position: relative;
+  z-index: 1;
+}
+
+.certified-engineers-card:hover {
+  background-image: none;
+  background-color: rgba(245, 189, 2, 0.98);
+}
+
+.certified-engineers-card:hover::before {
+  background: transparent;
+}
+
+/* ITAD Card */
+.itad-card {
+  background-image: url('/images/ITAD.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
+  border-radius: 8px;
+}
+
+.itad-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.3);
+  border-radius: 8px;
+  z-index: 0;
+}
+
+.itad-card .card-content,
+.itad-card .learn-more {
+  position: relative;
+  z-index: 1;
+}
+
+.itad-card:hover {
+  background-image: none;
+  background-color: rgba(245, 189, 2, 0.98);
+}
+
+.itad-card:hover::before {
+  background: transparent;
+}
+
+/* Cameras Card */
+.cameras-card {
+  background-image: url('/images/cameras.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
+  border-radius: 8px;
+}
+
+.cameras-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.3);
+  border-radius: 8px;
+  z-index: 0;
+}
+
+.cameras-card .card-content,
+.cameras-card .learn-more {
+  position: relative;
+  z-index: 1;
+}
+
+.cameras-card:hover {
+  background-image: none;
+  background-color: rgba(245, 189, 2, 0.98);
+}
+
+.cameras-card:hover::before {
+  background: transparent;
+}
 
 /* --- Partner Programme Section --- */
 .partner-content {

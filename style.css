@@ -28,10 +28,20 @@ body {
 section { padding: 60px 0; }
 section:nth-child(even) { background-color: var(--light-grey); }
 
+.page-header {
+    background: url('/images/page-header-bg.jpg') no-repeat center center/cover;
+    color: var(--white);
+    padding: 42px 0;
+    text-align: center;
+}
 
+.page-header h1 {
+    color: var(--white);
+    font-size: 2.8rem;
+    margin-bottom: 0;
+}
 .text-center { text-align: center; }
 .cta-button-container { text-align: center; margin-top: 40px; }
-
 
 /* --- Typography --- */
 h1, h2, h3 { font-weight: 600; margin-bottom: 20px; color: var(--primary-colour); }

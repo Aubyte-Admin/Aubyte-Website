@@ -579,6 +579,11 @@ p { margin-bottom: 15px; color: var(--medium-grey); }
   color: #ccc;
 }
 
+.section-paragraph {
+    max-width: 1000px;
+    margin: 40px auto;
+    text-align: center;
+}
 
 /* --- Responsive Design --- */
 @media (max-width: 992px) { .values-grid { grid-template-columns: repeat(2, 1fr); } }

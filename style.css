@@ -53,6 +53,11 @@ h3 { font-size: 1.4rem; color: var(--dark-grey); }
 h4 { font-size: 1.8rem; text-align: center; }
 p { margin-bottom: 15px; color: var(--medium-grey); }
 
+
+.black-paragraph {
+  color: var(--primary-colour)
+}
+
 .left-heading {
   text-align: left;
 }

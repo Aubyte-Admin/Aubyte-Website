@@ -658,13 +658,13 @@ p { margin-bottom: 15px; color: var(--medium-grey); }
 
 .wide-section {
   width: 100%;
-  max-width: 1100px;
+  max-width: 1250px;
   margin: 0 auto;
   padding: 0 40px; /* keeps 40px padding on both sides */
 }
 
 .section-paragraph {
-  max-width: 1100px;  /* same max-width as .wide-section */
+  max-width: 1250px;  /* same max-width as .wide-section */
   margin: 10px auto 40px auto; /* vertical margin, horizontal centered */
   padding: 0 40px; /* same horizontal padding as .wide-section */
   text-align: center; /* center the text inside paragraph */

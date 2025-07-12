@@ -610,7 +610,36 @@ p { margin-bottom: 15px; color: var(--medium-grey); }
 .partner-benefits {
   text-align: left;
 }
+/* Hide default marker and position custom icon */
+details.faq-item summary {
+  list-style: none;
+  cursor: pointer;
+  position: relative;
+  padding-left: 24px;
+}
 
+/* Hide default triangle in WebKit browsers */
+details.faq-item summary::-webkit-details-marker {
+  display: none;
+}
+
+/* Show + on the left when closed */
+details.faq-item summary::before {
+  content: '+';
+  position: absolute;
+  left: 0;
+  font-weight: bold;
+  font-size: 18px;
+  line-height: 1;
+  top: 50%;
+  transform: translateY(-50%);
+  transition: content 0.3s;
+}
+
+/* Change + to x when open */
+details.faq-item[open] summary::before {
+  content: '✕';
+}
 /* --- Responsive Design --- */
 @media (max-width: 992px) { .values-grid { grid-template-columns: repeat(2, 1fr); } }
 @media (max-width: 768px) {

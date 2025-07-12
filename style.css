@@ -353,7 +353,7 @@ background-color: transparent;
   pointer-events: none;
 }
 .service-card:hover::after {
-  background-color: rgba(245, 189, 2, 0.85); /* semi-transparent gold */
+  background-color: rgba(245, 189, 2, 0.90); /* semi-transparent gold */
 }
 /* --- Partner Programme Section --- */
 .partner-content {

@@ -241,8 +241,8 @@ p { margin-bottom: 15px; color: var(--medium-grey); }
 }
 
 .managed-it-services-card:hover {
-  background-image: overlay;
   background-color: rgba(245, 189, 2, 0.1);
+background-color: transparent;
 }
 
 .managed-it-services-card:hover::before {
@@ -342,7 +342,19 @@ p { margin-bottom: 15px; color: var(--medium-grey); }
 .cameras-card:hover::before {
   background: transparent;
 }
-
+.service-card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-color: rgba(245, 189, 2, 0); /* start transparent */
+  transition: background-color 0.3s ease;
+  border-radius: 8px;
+  z-index: 1;
+  pointer-events: none;
+}
+.service-card:hover::after {
+  background-color: rgba(245, 189, 2, 0.85); /* semi-transparent gold */
+}
 /* --- Partner Programme Section --- */
 .partner-content {
     display: grid; grid-template-columns: 1fr 1fr;

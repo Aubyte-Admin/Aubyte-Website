@@ -241,7 +241,7 @@ p { margin-bottom: 15px; color: var(--medium-grey); }
 }
 
 .managed-it-services-card:hover {
-  background-color: rgba(245, 189, 2, 0.75);
+  background-color: rgba(245, 189, 2, 0.85);
 background-color: transparent;
 }
 
@@ -303,7 +303,7 @@ background-color: transparent;
 }
 
 .itad-card:hover {
-  background-color: rgba(245, 189, 2, 0.75);
+  background-color: rgba(245, 189, 2, 0.85);
 }
 
 .itad-card:hover::before {
@@ -336,7 +336,7 @@ background-color: transparent;
 }
 
 .cameras-card:hover {
-  background-color: rgba(245, 189, 2, 0.75);
+  background-color: rgba(245, 189, 2, 0.85);
 }
 
 .cameras-card:hover::before {

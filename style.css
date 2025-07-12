@@ -656,7 +656,7 @@ p { margin-bottom: 15px; color: var(--medium-grey); }
   transform: translateY(-50%) rotate(0deg);
 }
 .custom-layout-section {
-  background-color: var(--secondary-colour);
+background: url('/images/goldback.jpg') no-repeat center center/cover;
   padding: 60px 20px;
 }
 

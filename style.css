@@ -373,7 +373,6 @@ p { margin-bottom: 15px; color: var(--medium-grey); }
     gap: 60px;
     align-items: center;
     margin-top: 40px;
-align-items: start;
 }
 .about-image img {
     width: 100%;

@@ -241,7 +241,7 @@ p { margin-bottom: 15px; color: var(--medium-grey); }
 }
 
 .managed-it-services-card:hover {
-  background: overlay;
+  background-image: overlay;
   background-color: rgba(245, 189, 2, 0.1);
 }
 

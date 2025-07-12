@@ -242,7 +242,6 @@ p { margin-bottom: 15px; color: var(--medium-grey); }
 
 .managed-it-services-card:hover {
   background-color: rgba(245, 189, 2, 0.85);
-background-color: transparent;
 }
 
 .managed-it-services-card:hover::before {

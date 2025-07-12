@@ -715,6 +715,11 @@ background: url('/images/blackgradient.PNG') no-repeat center center/cover;
     grid-row: auto;
   }
 }
+
+.box p {
+  text-align: left;
+}
+
 /* --- Responsive Design --- */
 @media (max-width: 992px) { .values-grid { grid-template-columns: repeat(2, 1fr); } }
 @media (max-width: 768px) {

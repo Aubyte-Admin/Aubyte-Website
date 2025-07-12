@@ -46,13 +46,17 @@ section:nth-child(even) { background-color: var(--light-grey); }
 
 
 /* --- Typography --- */
-h1, h2, h3, h4, h2l { font-weight: 600; margin-bottom: 20px; color: var(--primary-colour); }
+h1, h2, h3, h4 { font-weight: 600; margin-bottom: 20px; color: var(--primary-colour); }
 h1 { font-size: 2.8rem; }
 h2 { font-size: 2.2rem; text-align: center; }
-h2l { font-size: 2.2rem; text-align: left; }
 h3 { font-size: 1.4rem; color: var(--dark-grey); }
 h4 { font-size: 1.8rem; text-align: center; }
 p { margin-bottom: 15px; color: var(--medium-grey); }
+
+.left-heading {
+  text-align: left;
+}
+
 
 /* --- Navigation Bar --- */
 .navbar {

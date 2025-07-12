@@ -680,17 +680,6 @@ background: url('/images/blackgradient.PNG') no-repeat center center/cover;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
 }
 
-/* Heading centered */
-.box h3 {
-  text-align: center;
-  margin-bottom: 15px;
-}
-
-/* Paragraph left aligned */
-.box p {
-  text-align: left;
-}
-
 .box-1 {
   grid-column: 1;
   grid-row: 1;

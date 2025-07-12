@@ -24,7 +24,7 @@ body {
 }
 
 /* --- Layout & Helpers --- */
-.container { max-width: 1100px; margin: auto; padding: 0 20px; }
+.container { max-width: 1250px; margin: auto; padding: 0 20px; }
 section { padding: 60px 0; }
 section:nth-child(even) { background-color: var(--light-grey); }
 

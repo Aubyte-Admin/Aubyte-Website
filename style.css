@@ -145,9 +145,13 @@ p { margin-bottom: 15px; color: var(--medium-grey); }
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 25px;
-  max-width: 1100px; 
-  margin-top: 40px;
+  margin: 40px auto 0 auto; /* Top margin and horizontal centering */
+  max-width: 1100px;         /* Limit width to 1100px */
+  width: 100%;
+  padding: 0 20px;           /* Add side padding to prevent flush edge */
+  box-sizing: border-box;   /* Ensures padding stays within the max-width */
 }
+
 
 .service-card {
   padding: 30px;

@@ -249,7 +249,7 @@ p { margin-bottom: 15px; color: var(--medium-grey); }
 }
 
 /* Onsite Support Card */
-.onsite-support-card {
+.managed-it-services-card {
   background-image: url('/images/onsitesupport.jpg');
   background-size: cover;
   background-position: center;
@@ -258,29 +258,30 @@ p { margin-bottom: 15px; color: var(--medium-grey); }
   border-radius: 8px;
 }
 
-.onsite-support-card::before {
+.managed-it-services-card::before {
   content: "";
   position: absolute;
   inset: 0;
-  background: rgba(0,0,0,0.3);
+  background: rgba(0, 0, 0, 0.3);
   border-radius: 8px;
   z-index: 0;
 }
 
-.onsite-support-card .card-content,
-.onsite-support-card .learn-more {
+.managed-it-services-card .card-content,
+.managed-it-services-card .learn-more {
   position: relative;
   z-index: 1;
 }
 
-.onsite-support-card:hover {
+.managed-it-services-card:hover {
   background-image: none;
   background-color: rgba(245, 189, 2, 0.98);
 }
 
-.onsite-support-card:hover::before {
+.managed-it-services-card:hover::before {
   background: transparent;
 }
+
 
 /* Network Support Card */
 .network-support-card {

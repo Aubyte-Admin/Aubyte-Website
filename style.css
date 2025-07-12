@@ -178,10 +178,13 @@ p { margin-bottom: 15px; color: var(--medium-grey); }
   box-shadow: 0 8px 25px rgba(0,0,0,0.12);
 }
 
+.service-card .card-content {
+  opacity: 1;
+  transition: opacity 0.3s ease;
+}
+
 .service-card:hover .card-content {
-  opacity: 0;
-  pointer-events: none;
-  position: absolute;
+  opacity: 0.1; /* Not fully gone */
 }
 
 /* "Learn More" overlay */

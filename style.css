@@ -179,7 +179,7 @@ p { margin-bottom: 15px; color: var(--medium-grey); }
 }
 
 .service-card:hover .card-content {
-  opacity: -50;
+  opacity: 0;
   pointer-events: none;
   position: absolute;
 }
@@ -214,41 +214,8 @@ p { margin-bottom: 15px; color: var(--medium-grey); }
   pointer-events: none;
 }
 
-/* Service Desk Card */
-.service-desk-card {
-  background-image: url('/images/servicedesk.jpg');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  position: relative;
-  border-radius: 8px;
-}
 
-.service-desk-card::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: rgba(0,0,0,0.3);
-  border-radius: 8px;
-  z-index: 0;
-}
-
-.service-desk-card .card-content,
-.service-desk-card .learn-more {
-  position: relative;
-  z-index: 1;
-}
-
-.service-desk-card:hover {
-  background-image: none;
-  background-color: rgba(245, 189, 2, 0.98);
-}
-
-.service-desk-card:hover::before {
-  background: transparent;
-}
-
-/* Onsite Support Card */
+/* Managed IT Services*/
 .managed-it-services-card {
   background-image: url('/images/onsitesupport.jpg');
   background-size: cover;
@@ -274,8 +241,7 @@ p { margin-bottom: 15px; color: var(--medium-grey); }
 }
 
 .managed-it-services-card:hover {
-  background-image: none;
-  background-color: rgba(245, 189, 2, 0.98);
+  background-color: rgba(245, 189, 2, 0.75);
 }
 
 .managed-it-services-card:hover::before {
@@ -283,39 +249,6 @@ p { margin-bottom: 15px; color: var(--medium-grey); }
 }
 
 
-/* Network Support Card */
-.network-support-card {
-  background-image: url('/images/networksupport.jpg');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  position: relative;
-  border-radius: 8px;
-}
-
-.network-support-card::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: rgba(0,0,0,0.3);
-  border-radius: 8px;
-  z-index: 0;
-}
-
-.network-support-card .card-content,
-.network-support-card .learn-more {
-  position: relative;
-  z-index: 1;
-}
-
-.network-support-card:hover {
-  background-image: none;
-  background-color: rgba(245, 189, 2, 0.98);
-}
-
-.network-support-card:hover::before {
-  background: transparent;
-}
 
 .service-card a {
   text-decoration: none;
@@ -341,39 +274,6 @@ p { margin-bottom: 15px; color: var(--medium-grey); }
   flex-direction: column;
   justify-content: center;
   z-index: 1;
-}
-/* Certified Engineers Card */
-.certified-engineers-card {
-  background-image: url('/images/certified-engineers.jpg');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  position: relative;
-  border-radius: 8px;
-}
-
-.certified-engineers-card::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: rgba(0,0,0,0.3);
-  border-radius: 8px;
-  z-index: 0;
-}
-
-.certified-engineers-card .card-content,
-.certified-engineers-card .learn-more {
-  position: relative;
-  z-index: 1;
-}
-
-.certified-engineers-card:hover {
-  background-image: none;
-  background-color: rgba(245, 189, 2, 0.98);
-}
-
-.certified-engineers-card:hover::before {
-  background: transparent;
 }
 
 /* ITAD Card */
@@ -402,8 +302,7 @@ p { margin-bottom: 15px; color: var(--medium-grey); }
 }
 
 .itad-card:hover {
-  background-image: none;
-  background-color: rgba(245, 189, 2, 0.98);
+  background-color: rgba(245, 189, 2, 0.75);
 }
 
 .itad-card:hover::before {
@@ -436,8 +335,7 @@ p { margin-bottom: 15px; color: var(--medium-grey); }
 }
 
 .cameras-card:hover {
-  background-image: none;
-  background-color: rgba(245, 189, 2, 0.98);
+  background-color: rgba(245, 189, 2, 0.75);
 }
 
 .cameras-card:hover::before {

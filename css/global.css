@@ -1,0 +1,474 @@
+/* --- Google Font --- */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+/* --- Icon Library for Hamburger Menu --- */
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css');
+
+/* --- CSS Variables (GOLD STANDARD THEME) --- */
+:root {
+    --primary-colour: #1a1a1a;   /* A very dark, near-black for headers and footer */
+    --secondary-colour: #F5BD02; /* The vibrant gold */
+    --dark-grey: #333333;       /* For primary body text */
+    --medium-grey: #6c757d;     /* For secondary text and borders */
+    --light-grey: #f8f9fa;      /* For alternating section backgrounds */
+    --white: #ffffff;
+}
+
+/* --- Global Styles --- */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+    font-family: 'Poppins', sans-serif;
+    color: var(--dark-grey);
+    line-height: 1.6;
+    background-color: var(--white);
+}
+
+/* --- Layout & Helpers --- */
+.container { max-width: 1250px; margin: auto; padding: 0 20px; }
+section { padding: 60px 0; }
+section:nth-child(even) { background-color: var(--light-grey); }
+
+.page-header {
+    background: url('../images/page-header-bg.jpg') no-repeat center center/cover;
+    color: var(--white);
+    padding: 42px 0;
+    text-align: center;
+}
+
+
+.page-header h1 {
+    color: var(--white);
+    font-size: 2.8rem;
+    margin-bottom: 0;
+}
+.text-center { text-align: center; }
+.cta-button-container { text-align: center; margin-top: 40px; }
+
+
+/* --- Typography --- */
+h1, h2, h3, h4 { font-weight: 600; margin-bottom: 20px; color: var(--primary-colour); }
+h1 { font-size: 2.8rem; }
+h2 { font-size: 2.2rem; text-align: center; }
+h3 { font-size: 1.4rem; color: var(--dark-grey); }
+h4 { font-size: 1.8rem; text-align: center; }
+p { margin-bottom: 15px; color: var(--medium-grey); }
+
+
+.black-paragraph {
+  color: var(--primary-colour)
+}
+
+.left-heading {
+  text-align: left;
+}
+
+.center-heading {
+  text-align: center;
+}
+
+/* --- Navigation Bar --- */
+.navbar {
+    background: var(--white);
+    color: var(--dark-grey);
+    padding: 1rem 0;
+    position: sticky;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+.navbar .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%; 
+}
+.navbar .logo {
+    text-decoration: none;
+}
+.navbar .logo {
+    position: absolute; /* Takes the logo out of the normal flow */
+    top: -50px;          /* Adjust to move the logo down from the top edge */
+    z-index: 1001;      /* Ensures the logo is on top of other elements */
+}
+
+.navbar .logo img {
+    height: 160px;      /* This is your desired logo size */
+}
+.navbar nav {
+    margin-left: auto; 
+}
+.navbar .nav-links {
+    list-style: none;
+    display: flex;
+}
+.navbar .nav-links li { margin-left: 30px; }
+.navbar .nav-links li a {
+    color: var(--dark-grey);
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+.navbar .nav-links li a:hover { color: var(--secondary-colour); }
+
+/* --- Mobile Hamburger Menu --- */
+.hamburger { display: none; cursor: pointer; font-size: 1.5rem; }
+
+/* --- Hero Section --- */
+.hero {
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('../images/hero-background1.jpg') no-repeat center center/cover;
+    color: var(--white);
+    height: 85vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+.hero h1 { color: var(--white); font-size: 3.5rem; }
+.hero p {
+    font-size: 1.2rem;
+    max-width: 600px;
+    margin: 20px auto 30px;
+    color: rgba(255,255,255,0.9);
+}
+.btn {
+    display: inline-block; padding: 12px 28px; border-radius: 5px;
+    text-decoration: none; font-weight: 600; transition: all 0.3s ease;
+    margin: 5px; border: 2px solid transparent;
+}
+.btn-primary { 
+    background: var(--secondary-colour); 
+    color: var(--primary-colour);
+}
+.btn-primary:hover { 
+    background: #E0AC02;
+    transform: translateY(-2px); 
+}
+.btn-secondary { 
+    background: transparent; 
+    color: var(--white); 
+    border-color: var(--white); 
+}
+.btn-secondary:hover { 
+    background: var(--white); 
+    color: var(--primary-colour); 
+}
+
+/* --- Services Section --- */
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 25px;
+  margin: 40px auto 0 auto; /* Top margin and horizontal centering */
+  max-width: 1100px;         /* Limit width to 1100px */
+  width: 100%;
+  padding: 0 20px;           /* Add side padding to prevent flush edge */
+  box-sizing: border-box;   /* Ensures padding stays within the max-width */
+}
+
+
+.service-card {
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  min-height: 320px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+  color: white;
+  cursor: pointer;
+}
+
+.service-card h3,
+.service-card p {
+  color: white;
+}
+
+.service-card:hover { 
+  transform: translateY(-5px); 
+  box-shadow: 0 8px 25px rgba(0,0,0,0.12);
+}
+
+.service-card:hover .card-content {
+  opacity: 0;
+  pointer-events: none;
+  position: absolute;
+}
+/* "Learn More" overlay */
+.service-card .learn-more {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: transparent;
+  color: white;
+  font-size: 1.3rem;
+  font-weight: 600;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  border-radius: 8px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  user-select: none;
+  z-index: 2;
+  text-align: center;
+}
+
+.service-card:hover .learn-more {
+  opacity: 1;
+}
+
+.service-card:hover .card-content {
+  opacity: 0;
+  pointer-events: none;
+}
+
+
+/* Managed IT Services*/
+.managed-it-services-card {
+  background-image: url('/images/onsitesupport.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
+  border-radius: 8px;
+}
+
+.managed-it-services-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.3);
+  border-radius: 8px;
+  z-index: 0;
+}
+
+.managed-it-services-card .card-content,
+.managed-it-services-card .learn-more {
+  position: relative;
+  z-index: 3;
+}
+
+.managed-it-services-card:hover {
+  background-color: rgba(245, 189, 2, 0.85);
+}
+
+.managed-it-services-card:hover::before {
+  background: transparent;
+}
+
+
+
+.service-card a {
+  text-decoration: none;
+  color: white;
+}
+
+.service-card a:hover {
+  color: var(--secondary-colour); /* Optional hover effect */
+}
+.service-card-link {
+  text-decoration: none;
+  color: inherit;
+}
+
+.service-card-link h3,
+.service-card-link p {
+  color: white;
+  text-decoration: none;
+}
+.service-card .card-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  z-index: 1;
+}
+
+/* ITAD Card */
+.itad-card {
+  background-image: url('/images/itad.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
+  border-radius: 8px;
+}
+
+.itad-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.3);
+  border-radius: 8px;
+  z-index: 0;
+}
+
+.itad-card .card-content,
+.itad-card .learn-more {
+  position: relative;
+  z-index: 3;
+}
+
+.itad-card:hover {
+  background-color: rgba(245, 189, 2, 0.85);
+}
+
+.itad-card:hover::before {
+  background: transparent;
+}
+
+/* Cameras Card */
+.cameras-card {
+  background-image: url('/images/cameras.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
+  border-radius: 8px;
+}
+
+.cameras-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.3);
+  border-radius: 8px;
+  z-index: 0;
+}
+
+.cameras-card .card-content,
+.cameras-card .learn-more {
+  position: relative;
+  z-index: 3;
+}
+
+.cameras-card:hover {
+  background-color: rgba(245, 189, 2, 0.85);
+}
+
+.cameras-card:hover::before {
+  background: transparent;
+}
+.service-card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-color: rgba(245, 189, 2, 0); /* start transparent */
+  transition: background-color 0.3s ease;
+  border-radius: 8px;
+  z-index: 1;
+  pointer-events: none;
+}
+.service-card:hover::after {
+  background-color: rgba(245, 189, 2, 0.75); /* semi-transparent gold */
+}
+
+
+/* Footer */
+.site-footer {
+  background-image: url('/images/footer.png');
+  background-size: cover;
+  background-position: center right;
+  background-repeat: no-repeat;
+  color: white;
+  padding: 40px 0;
+  font-size: 0.9rem;
+}
+
+.footer-container {
+  display: flex;
+  justify-content: flex-start;  /* Align left */
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 20px;
+  width: 100%;
+}
+
+.footer-grid {
+  display: flex;
+  gap: 40px;
+  width: 60%;           /* Limit columns to 60% width */
+  min-width: 300px;     /* Optional: avoid too narrow on small screens */
+}
+
+.footer-column {
+  flex: 1;
+  max-width: none;      /* Let columns share the 60% equally */
+}
+
+.footer-column h4 {
+  color: white;
+  font-size: 1.1rem;
+  margin-bottom: 20px;
+  font-weight: 600;
+}
+
+.footer-column p {
+  color: #ccc;
+  margin-bottom: 10px;
+}
+
+.footer-column ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+.footer-column ul li {
+  margin-bottom: 10px;
+}
+
+.footer-column ul li a {
+  color: #ccc;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.footer-column ul li a:hover {
+  color: var(--secondary-colour);
+}
+
+.footer-bottom {
+  text-align: center;
+  margin-top: 40px;
+  padding-top: 20px;
+  border-top: 1px solid var(--medium-grey);
+  color: #ccc;
+}
+
+@media (max-width: 768px) {
+  .five-box-grid {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+  }
+
+  .box-3 {
+    grid-row: auto;
+  }
+}
+
+/* --- Responsive Design --- */
+@media (max-width: 992px) { .values-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 768px) {
+    h1 { font-size: 2.5rem; } h2 { font-size: 1.8rem; } .hero h1 { font-size: 2.8rem; }
+    .partner-content, .contact-grid, .about-grid, .values-grid { grid-template-columns: 1fr; }
+    .about-grid, .values-grid { gap: 40px; }
+    .contact-info { text-align: center; }
+    .value-card { min-height: auto; width: 100%; height: 280px; border-radius: 8px; padding: 40px 30px; }
+    .value-card-front, .value-card-back { position: static; opacity: 1; height: auto; }
+    .value-card-front { display: none; } .value-card-back { display: flex; }
+    .process-step-onboarding, .process-step-request, .process-step-execution, .value-card-partnership, .value-card-reliable, .value-card-clarity, .value-card-excellence, .value-card-agility, .value-card-integrity { background-color: transparent; box-shadow: none; border: none !important; padding: 20px; display: flex; justify-content: center; align-items: center; text-align: center; }
+    .process-step-onboarding .value-card-back, .process-step-request .value-card-back, .process-step-execution .value-card-back, .value-card-partnership .value-card-back, .value-card-reliable .value-card-back, .value-card-clarity .value-card-back, .value-card-excellence .value-card-back, .value-card-agility .value-card-back, .value-card-integrity .value-card-back { background: transparent; }
+    .process-step-onboarding .value-card-back h4, .process-step-onboarding .value-card-back p, .process-step-request .value-card-back h4, .process-step-request .value-card-back p, .process-step-execution .value-card-back h4, .process-step-execution .value-card-back p, .value-card-partnership .value-card-back h4, .value-card-partnership .value-card-back p, .value-card-reliable .value-card-back h4, .value-card-reliable .value-card-back p, .value-card-clarity .value-card-back h4, .value-card-clarity .value-card-back p, .value-card-excellence .value-card-back h4, .value-card-excellence .value-card-back p, .value-card-agility .value-card-back h4, .value-card-agility .value-card-back p, .value-card-integrity .value-card-back h4, .value-card-integrity .value-card-back p { color: var(--white); text-shadow: 1px 1px 3px rgba(0,0,0,0.8); }
+    .hamburger { display: block; margin-left: auto; }
+    .navbar nav { position: static; }
+    .navbar .nav-links { display: none; flex-direction: column; width: 100%; background: var(--white); position: absolute; top: 60px; left: 0; padding: 20px 0; box-shadow: 0 4px 10px rgba(0,0,0,0.1); }
+    .navbar .nav-links.active { display: flex; }
+    .navbar .nav-links li { margin: 10px 0; text-align: center; }
+    .service-card { min-height: auto; padding-bottom: 20px; }
+    .service-card .card-content, .service-card .icon { opacity: 1 !important; }
+}

@@ -1,0 +1,16 @@
+.partner-benefits ul {
+  list-style: disc;
+  padding-left: 20px;
+}
+
+.partner-benefits ul li {
+  color: var(--dark-grey); /* Optional: sets text color if needed */
+}
+
+.partner-benefits ul li::marker {
+  color: var(--secondary-colour); /* Makes bullet (dot) gold */
+}
+.about-text,
+.partner-benefits {
+  text-align: left;
+}

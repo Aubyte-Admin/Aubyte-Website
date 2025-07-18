@@ -1,0 +1,8 @@
+/* --- Contact Section --- */
+.contact-grid { display: grid; grid-template-columns: 1fr 1.5fr; gap: 50px; margin-top: 40px; }
+.contact-info p { font-size: 1.1rem; }
+.contact-form .form-group { margin-bottom: 20px; }
+.contact-form input, .contact-form textarea { width: 100%; padding: 12px; border: 1px solid #ccc; border-radius: 5px; font-family: 'Poppins', sans-serif; }
+.contact-form input:focus, .contact-form textarea:focus { outline: none; border-color: var(--secondary-colour); }
+.btn-submit { width: 100%; background: var(--secondary-colour); color: var(--primary-colour); border: none; cursor: pointer; }
+.btn-submit:hover { background: #E0AC02; }

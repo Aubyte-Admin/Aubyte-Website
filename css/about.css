@@ -1,0 +1,108 @@
+/* Image-backed Circle Customizations */
+.value-card-partnership, .value-card-reliable, .value-card-clarity,
+.value-card-excellence, .value-card-agility, .value-card-integrity {
+    background-size: cover;
+    background-position: center;
+    border-color: transparent !important;
+}
+
+.value-card-partnership:hover, .value-card-reliable:hover, .value-card-clarity:hover,
+.value-card-excellence:hover, .value-card-agility:hover, .value-card-integrity:hover {
+    border-color: var(--secondary-colour) !important;
+}
+
+.value-card-partnership .value-card-front h4,
+.value-card-reliable .value-card-front h4,
+.value-card-clarity .value-card-front h4,
+.value-card-excellence .value-card-front h4,
+.value-card-agility .value-card-front h4,
+.value-card-integrity .value-card-front h4 {
+    color: var(--white); 
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.8);
+}
+
+.value-card-partnership .value-card-back,
+.value-card-reliable .value-card-back,
+.value-card-clarity .value-card-back,
+.value-card-excellence .value-card-back,
+.value-card-agility .value-card-back,
+.value-card-integrity .value-card-back {
+    background: var(--white); 
+    border-radius: 50%; 
+}
+
+/*.value-card-reliable { background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('/images/value-reliable.jpeg'); background-position: center top; }
+.value-card-clarity { background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('../images/value-clarity.jpg'); }
+.value-card-excellence { background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('../images/value-excellence.jpeg'); }
+.value-card-agility { background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('../images/value-agility.jpg'); }
+.value-card-integrity { background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('../images/value-integrity.jpg'); }
+.value-card-partnership { background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('../images/value-partnership.jpg'); }*/
+
+.about-grid {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    gap: 60px;
+    align-items: left;
+    margin-top: 40px;
+    align-items: start;
+ text-align: left;   /* ensures text in both columns aligns left */
+}
+.about-image img {
+    width: 100%;
+    border-radius: 8px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+}
+
+/* Values Grid Section (3x2 Circles) */
+.values-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    justify-items: center;
+    margin-top: 40px;
+}
+.value-card {
+    background: var(--white);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.4s ease;
+    position: relative;
+    overflow: hidden; 
+    width: 280px;
+    height: 280px;
+    border-radius: 50%;
+    border: 3px solid transparent;
+}
+.value-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.12);
+    border-color: var(--secondary-colour);
+}
+.value-card-front, .value-card-back {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    transition: opacity 0.4s ease-in-out;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 30px;
+}
+.value-card-front { opacity: 1; }
+.value-card-front {
+    background-color: transparent !important;
+}
+.value-card-back { opacity: 0; }
+.value-card:hover .value-card-front { opacity: 0; }
+.value-card:hover .value-card-back { opacity: 1; }
+.value-card h4 { font-size: 1.5rem; }
+.value-card p { font-size: 0.95rem; margin: 10px 0 0; }
+
+.about-text,
+.partner-benefits {
+  text-align: left;
+}

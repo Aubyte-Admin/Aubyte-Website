@@ -97,7 +97,6 @@
             <img src="/images/contact.png" alt="Image 6">
             <h3>Contact Us</h3>
             <p>Get in touch to learn more about how Aubyte can support your business.</p>
-            <p class="additional-text">Contact us today to discuss your needs and discover how we can support your IT environment with efficiency, security, and confidence. Whether you require onsite support, network management, system optimisation, or data protection services, our team is ready to assist you.</p>
             <a href="/contact" class="learn-more-btn">Contact us</a>
         </div>
     </div>
@@ -158,21 +157,16 @@
   </div>
 </footer>
 
-    <script>const hamburger = document.getElementById('hamburger-icon'); const navLinks = document.getElementById('nav-links'); hamburger.addEventListener('click', () => { navLinks.classList.toggle('active'); });</script>
-    <script>
-    const buttons = document.querySelectorAll('.learn-more-btn');
+            <script>
+    const buttons = document.querySelectorAll('button.learn-more-btn');
 
     buttons.forEach(button => {
         button.addEventListener('click', () => {
             const gridItem = button.closest('.grid-item');
-
-            // Just toggle the class. CSS will handle the rest.
             gridItem.classList.toggle('expanded');
-
-            // Update the button text based on the new state
             if (gridItem.classList.contains('expanded')) {
                 button.textContent = 'Show less';
-                gridItem.appendChild(button); // Moves button to the bottom
+                gridItem.appendChild(button);
             } else {
                 button.textContent = 'Show more';
             }

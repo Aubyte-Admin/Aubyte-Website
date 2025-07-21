@@ -14,21 +14,28 @@
 <body>
 
     <header class="navbar">
-        <div class="container">
-            <a href="/" class="logo"><img src="/images/logo.png" alt="Aubyte Logo"></a>
-            <nav>
-                <div class="hamburger" id="hamburger-icon"><i class="fas fa-bars"></i></div>
-                <ul class="nav-links" id="nav-links">
-                    <li><a href="/">Home</a></li>
-                    <li><a href="/services">Services</a></li>
-                    <li><a href="/partner">Partner</a></li>
-                    <li><a href="/about">About</a></li>
-                    <li><a href="/why-us">Why Us</a></li>
-                    <li><a href="/contact">Contact</a></li>
-                </ul>
-            </nav>
-        </div>
-    </header>
+    <div class="container">
+        <a href="/" class="logo"><img src="/images/logo.png" alt="Aubyte Logo"></a>
+        <nav>
+            <div class="hamburger" id="hamburger-icon"><i class="fas fa-bars"></i></div>
+            <ul class="nav-links" id="nav-links">
+                <li><a href="/">Home</a></li>
+                <li class="dropdown">
+                    <a href="/services" class="dropdown-toggle" id="services-dropdown-toggle">Services <i class="fas fa-angle-down"></i></a>
+                    <ul class="dropdown-menu" id="services-dropdown-menu">
+                        <li><a href="/managed-it-services">Managed IT Services</a></li>
+                        <li><a href="/it-asset-disposal">IT Asset Disposal</a></li>
+                        <li><a href="/security-cameras">Security Cameras</a></li>
+                    </ul>
+                </li>
+                <li><a href="/msp-partner">Partner</a></li>
+                <li><a href="/about">About</a></li>
+                <li><a href="/contact">Contact</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
 <body class="managed-it-page">
     <main>
         <section class="page-header"><div class="container"><h1>Frequently Asked Questions</h1></div></section>

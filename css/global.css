@@ -472,3 +472,93 @@ p { margin-bottom: 15px; color: var(--medium-grey); }
     .service-card { min-height: auto; padding-bottom: 20px; }
     .service-card .card-content, .service-card .icon { opacity: 1 !important; }
 }
+
+/* --- Dropdown Menu Styles --- */
+
+/* Parent container for the dropdown */
+.navbar .nav-links .dropdown {
+    position: relative;
+}
+
+/* The "Services" link that toggles the dropdown */
+.navbar .nav-links .dropdown-toggle {
+    display: flex;
+    align-items: center;
+}
+
+/* The down-arrow icon */
+.navbar .nav-links .dropdown-toggle i {
+    margin-left: 6px;
+    font-size: 0.8em;
+    transition: transform 0.3s ease;
+}
+
+/* The dropdown menu itself (hidden by default) */
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: -15px; /* Adjust to align with "Services" text */
+    background-color: var(--white);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+    list-style: none;
+    padding: 10px 0;
+    margin: 0; /* No margin */
+    min-width: 240px;
+    z-index: 1001;
+    border-radius: 8px;
+}
+
+/* The links inside the dropdown menu */
+.dropdown-menu li a {
+    padding: 12px 20px;
+    display: block;
+    font-weight: 400;
+    white-space: nowrap;
+}
+
+
+/* --- DESKTOP: Hover Behavior --- */
+@media (min-width: 769px) {
+    /* The core fix: create an invisible "bridge" below the nav link */
+    .navbar .nav-links .dropdown {
+        padding-bottom: 20px; /* This creates the hoverable space */
+        margin-bottom: -20px; /* This pulls the next nav items back up */
+    }
+
+    /* Show the menu when hovering the entire dropdown area */
+    .navbar .nav-links .dropdown:hover > .dropdown-menu {
+        display: block;
+    }
+
+    /* Rotate the arrow icon on hover */
+    .navbar .nav-links .dropdown:hover > .dropdown-toggle > i {
+        transform: rotate(180deg);
+    }
+}
+
+
+/* --- MOBILE: Click Behavior --- */
+@media (max-width: 768px) {
+    /* Reposition dropdown for the mobile menu flow */
+    .dropdown-menu {
+        position: static;
+        box-shadow: none;
+        border-radius: 0;
+        background-color: #fdfdfd;
+        padding-left: 30px; /* Indent items under "Services" */
+        min-width: auto;
+        border-top: 1px solid #eee;
+        margin-bottom: 10px;
+    }
+
+    /* JavaScript will toggle this class to show/hide the menu */
+    .dropdown-menu.show {
+        display: block;
+    }
+
+    /* Rotate the arrow when the menu is active on mobile */
+    .dropdown-toggle.active > i {
+        transform: rotate(180deg);
+    }
+}

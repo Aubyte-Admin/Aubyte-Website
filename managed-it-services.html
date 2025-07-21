@@ -14,21 +14,27 @@
 </head>
 <body>
     <header class="navbar">
-        <div class="container">
-            <a href="/" class="logo"><img src="/images/logo.png" alt="Aubyte Logo"></a>
-            <nav>
-                <div class="hamburger" id="hamburger-icon"><i class="fas fa-bars"></i></div>
-                <ul class="nav-links" id="nav-links">
-                    <li><a href="/">Home</a></li>
-                    <li><a href="/services">Services</a></li>
-                    <li><a href="/msp-partner">Partner</a></li>
-                    <li><a href="/about">About</a></li>
-                    <li><a href="/why-us">Why Us</a></li>
-                    <li><a href="/contact">Contact</a></li>
-                </ul>
-            </nav>
-        </div>
-    </header>
+    <div class="container">
+        <a href="/" class="logo"><img src="/images/logo.png" alt="Aubyte Logo"></a>
+        <nav>
+            <div class="hamburger" id="hamburger-icon"><i class="fas fa-bars"></i></div>
+            <ul class="nav-links" id="nav-links">
+                <li><a href="/">Home</a></li>
+                <li class="dropdown">
+                    <a href="/services" class="dropdown-toggle" id="services-dropdown-toggle">Services <i class="fas fa-angle-down"></i></a>
+                    <ul class="dropdown-menu" id="services-dropdown-menu">
+                        <li><a href="/managed-it-services">Managed IT Services</a></li>
+                        <li><a href="/it-asset-disposal">IT Asset Disposal</a></li>
+                        <li><a href="/security-cameras">Security Cameras</a></li>
+                    </ul>
+                </li>
+                <li><a href="/msp-partner">Partner</a></li>
+                <li><a href="/about">About</a></li>
+                <li><a href="/contact">Contact</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
 
     <main>
         <section class="page-header">
@@ -158,18 +164,44 @@
 </footer>
 
             <script>
-    const buttons = document.querySelectorAll('button.learn-more-btn');
+    document.addEventListener('DOMContentLoaded', function() {
+        // --- Hamburger Menu Logic ---
+        const hamburger = document.getElementById('hamburger-icon');
+        const navLinks = document.getElementById('nav-links');
+        if (hamburger) {
+            hamburger.addEventListener('click', () => {
+                navLinks.classList.toggle('active');
+            });
+        }
 
-    buttons.forEach(button => {
-        button.addEventListener('click', () => {
-            const gridItem = button.closest('.grid-item');
-            gridItem.classList.toggle('expanded');
-            if (gridItem.classList.contains('expanded')) {
-                button.textContent = 'Show less';
-                gridItem.appendChild(button);
-            } else {
-                button.textContent = 'Show more';
-            }
+        // --- Dropdown Menu Logic for Mobile ---
+        const dropdownToggle = document.getElementById('services-dropdown-toggle');
+        const dropdownMenu = document.getElementById('services-dropdown-menu');
+
+        if (dropdownToggle) {
+            dropdownToggle.addEventListener('click', function(event) {
+                // On mobile, a click should toggle the menu, not navigate.
+                if (window.innerWidth <= 768) {
+                    event.preventDefault(); // Prevents link from navigating
+                    dropdownMenu.classList.toggle('show');
+                    dropdownToggle.classList.toggle('active');
+                }
+            });
+        }
+        
+        // --- Expandable Grid Button Logic ---
+        const buttons = document.querySelectorAll('button.learn-more-btn');
+        buttons.forEach(button => {
+            button.addEventListener('click', () => {
+                const gridItem = button.closest('.grid-item');
+                gridItem.classList.toggle('expanded');
+                if (gridItem.classList.contains('expanded')) {
+                    button.textContent = 'Show less';
+                    gridItem.appendChild(button);
+                } else {
+                    button.textContent = 'Show more';
+                }
+            });
         });
     });
 </script>

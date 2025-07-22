@@ -28,7 +28,7 @@
                         <li><a href="/security-cameras">Security Cameras</a></li>
                     </ul>
                 </li>
-                <li><a href="/msp-partner">Partner</a></li>
+                <li><a href="/partner">Partner</a></li>
                 <li><a href="/about">About</a></li>
                 <li><a href="/contact">Contact</a></li>
             </ul>
@@ -168,71 +168,6 @@
   </div>
 </footer>
 
-    <script>
-document.addEventListener('DOMContentLoaded', function() {
-    // --- Hamburger Menu Logic ---
-    const hamburger = document.getElementById('hamburger-icon');
-    const navLinksList = document.getElementById('nav-links');
-    if (hamburger) {
-        hamburger.addEventListener('click', () => {
-            navLinksList.classList.toggle('active');
-        });
-    }
-
-    // --- Dropdown Menu Logic for Mobile ---
-    const dropdownToggle = document.getElementById('services-dropdown-toggle');
-    const dropdownMenu = document.getElementById('services-dropdown-menu');
-    if (dropdownToggle) {
-        dropdownToggle.addEventListener('click', function(event) {
-            if (window.innerWidth <= 768) {
-                event.preventDefault();
-                dropdownMenu.classList.toggle('show');
-                dropdownToggle.classList.toggle('active');
-            }
-        });
-    }
-
-    // --- Active Nav Link Highlighting ---
-    const currentLocation = window.location.pathname;
-    const allNavLinks = document.querySelectorAll('.nav-links > li > a');
-
-    // Logic for the services dropdown
-    const servicePages = ['/managed-it-services', '/it-asset-disposal', '/security-cameras'];
-    const onServicePage = servicePages.some(page => currentLocation.includes(page));
-
-    if (onServicePage) {
-        const servicesDropdownToggle = document.getElementById('services-dropdown-toggle');
-        if (servicesDropdownToggle) {
-            servicesDropdownToggle.classList.add('active');
-        }
-    } else {
-        // Logic for all other pages
-        let isOtherPageActive = false;
-        allNavLinks.forEach(link => {
-            const linkHref = link.getAttribute('href');
-
-            // Skip links that aren't top-level pages or are the dropdown
-            if (!linkHref || link.id === 'services-dropdown-toggle') {
-                return;
-            }
-
-            // Check if the current location corresponds to the link's href.
-            // This now correctly handles '/about' vs '/about.html'
-            if (linkHref !== '/' && currentLocation.startsWith(linkHref)) {
-                link.classList.add('active');
-                isOtherPageActive = true;
-            }
-        });
-
-        // Handle the Home page specifically to avoid it being active on all pages
-        if (!isOtherPageActive && (currentLocation === '/' || currentLocation.endsWith('/index.html'))) {
-            const homeLink = document.querySelector('.nav-links a[href="/"]');
-            if (homeLink) {
-                homeLink.classList.add('active');
-            }
-        }
-    }
-});
-</script>
+    <script src="/js/global.js" defer></script>
 </body>
 </html>

@@ -1,4 +1,3 @@
-/* --- partner.css --- */
 
 .partner-benefits ul {
   list-style: disc;
@@ -12,6 +11,7 @@
 .partner-benefits ul li::marker {
   color: var(--secondary-colour); /* Makes bullet (dot) gold */
 }
+
 .about-text,
 .partner-benefits {
   text-align: left;
@@ -24,21 +24,25 @@
     background-position: center;
     border-color: transparent !important;
 }
+
 .process-step-onboarding:hover, .process-step-request:hover, .process-step-execution:hover {
     border-color: var(--secondary-colour) !important;
 }
+
 .process-step-onboarding .value-card-front h4,
 .process-step-request .value-card-front h4,
 .process-step-execution .value-card-front h4{
     color: var(--white); 
     text-shadow: 1px 1px 3px rgba(0,0,0,0.8);
 }
+
 .process-step-onboarding .value-card-back,
 .process-step-request .value-card-back,
 .process-step-execution .value-card-back{
     background: var(--white); 
     border-radius: 50%; 
 }
+
 .process-step-onboarding { background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('../images/process-onboarding.jpg'); }
 .process-step-request { background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('../images/process-request.jpg'); }
 .process-step-execution { background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('../images/process-execution.jpg'); }
@@ -50,8 +54,9 @@
     align-items: left;
     margin-top: 40px;
     align-items: start;
- text-align: left;   /* ensures text in both columns aligns left */
+    text-align: left;   /* ensures text in both columns aligns left */
 }
+
 .about-image img {
     width: 100%;
     border-radius: 8px;
@@ -66,6 +71,7 @@
     justify-items: center;
     margin-top: 40px;
 }
+
 .value-card {
     background: var(--white);
     box-shadow: 0 4px 15px rgba(0,0,0,0.08);
@@ -77,11 +83,13 @@
     border-radius: 50%;
     border: 3px solid transparent;
 }
+
 .value-card:hover {
     transform: translateY(-5px);
     box-shadow: 0 8px 25px rgba(0,0,0,0.12);
     border-color: var(--secondary-colour);
 }
+
 .value-card-front, .value-card-back {
     position: absolute;
     top: 0;
@@ -97,6 +105,7 @@
     text-align: center;
     padding: 30px;
 }
+
 .value-card-front { opacity: 1; }
 .value-card-back { opacity: 0; }
 .value-card:hover .value-card-front { opacity: 0; }
@@ -105,102 +114,50 @@
 .value-card p { font-size: 0.95rem; margin: 10px 0 0; }
 
 .partner-content {
-    display: grid; grid-template-columns: 1fr 1fr;
-    gap: 50px; align-items: center; margin-top: 40px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+    align-items: center;
+    margin-top: 40px;
 }
-.partner-content ul { list-style: none; padding-left: 0; }
-.partner-content li { font-size: 1.1rem; margin-bottom: 15px; padding-left: 30px; position: relative; }
+
+.partner-content ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.partner-content li {
+    font-size: 1.1rem;
+    margin-bottom: 15px;
+    padding-left: 30px;
+    position: relative;
+}
+
 .partner-content li::before {
-    content: '✓'; color: var(--secondary-colour); font-weight: 700;
-    position: absolute; left: 0; top: 0;
+    content: '✓';
+    color: var(--secondary-colour);
+    font-weight: 700;
+    position: absolute;
+    left: 0;
+    top: 0;
 }
 
-/* Onboarding Card */
-.onboarding-card {
-  background-image: url('/images/process-onboarding.jpg');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  position: relative;
-  border-radius: 8px;
-  aspect-ratio: 1 / 1;
-  display: grid; /* ADD THIS LINE */
-  place-items: center; /* ADD THIS LINE */
-}
-
-.onboarding-card::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: rgba(0,0,0,0.3);
-  border-radius: 8px;
-  z-index: 0;
-}
-
-.onboarding-card .card-content,
-.onboarding-card .learn-more {
-  position: relative;
-  z-index: 3;
-}
-
-.onboarding-card:hover {
-  background-color: rgba(245, 189, 2, 0.85);
-}
-
-.onboarding-card:hover::before {
-  background: transparent;
-}
-
-/* Service Request Card */
-.service-request-card {
-  background-image: url('/images/process-request.jpg');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  position: relative;
-  border-radius: 8px;
-  aspect-ratio: 1 / 1;
-  display: grid; /* ADD THIS LINE */
-  place-items: center; /* ADD THIS LINE */
-}
-
-.service-request-card::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: rgba(0,0,0,0.3);
-  border-radius: 8px;
-  z-index: 0;
-}
-
-.service-request-card .card-content,
-.service-request-card .learn-more {
-  position: relative;
-  z-index: 3;
-}
-
-.service-request-card:hover {
-  background-color: rgba(245, 189, 2, 0.85);
-}
-
-.service-request-card:hover::before {
-  background: transparent;
-}
-
-/* Execution Card */
+/* Base Card Structure for Partner Page */
+.onboarding-card,
+.service-request-card,
 .execution-card {
-  background-image: url('/images/process-execution.jpg');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  
   position: relative;
   border-radius: 8px;
   aspect-ratio: 1 / 1;
-  display: grid; /* ADD THIS LINE */
-  place-items: center; /* ADD THIS LINE */
+  display: grid; /* Use grid to layer and center content */
+  place-items: center;
 }
 
+.onboarding-card::before,
+.service-request-card::before,
 .execution-card::before {
   content: "";
   position: absolute;
@@ -210,21 +167,57 @@
   z-index: 0;
 }
 
+/* Make sure content layers correctly */
+.onboarding-card .card-content,
+.onboarding-card .learn-more,
+.service-request-card .card-content,
+.service-request-card .learn-more,
 .execution-card .card-content,
 .execution-card .learn-more {
   position: relative;
   z-index: 3;
+  grid-column: 1 / -1; /* Ensure items stack in the same grid cell */
+  grid-row: 1 / -1;
 }
 
+/* FIX: This is the key change to center the default text */
+.onboarding-card .card-content,
+.service-request-card .card-content,
+.execution-card .card-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%; /* Make content take full height to allow centering */
+    width: 100%;
+}
+
+/* Hover background color */
+.onboarding-card:hover,
+.service-request-card:hover,
 .execution-card:hover {
   background-color: rgba(245, 189, 2, 0.85);
 }
 
+.onboarding-card:hover::before,
+.service-request-card:hover::before,
 .execution-card:hover::before {
   background: transparent;
 }
 
+/* Specific background images */
+.onboarding-card { background-image: url('/images/process-onboarding.jpg'); }
+.service-request-card { background-image: url('/images/process-request.jpg'); }
+.execution-card { background-image: url('/images/process-execution.jpg'); }
+
+
 /* --- Styling for "How It Works" Hover Content --- */
+
+/* Corrected font size for non-hover paragraph */
+.service-card .card-content p {
+    font-size: 1rem;
+}
+
 .service-card .learn-more {
   /* Override old "Learn More" button styles */
   text-transform: none;
@@ -232,7 +225,9 @@
   text-align: center;
   align-items: center; /* Vertically center content */
   padding: 2px;
+  display: flex; /* Ensure flex properties apply */
   flex-direction: column; /* Stack h4 and p vertically */
+  justify-content: center;
   z-index: 3; /* Ensure this is on top of the overlay */
 }
 
@@ -243,9 +238,13 @@
   text-shadow: 1px 1px 2px rgba(0,0,0,0.5); /* Adds readability */
 }
 
-.service-card .learn-more h4 {
-    font-size: 10rem;
-    margin-bottom: 10px;
-    
+/* Corrected font size for hover paragraph */
+.service-card .learn-more p {
+    font-size: 1rem;
 }
 
+/* Corrected font size for hover heading */
+.service-card .learn-more h4 {
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+}

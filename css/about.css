@@ -106,3 +106,306 @@
 .partner-benefits {
   text-align: left;
 }
+
+/* Excellence Card */
+.excellence-card {
+  background-image: url('/images/excellence.jpg'); /* Replace with your image path */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
+  border-radius: 8px;
+}
+
+.excellence-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.3);
+  border-radius: 8px;
+  z-index: 0;
+}
+
+.excellence-card .card-content,
+.excellence-card .learn-more {
+  position: relative;
+  z-index: 3;
+}
+
+.excellence-card:hover {
+  background-color: rgba(245, 189, 2, 0.85);
+}
+
+.excellence-card:hover::before {
+  background: transparent;
+}
+
+/* Partnership Card */
+.partnership-card {
+  background-image: url('/images/partnership.jpg'); /* Replace with your image path */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
+  border-radius: 8px;
+}
+
+.partnership-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.3);
+  border-radius: 8px;
+  z-index: 0;
+}
+
+.partnership-card .card-content,
+.partnership-card .learn-more {
+  position: relative;
+  z-index: 3;
+}
+
+.partnership-card:hover {
+  background-color: rgba(245, 189, 2, 0.85);
+}
+
+.partnership-card:hover::before {
+  background: transparent;
+}
+
+/* Reliable Card */
+.reliable-card {
+  background-image: url('/images/reliable.jpg'); /* Replace with your image path */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
+  border-radius: 8px;
+}
+
+.reliable-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.3);
+  border-radius: 8px;
+  z-index: 0;
+}
+
+.reliable-card .card-content,
+.reliable-card .learn-more {
+  position: relative;
+  z-index: 3;
+}
+
+.reliable-card:hover {
+  background-color: rgba(245, 189, 2, 0.85);
+}
+
+.reliable-card:hover::before {
+  background: transparent;
+}
+
+/* Integrity Card */
+.integrity-card {
+  background-image: url('/images/integrity.jpg'); /* Replace with your image path */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
+  border-radius: 8px;
+}
+
+.integrity-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.3);
+  border-radius: 8px;
+  z-index: 0;
+}
+
+.integrity-card .card-content,
+.integrity-card .learn-more {
+  position: relative;
+  z-index: 3;
+}
+
+.integrity-card:hover {
+  background-color: rgba(245, 189, 2, 0.85);
+}
+
+.integrity-card:hover::before {
+  background: transparent;
+}
+
+/* Agility Card */
+.agility-card {
+  background-image: url('/images/agility.jpg'); /* Replace with your image path */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
+  border-radius: 8px;
+}
+
+.agility-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.3);
+  border-radius: 8px;
+  z-index: 0;
+}
+
+.agility-card .card-content,
+.agility-card .learn-more {
+  position: relative;
+  z-index: 3;
+}
+
+.agility-card:hover {
+  background-color: rgba(245, 189, 2, 0.85);
+}
+
+.agility-card:hover::before {
+  background: transparent;
+}
+
+/* Clarity Card */
+.clarity-card {
+  background-image: url('/images/clarity.jpg'); /* Replace with your image path */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
+  border-radius: 8px;
+}
+
+.clarity-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.3);
+  border-radius: 8px;
+  z-index: 0;
+}
+
+.clarity-card .card-content,
+.clarity-card .learn-more {
+  position: relative;
+  z-index: 3;
+}
+
+.clarity-card:hover {
+  background-color: rgba(245, 189, 2, 0.85);
+}
+
+.clarity-card:hover::before {
+  background: transparent;
+}
+
+/* General Card Styles */
+.process-card {
+  position: relative;
+  border-radius: 8px;
+  aspect-ratio: 1 / 1;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: grid;
+  place-items: center;
+  overflow: hidden; /* Ensures overlay respects border-radius */
+  color: white; /* Set default text color */
+  text-align: center;
+}
+
+/* Dark Overlay on Cards */
+.process-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.3);
+  border-radius: 8px;
+  z-index: 1;
+  transition: background-color 0.3s ease;
+}
+
+/* Content within Cards (Initial and Hover States) */
+.process-card .card-content,
+.process-card .learn-more {
+  position: relative;
+  z-index: 2;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+  padding: 15px; /* Add some padding */
+}
+
+/* Styling for the hidden hover content */
+.process-card .learn-more {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  opacity: 0; /* Hide by default */
+  visibility: hidden; /* Make it inaccessible by default */
+  position: absolute; /* Take it out of the layout flow */
+}
+
+/* Styling for text within the hover content */
+.process-card .learn-more h4,
+.process-card .learn-more p {
+  color: white;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+.process-card .learn-more h4 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+/* --- HOVER BEHAVIOR --- */
+
+/* Change overlay color on hover */
+.process-card:hover::before {
+  background-color: rgba(245, 189, 2, 0.85);
+}
+
+/* Hide initial content on hover */
+.process-card:hover .card-content {
+  opacity: 0;
+  visibility: hidden;
+}
+
+/* Show hover content on hover */
+.process-card:hover .learn-more {
+  opacity: 1;
+  visibility: visible;
+}
+
+
+/* Specific Card Background Images */
+.excellence-card {
+  background-image: url('/images/value-excellence.jpeg');
+}
+
+.partnership-card {
+  background-image: url('/images/value-partnership.jpg');
+}
+
+.reliable-card {
+  background-image: url('/images/value-reliable.jpeg');
+}
+.integrity-card {
+  background-image: url('/images/value-integrity.jpg');
+}
+.agility-card {
+  background-image: url('/images/value-agility.jpg');
+}
+.clarity-card {
+  background-image: url('/images/value-clarity.jpg');
+}
+
+/* Link styling */
+.service-card-link {
+    text-decoration: none; /* Removes underline from links */
+}

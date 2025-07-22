@@ -562,3 +562,14 @@ p { margin-bottom: 15px; color: var(--medium-grey); }
         transform: rotate(180deg);
     }
 }
+
+
+.nav-links li a:hover,
+.nav-links li a.active {
+    color: #FFD700; /* This is a gold color */
+}
+
+/* Optional: Style for the dropdown toggle when active */
+.dropdown .dropdown-toggle.active {
+    color: #FFD700;
+}

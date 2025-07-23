@@ -409,3 +409,54 @@
 .service-card-link {
     text-decoration: none; /* Removes underline from links */
 }
+
+/* --- Key Features Section --- */
+.key-features-section {
+    padding: 60px 20px;
+    background-color: var(--white); /* Or use var(--light-grey) for alternating colors */
+}
+
+.key-features-section h2 {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.key-features-list {
+    max-width: 1000px;
+    margin: 0 auto;
+    list-style: none; /* Remove default bullet points */
+    padding-left: 0;
+}
+
+.key-features-list li {
+    font-size: 1.1rem;
+    color: var(--medium-grey); /* UPDATED: This makes non-strong text grey */
+    margin-bottom: 25px;
+    padding-bottom: 25px;
+    border-bottom: 1px solid #eee;
+    padding-left: 35px;
+    position: relative;
+    line-height: 1.5;
+}
+
+.key-features-list li:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+.key-features-list li::before {
+    font-family: "Font Awesome 5 Free"; /* Use the Font Awesome font library */
+    font-weight: 900;                   /* This is required for solid icons */
+    content: "\f085";                   /* This is the specific code for the 'fa-arrow-pointer' icon */
+    color: var(--secondary-colour);
+    font-size: 1.1rem;                  /* Adjust size as needed */
+    position: absolute;
+    left: 0;
+    top: 4px;                           /* Adjust vertical alignment */
+}
+
+.key-features-list li strong {
+    color: var(--primary-colour);
+    font-size: 1.3rem; /* Added this line to make the bold text bigger */
+}

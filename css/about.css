@@ -383,13 +383,15 @@
 }
 
 
-/* Specific Card Background Images */
+/* Specific Card Background Images.excellence-card {
+  background-image: url('/images/value-excellence.jpeg');
+} */
 .excellence-card {
   background-image: url('/images/value-excellence.jpeg');
 }
 
 .partnership-card {
-  background-image: url('/images/value-partnership.jpg');
+  background-image: url('/images/partnership.jpg');
 }
 
 .reliable-card {

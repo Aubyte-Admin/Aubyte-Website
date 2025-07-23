@@ -134,13 +134,25 @@
         
 
         
-        <section id="cta">
-            <div class="container text-center">
-                <h2>Become an Aubyte Partner Today</h2>
-                <p>Let's start the conversation and explore how we can help your MSP thrive.</p>
-                <a href="/contact" class="btn btn-primary">Get in Touch</a>
+       <section id="contact">
+        <div class="container">
+            <div class="contact-grid">
+                <div class="contact-info">
+                    <h3>Partner With Us</h3> 
+                    <p>Fill out the form, and one of our consultants will be in touch to discuss how we can support you.</p>
+                </div>
+                <form class="contact-form" action="https://formsubmit.co/info@aubyte.co.za" method="POST">
+                    <div class="form-group"><input type="text" name="name" placeholder="Your Full Name" required></div>
+                    <div class="form-group"><input type="text" name="company" placeholder="Your Company Name" required></div>
+                    <div class="form-group"><input type="email" name="email" placeholder="Your Email Address" required></div>
+                    <div class="form-group"><textarea name="message" rows="5" placeholder="How can we help you?" required></textarea></div>
+                    <input type="hidden" name="_next" value="https://aubyte.co.za/thankyou">
+                    <input type="hidden" name="_captcha" value="false">
+                    <button type="submit" class="btn btn-submit">Send Message</button>
+                </form>
             </div>
-        </section>
+        </div>
+    </section>
     </main>
 
     <footer class="site-footer">

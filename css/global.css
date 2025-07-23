@@ -389,16 +389,23 @@ p { margin-bottom: 15px; color: var(--medium-grey); }
   width: 100%;
 }
 
+
+
+/* --- In your global.css file --- */
+
 .footer-grid {
-  display: flex;
-  gap: 40px;
-  width: 60%;           /* Limit columns to 60% width */
-  min-width: 300px;     /* Optional: avoid too narrow on small screens */
+  display: flex; /* Aligns columns in a row */
+  width: 60%;
+  gap: 40px;     /* This creates the consistent spacing you want BETWEEN the columns */
+  min-width: 300px;
 }
 
 .footer-column {
-  flex: 1;
-  max-width: none;      /* Let columns share the 60% equally */
+  /*
+    By leaving this empty (specifically, by REMOVING 'flex: 1'),
+    each column will only be as wide as its content needs to be.
+  */
+  max-width: none;
 }
 
 .footer-column h4 {

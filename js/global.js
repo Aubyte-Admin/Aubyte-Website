@@ -11,7 +11,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 return response.text();
             })
             .then(data => {
-                document.getElementById('header-placeholder').innerHTML = data;
+                document.getElementById('header-placeholder').outerHTML = data;
                 // Once the header is loaded, initialize all the page-specific logic
                 // that depends on the header's HTML elements (like nav links, hamburger icon).
                 initializePage();

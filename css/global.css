@@ -24,7 +24,7 @@ body {
 }
 
 /* --- Layout & Helpers --- */
-.container { max-width: 1250px; margin: auto; padding: 0 20px; }
+.container { max-width: 1500px; margin: auto; padding: 0 20px; }
 section { padding: 60px 0; }
 section:nth-child(even) { background-color: var(--light-grey); }
 
@@ -116,21 +116,31 @@ p { margin-bottom: 15px; color: var(--medium-grey); }
 
 /* --- Hero Section --- */
 .hero {
-    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('../images/hero-background1.jpg') no-repeat center center/cover;
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('../images/hero.png') no-repeat center center/cover;
     color: var(--white);
-    height: 72vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
+    height: 85vh;
+    
+    /* Grid layout */
+    display: grid;
+    grid-template-columns: 2fr 1fr; /* Creates 2 columns: left is 2/3, right is 1/3 */
+    align-items: center; /* Vertically centers the content */
+    padding: 0 5vw; /* Adds some space on the sides using viewport width */
 }
-.hero h1 { color: var(--white); font-size: 3.5rem; }
+.hero h1 {
+    color: var(--white);
+    font-size: 3.5rem;
+    text-align: left; /* Aligns the heading to the left */
+}
 .hero p {
     font-size: 1.2rem;
     max-width: 800px;
-    margin: 20px auto 30px;
+    margin: 20px auto 30px 0;
     color: rgba(255,255,255,0.9);
+    text-align: justify;
 }
+
+
+
 .btn {
     display: inline-block; padding: 12px 28px; border-radius: 5px;
     text-decoration: none; font-weight: 600; transition: all 0.3s ease;
@@ -579,4 +589,30 @@ p { margin-bottom: 15px; color: var(--medium-grey); }
 /* Optional: Style for the dropdown toggle when active */
 .dropdown .dropdown-toggle.active {
     color: #FFD700;
+}
+
+.about-grid {
+  display: grid;
+  grid-template-columns: 0.8fr 1.25fr;
+  gap: 10px;
+  align-items: start;
+  text-align: justify;
+}
+
+/* Target the first column (the .about-image div) */
+.about-grid > :first-child {
+  margin-top: 0px; /* Your desired margin for the first column */
+  margin-bottom: 0px;
+}
+
+/* Target the second column (the .about-content div) */
+.about-grid > :last-child {
+  margin-top: 80px; /* Your desired margin for the second column */
+  margin-bottom: 0px;
+}
+
+.about-image img {
+  width: 80%;
+  height: auto;
+  border-radius: 8px;
 }

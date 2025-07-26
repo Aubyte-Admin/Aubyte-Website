@@ -65,21 +65,30 @@
 .faq-item[open] summary::after { transform: rotate(45deg); }
 .faq-item div { padding: 0 10px 20px; }
 
-.about-image img {
-    width: 100%;
-    border-radius: 8px;
-}
-.about-text{
-  text-align: left;
-}
 .about-grid {
-    display: grid;
-    grid-template-columns: 1.2fr 1fr;
-    gap: 60px;
-    align-items: left;
-    margin-top: 40px;
-    align-items: start;
-    text-align: left;
+  display: grid;
+  grid-template-columns: 0.8fr 1.25fr;
+  gap: 10px;
+  align-items: center;
+  text-align: justify;
+}
+
+/* Target the first column (the .about-image div) */
+.about-grid > :first-child {
+  margin-top: 0px; /* Your desired margin for the first column */
+  margin-bottom: 0px;
+}
+
+/* Target the second column (the .about-content div) */
+.about-grid > :last-child {
+  margin-top: 0px; /* Your desired margin for the second column */
+  margin-bottom: 0px;
+}
+
+.about-image img {
+  width: 80%;
+  height: auto;
+  border-radius: 8px;
 }
 
 /* --- Expandable Grid Section --- */
@@ -221,7 +230,7 @@
 }
 
 .key-features-list li::before {
-    font-family: "Font Awesome 5 Free"; /* Use the Font Awesome font library */
+    font-family: "Font Awesome 7 Free"; /* Use the Font Awesome font library */
     font-weight: 900;                   /* This is required for solid icons */
     content: "\f085";                   /* This is the specific code for the 'fa-arrow-pointer' icon */
     color: var(--secondary-colour);

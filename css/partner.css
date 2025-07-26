@@ -48,18 +48,29 @@
 .process-step-execution { background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('../images/process-execution.jpg'); }
 
 .about-grid {
-    display: grid;
-    grid-template-columns: 1fr 1.2fr; /* This was changed from 1.2fr 1fr */
-    gap: 60px;
-    align-items: left;
-    margin-top: 40px;
-    align-items: start;
-    text-align: left;
+  display: grid;
+  grid-template-columns: 0.8fr 1.25fr;
+  gap: 10px;
+  align-items: center;
+  text-align: justify;
+}
+
+/* Target the first column (the .about-image div) */
+.about-grid > :first-child {
+  margin-top: 0px; /* Your desired margin for the first column */
+  margin-bottom: 0px;
+}
+
+/* Target the second column (the .about-content div) */
+.about-grid > :last-child {
+  margin-top: 0px; /* Your desired margin for the second column */
+  margin-bottom: 0px;
 }
 
 .about-image img {
-    width: 100%;
-    border-radius: 8px;
+  width: 80%;
+  height: auto;
+  border-radius: 8px;
 }
 
 /* Values Grid Section (3x2 Circles) */
@@ -140,75 +151,104 @@
     left: 0;
     top: 0;
 }
+/* --- Partner Page Card Styles (Corrected & Final) --- */
 
-/* Base Card Structure for Partner Page */
+/* Base Card Structure */
 .onboarding-card,
 .service-request-card,
 .execution-card {
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
   position: relative;
   border-radius: 8px;
   aspect-ratio: 1 / 1;
-  display: grid; /* Use grid to layer and center content */
+  background-size: cover;
+  background-position: center;
+  display: grid;
   place-items: center;
+  overflow: hidden;
+  text-align: center;
 }
 
+/* Dark Overlay (Initial State) */
 .onboarding-card::before,
 .service-request-card::before,
 .execution-card::before {
   content: "";
   position: absolute;
   inset: 0;
-  background: rgba(0,0,0,0.3);
+  background-color: rgba(0, 0, 0, 0.3); /* Use background-color */
   border-radius: 8px;
-  z-index: 0;
+  z-index: 1;
+  transition: background-color 0.3s ease;
 }
 
-/* Make sure content layers correctly */
-.onboarding-card .card-content,
-.onboarding-card .learn-more,
-.service-request-card .card-content,
-.service-request-card .learn-more,
-.execution-card .card-content,
-.execution-card .learn-more {
-  position: relative;
-  z-index: 3;
-  grid-column: 1 / -1; /* Ensure items stack in the same grid cell */
+/* Content Containers (for both initial and hover states) */
+.onboarding-card .card-content, .onboarding-card .learn-more,
+.service-request-card .card-content, .service-request-card .learn-more,
+.execution-card .card-content, .execution-card .learn-more {
+  /* Stacks the divs on top of each other */
+  grid-column: 1 / -1;
   grid-row: 1 / -1;
+  
+  /* Centers the text within the divs */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  width: 100%;
+  height: 100%;
+  padding: 15px;
+  z-index: 2;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
 }
 
-/* FIX: This is the key change to center the default text */
-.onboarding-card .card-content,
-.service-request-card .card-content,
-.execution-card .card-content {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    height: 100%; /* Make content take full height to allow centering */
-    width: 100%;
+/* FIX #2: Force ALL text inside these cards to be white */
+.onboarding-card h3, .onboarding-card h4, .onboarding-card p,
+.service-request-card h3, .service-request-card h4, .service-request-card p,
+.execution-card h3, .execution-card h4, .execution-card p {
+    color: var(--white);
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.7);
 }
 
-/* Hover background color */
-.onboarding-card:hover,
-.service-request-card:hover,
-.execution-card:hover {
-  background-color: rgba(245, 189, 2, 0.85);
+
+/* --- HOVER BEHAVIOR --- */
+
+/* By default, the hover content is hidden */
+.onboarding-card .learn-more,
+.service-request-card .learn-more,
+.execution-card .learn-more {
+  opacity: 0;
+  visibility: hidden;
 }
 
+/* On hover, hide the initial content */
+.onboarding-card:hover .card-content,
+.service-request-card:hover .card-content,
+.execution-card:hover .card-content {
+  opacity: 0;
+  visibility: hidden;
+}
+
+/* On hover, show the hover content */
+.onboarding-card:hover .learn-more,
+.service-request-card:hover .learn-more,
+.execution-card:hover .learn-more {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* FIX #1: On hover, change the overlay to be golden */
 .onboarding-card:hover::before,
 .service-request-card:hover::before,
 .execution-card:hover::before {
-  background: transparent;
+  background-color: rgba(245, 189, 2, 0.85); /* The gold overlay */
 }
 
-/* Specific background images */
+
+/* --- Specific Background Images --- */
 .onboarding-card { background-image: url('/images/process-onboarding.jpg'); }
 .service-request-card { background-image: url('/images/process-request.jpg'); }
 .execution-card { background-image: url('/images/process-execution.jpg'); }
-
 
 /* --- Styling for "How It Works" Hover Content --- */
 

@@ -2,6 +2,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
 /* --- Icon Library for Hamburger Menu --- */
 @import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css');
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css');
 
 /* --- CSS Variables (GOLD STANDARD THEME) --- */
 :root {
@@ -11,6 +12,7 @@
     --medium-grey: #6c757d;     /* For secondary text and borders */
     --light-grey: #f8f9fa;      /* For alternating section backgrounds */
     --white: #ffffff;
+    --Background-grey: #CFCFCF;
 }
 
 /* --- Global Styles --- */
@@ -24,7 +26,15 @@ body {
 }
 
 /* --- Layout & Helpers --- */
-.container { max-width: 1500px; margin: auto; padding: 0 20px; }
+.container {
+  max-width: auto;
+  margin: auto;
+  /* Adjust the values in calc() to your liking */
+  padding: 0 calc(1rem + 2vw); /* Example: 16px base + 2% of viewport width */
+  max-height: auto;
+}
+
+
 section { padding: 60px 0; }
 section:nth-child(even) { background-color: var(--light-grey); }
 
@@ -51,7 +61,7 @@ h1 { font-size: 2.8rem; }
 h2 { font-size: 2.2rem; text-align: center; }
 h3 { font-size: 1.4rem; color: var(--dark-grey); }
 h4 { font-size: 1.8rem; text-align: center; }
-p { margin-bottom: 15px; color: var(--medium-grey); }
+p { margin-bottom: 15px; color: var(--medium-grey); text-align: justify;font-size: 1rem;}
 
 
 .black-paragraph {
@@ -116,9 +126,9 @@ p { margin-bottom: 15px; color: var(--medium-grey); }
 
 /* --- Hero Section --- */
 .hero {
-    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('../images/hero.png') no-repeat center center/cover;
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('../images/hero1.png') no-repeat center center/cover;
     color: var(--white);
-    height: 85vh;
+    height: 95vh;
     
     /* Grid layout */
     display: grid;
@@ -132,7 +142,7 @@ p { margin-bottom: 15px; color: var(--medium-grey); }
     text-align: left; /* Aligns the heading to the left */
 }
 .hero p {
-    font-size: 1.2rem;
+    font-size: 1.05rem;
     max-width: 800px;
     margin: 20px auto 30px 0;
     color: rgba(255,255,255,0.9);
@@ -164,7 +174,6 @@ p { margin-bottom: 15px; color: var(--medium-grey); }
     color: var(--primary-colour); 
 }
 
-/* --- Services Section --- */
 .services-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -176,208 +185,103 @@ p { margin-bottom: 15px; color: var(--medium-grey); }
   box-sizing: border-box;   /* Ensures padding stays within the max-width */
 }
 
+/* --- General Service/Process Card Styles (Unified for Consistency) --- */
 
-.service-card {
-  padding: 30px;
-  border-radius: 8px;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.08);
-  text-align: center;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  min-height: 320px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+.service-card, .process-card {
   position: relative;
-  color: white;
-  cursor: pointer;
-}
-
-.service-card h3,
-.service-card p {
-  color: white;
-}
-
-.service-card:hover { 
-  transform: translateY(-5px); 
-  box-shadow: 0 8px 25px rgba(0,0,0,0.12);
-}
-
-.service-card:hover .card-content {
-  opacity: 0;
-  pointer-events: none;
-  position: absolute;
-}
-/* "Learn More" overlay */
-.service-card .learn-more {
-  position: absolute;
-  inset: 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background: transparent;
-  color: white;
-  font-size: 1.3rem;
-  font-weight: 600;
-  opacity: 0;
-  transition: opacity 0.3s ease;
   border-radius: 8px;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  user-select: none;
-  z-index: 2;
-  text-align: center;
-}
-
-.service-card:hover .learn-more {
-  opacity: 1;
-}
-
-.service-card:hover .card-content {
-  opacity: 0;
-  pointer-events: none;
-}
-
-
-/* Managed IT Services*/
-.managed-it-services-card {
-  background-image: url('/images/onsitesupport.jpg');
+  aspect-ratio: 1 / 1;
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  position: relative;
-  border-radius: 8px;
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+  color: white;
+  text-align: center;
+  text-decoration: none;
 }
 
-.managed-it-services-card::before {
+/* Dark Overlay on Cards */
+.service-card::before, .process-card::before {
   content: "";
   position: absolute;
   inset: 0;
   background: rgba(0, 0, 0, 0.3);
   border-radius: 8px;
-  z-index: 0;
+  z-index: 1;
+  transition: background-color 0.3s ease;
 }
 
-.managed-it-services-card .card-content,
-.managed-it-services-card .learn-more {
+/* Content within Cards (Initial and Hover States) */
+.service-card .card-content,
+.service-card .learn-more {
   position: relative;
-  z-index: 3;
+  z-index: 2;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+  padding: 15px;
+  color: white; /* Ensure text is white */
 }
 
-.managed-it-services-card:hover {
-  background-color: rgba(245, 189, 2, 0.85);
+/* Ensure headings inside are white */
+.service-card .card-content h3,
+.service-card .learn-more h3,
+.service-card .learn-more p {
+    color: white;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
 }
 
-.managed-it-services-card:hover::before {
-  background: transparent;
-}
-
-
-
-.service-card a {
-  text-decoration: none;
-  color: white;
-}
-
-.service-card a:hover {
-  color: var(--secondary-colour); /* Optional hover effect */
-}
-.service-card-link {
-  text-decoration: none;
-  color: inherit;
-}
-
-.service-card-link h3,
-.service-card-link p {
-  color: white;
-  text-decoration: none;
-}
-.service-card .card-content {
-  flex: 1;
+/* Styling for the hidden hover content */
+.service-card .learn-more {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  z-index: 1;
+  align-items: center;
+  opacity: 0;
+  visibility: hidden;
+  position: absolute;
+}
+
+/* --- HOVER BEHAVIOR --- */
+
+/* Change overlay color on hover */
+.service-card:hover::before {
+  background-color: rgba(245, 189, 2, 0.85); /* Gold overlay */
+}
+
+/* Hide initial content on hover */
+.service-card:hover .card-content {
+  opacity: 0;
+  visibility: hidden;
+}
+
+/* Show hover content on hover */
+.service-card:hover .learn-more {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* --- Specific Card Background Images --- */
+
+/* Managed IT Services Card */
+.managed-it-services-card {
+  background-image: url('/images/onsitesupport.jpg');
 }
 
 /* ITAD Card */
 .itad-card {
   background-image: url('/images/itad.jpg');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  position: relative;
-  border-radius: 8px;
-}
-
-.itad-card::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: rgba(0,0,0,0.3);
-  border-radius: 8px;
-  z-index: 0;
-}
-
-.itad-card .card-content,
-.itad-card .learn-more {
-  position: relative;
-  z-index: 3;
-}
-
-.itad-card:hover {
-  background-color: rgba(245, 189, 2, 0.85);
-}
-
-.itad-card:hover::before {
-  background: transparent;
 }
 
 /* Cameras Card */
 .cameras-card {
   background-image: url('/images/cameras2.jpg');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  position: relative;
-  border-radius: 8px;
 }
 
-.cameras-card::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: rgba(0,0,0,0.3);
-  border-radius: 8px;
-  z-index: 0;
+/* Link Styling */
+.service-card-link {
+    text-decoration: none; /* Removes underline from links */
 }
-
-.cameras-card .card-content,
-.cameras-card .learn-more {
-  position: relative;
-  z-index: 3;
-}
-
-.cameras-card:hover {
-  background-color: rgba(245, 189, 2, 0.85);
-}
-
-.cameras-card:hover::before {
-  background: transparent;
-}
-.service-card::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background-color: rgba(245, 189, 2, 0); /* start transparent */
-  transition: background-color 0.3s ease;
-  border-radius: 8px;
-  z-index: 1;
-  pointer-events: none;
-}
-.service-card:hover::after {
-  background-color: rgba(245, 189, 2, 0.75); /* semi-transparent gold */
-}
-
 
 /* Footer */
 .site-footer {
@@ -406,7 +310,7 @@ p { margin-bottom: 15px; color: var(--medium-grey); }
 .footer-grid {
   display: flex; /* Aligns columns in a row */
   width: 60%;
-  gap: 40px;     /* This creates the consistent spacing you want BETWEEN the columns */
+  gap: 70px;     /* This creates the consistent spacing you want BETWEEN the columns */
   min-width: 300px;
 }
 
@@ -486,7 +390,6 @@ p { margin-bottom: 15px; color: var(--medium-grey); }
     .navbar .nav-links { display: none; flex-direction: column; width: 100%; background: var(--white); position: absolute; top: 60px; left: 0; padding: 20px 0; box-shadow: 0 4px 10px rgba(0,0,0,0.1); }
     .navbar .nav-links.active { display: flex; }
     .navbar .nav-links li { margin: 10px 0; text-align: center; }
-    .service-card { min-height: auto; padding-bottom: 20px; }
     .service-card .card-content, .service-card .icon { opacity: 1 !important; }
 }
 
@@ -594,8 +497,8 @@ p { margin-bottom: 15px; color: var(--medium-grey); }
 .about-grid {
   display: grid;
   grid-template-columns: 0.8fr 1.25fr;
-  gap: 10px;
-  align-items: start;
+  gap: -100px;
+  align-items: center;
   text-align: justify;
 }
 
@@ -603,16 +506,223 @@ p { margin-bottom: 15px; color: var(--medium-grey); }
 .about-grid > :first-child {
   margin-top: 0px; /* Your desired margin for the first column */
   margin-bottom: 0px;
+  text-align: center;
 }
 
 /* Target the second column (the .about-content div) */
 .about-grid > :last-child {
-  margin-top: 80px; /* Your desired margin for the second column */
+  margin-top: 0px; /* Your desired margin for the second column */
   margin-bottom: 0px;
 }
 
 .about-image img {
-  width: 80%;
+  width: 67%;
   height: auto;
   border-radius: 8px;
 }
+
+.why-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* Creates two equal columns */
+  gap: 40px;                     /* Adjust the space between the columns as needed */
+  align-items: stretch;           
+}
+
+/* Target the first column (the .about-image div) */
+.why-grid > :first-child {
+  margin-top: 0px; /* Your desired margin for the first column */
+  margin-bottom: 0px;
+}
+
+/* Target the second column (the .about-content div) */
+.why-grid > :last-child {
+  margin-top: 0px; /* Your desired margin for the second column */
+  margin-bottom: 0px;
+}
+.why-grid > div {
+  background: var(--white);          /* Gives the box a white background */
+  padding: 45px 65px;                /* Adds space inside the box */
+  border-radius: 8px;                /* Rounds the corners slightly */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Adds the shadow effect */
+
+}
+
+
+.contact-grid { display: grid; grid-template-columns: 1fr 1.5fr; gap: 50px; margin-top: 40px; }
+.contact-info p { font-size: 0.8
+    rem; }
+.contact-form .form-group { margin-bottom: 20px; }
+.contact-form input, .contact-form textarea { width: 100%; padding: 12px; border: 1px solid #ccc; border-radius: 5px; font-family: 'Poppins', sans-serif; }
+.contact-form input:focus, .contact-form textarea:focus { outline: none; border-color: var(--secondary-colour); }
+.btn-submit { width: 100%; background: var(--secondary-colour); color: var(--primary-colour); border: none; cursor: pointer; }
+.btn-submit:hover { background: #E0AC02; }
+
+/* --- Background Utility Class --- */
+section.bg-secondary {
+    background-color: var(--Background-grey);
+}
+
+.text-secondary {
+  color: #F5BD02; 
+}
+
+/* Styles for the 'about us' section */
+.why-grid h2 {
+    font-size: 1.8rem; /* Adjust this value to your liking */
+  
+}
+
+.why-grid p {
+    font-size: 0.9rem; /* Adjust this value to your liking */
+}
+
+.iti {
+  position: relative;
+  display: inline-block;
+}
+.iti * {
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+}
+.iti__hide {
+  display: none;
+}
+.iti__v-hide {
+  visibility: hidden;
+}
+
+.iti input, .iti input[type=text], .iti input[type=tel] {
+  position: relative;
+  z-index: 0;
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+  padding-right: 36px;
+  margin-right: 0;
+}
+.iti__flag-container {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  padding: 1px;
+}
+.iti__selected-flag {
+  z-index: 1;
+  position: relative;
+  display: flex;
+  align-items: center;
+  height: 100%;
+  padding: 0 6px 0 8px;
+}
+.iti__arrow {
+  margin-left: 6px;
+  width: 0;
+  height: 0;
+  border-left: 3px solid transparent;
+  border-right: 3px solid transparent;
+  border-top: 4px solid #555;
+}
+.iti__arrow--up {
+  border-top: none;
+  border-bottom: 4px solid #555;
+}
+.iti__country-list {
+  position: absolute;
+  z-index: 2;
+  list-style: none;
+  text-align: left;
+  padding: 0;
+  margin: 0 0 0 -1px;
+  box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.2);
+  background-color: white;
+  border: 1px solid #CCC;
+  white-space: nowrap;
+  max-height: 200px;
+  overflow-y: scroll;
+}
+.iti__country-list--dropup {
+  bottom: 100%;
+  margin-bottom: -1px;
+}
+.iti__divider {
+  padding-bottom: 5px;
+  margin-bottom: 5px;
+  border-bottom: 1px solid #CCC;
+}
+.iti__country {
+  padding: 5px 10px;
+  outline: none;
+}
+.iti__dial-code {
+  color: #999;
+}
+.iti__country.iti__highlight {
+  background-color: rgba(0, 0, 0, 0.05);
+}
+.iti__flag-box, .iti__country-name, .iti__dial-code {
+  vertical-align: middle;
+}
+.iti__flag-box {
+  display: inline-block;
+  width: 20px;
+}
+.iti__country-name {
+  margin-left: 5px;
+}
+
+.iti__flag {
+  width: 20px;
+  height: 15px;
+  box-shadow: 0px 0px 1px 0px #888;
+  
+  /* --- NEW PATH --- */
+  /* This path starts from the root of your project. */
+  background-image: url(/img/flags.png);
+  
+  background-repeat: no-repeat;
+  background-color: #DBDBDB;
+  background-position: 20px 0;
+}
+
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+  .iti__flag {
+    /* --- NEW PATH for high-res screens --- */
+    background-image: url(/img/flags@2x.png);
+  }
+}
+
+.iti--allow-dropdown input, .iti--allow-dropdown input[type=text], .iti--allow-dropdown input[type=tel] {
+  padding-right: 6px;
+  padding-left: 52px;
+  margin-left: 0;
+}
+.iti--allow-dropdown .iti__flag-container:hover {
+  cursor: pointer;
+}
+.iti--allow-dropdown .iti__flag-container:hover .iti__selected-flag {
+  background-color: rgba(0, 0, 0, 0.05);
+}
+.iti--allow-dropdown input[disabled] + .iti__flag-container:hover,
+.iti--allow-dropdown input[readonly] + .iti__flag-container:hover {
+  cursor: default;
+}
+.iti--allow-dropdown input[disabled] + .iti__flag-container:hover .iti__selected-flag,
+.iti--allow-dropdown input[readonly] + .iti__flag-container:hover .iti__selected-flag {
+  background-color: transparent;
+}
+.iti--separate-dial-code .iti__selected-flag {
+  background-color: rgba(0, 0, 0, 0.05);
+}
+.iti--separate-dial-code .iti__selected-dial-code {
+  margin-left: 6px;
+}
+.iti--container {
+  position: absolute;
+  top: -1000px;
+  left: -1000px;
+  z-index: 1060;
+  padding: 1px;
+}
+.iti--container:hover {
+  cursor: pointer;}
+

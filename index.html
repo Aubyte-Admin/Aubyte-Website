@@ -5,10 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Aubyte</title>
     <meta name="description" content="Aubyte provides reliable, white-label IT field engineers and onsite support for MSPs across South Africa. Scale your business with our expert technical services.">
+    
+    <!-- FIXED: All paths now start with '/' to be root-relative and consistent -->
     <link rel="stylesheet" href="/css/global.css">
-    <link rel="icon" href="../images/favicon.png" type="image/png">
-    <link rel="shortcut icon" href="../images/favicon.png" type="image/png">
-    <link rel="apple-touch-icon" href="../images/favicon.png">
+    <link rel="icon" href="/images/favicon.png" type="image/png">
+    <link rel="shortcut icon" href="/images/favicon.png" type="image/png">
+    <link rel="apple-touch-icon" href="/images/favicon.png">
+
+<!-- FIXED: Added the missing closing head tag -->
+</head>
+
 <body>
   
     <div id="header-placeholder"></div>
@@ -23,11 +29,11 @@
             </div>
         </section>
 
-<section id="about us">
+        <section id="about us">
             <div class="container">
                 <div class="about-grid">
-                    <div class="about-image"><img src="/images/about.png" alt="A team collaborating on a strategic plan with sticky notes"></div>
-                <div class="about-text">
+                    <div class="about-image"><img src="/images/about1.png" alt="A team collaborating on a strategic plan with sticky notes"></div>
+                    <div class="about-text">
                         <h2>About Aubyte</h2>
                         <p>Aubyte is a team of passionate professionals committed to delivering high-quality technology services. Building on years of experience in the IT industry, we’ve cultivated a strong commitment to excellence, integrity, and innovation.</p>
                         <p>We understand that every business is different, and that’s why we take a personalised approach to each project. Whether a startup or an established enterprise, we collaborate with you to craft solutions that will help your business grow, evolve, and stay ahead of the curve.</p>
@@ -36,85 +42,89 @@
             </div>
         </section>
 
-<section id="services">
-  <div class="container">
-    <h2>Services</h2>
-    <div class="services-grid">
-      
-     <a href="/managed-it-services" class="service-card-link">
-  <div class="service-card managed-it-services-card">
-    <div class="card-content">
-      <h3>Managed IT Services</h3>
-      <p>Smart hands when and where you need them. Get reliable, professional technicians dispatched to your client sites.</p>
-    </div>
-    <div class="learn-more">Learn More</div>
-  </div>
-</a>                       
-                    <a href="/it-asset-disposal" class="service-card-link">
-  <div class="service-card itad-card">
-    <div class="card-content">
-      <h3>IT Asset Disposal</h3>
-      <p>Secure, compliant, and environmentally responsible disposal and recycling of retired IT equipment.</p>
-    </div>
-    <div class="learn-more">Learn More</div>
-  </div>
-</a>
-                    <a href="/security-cameras" class="service-card-link">
-  <div class="service-card cameras-card">
-    <div class="card-content">
-      <h3>Security Cameras</h3>
-      <p>Protect what matters with smart surveillance. Professional CCTV and IP camera installations tailored to your needs.</p>
-    </div>
-    <div class="learn-more">Learn More</div>
-  </div>
-</a>
-    </div>
-  </div>
-</section>
+        <section id="services">
+          <div class="container">
+            <h2>Our Services</h2>
+            <div class="services-grid">
+              
+             <a href="/managed-it-services" class="service-card-link">
+          <div class="service-card managed-it-services-card">
+            <div class="card-content">
+              <h3>Managed IT Services</h3>  
+            </div>
+            <div class="learn-more"><h3>Learn More</h3></div>
+          </div>
+        </a>                       
+                            <a href="/it-asset-disposal" class="service-card-link">
+          <div class="service-card itad-card">
+            <div class="card-content">
+              <h3>IT Asset Disposal</h3>
+            </div>
+            <div class="learn-more"><h3>Learn More</h3></div>
+          </div>
+        </a>
+                            <a href="/security-cameras" class="service-card-link">
+          <div class="service-card cameras-card">
+            <div class="card-content">
+              <h3>Security Cameras</h3>
+            </div>
+            <div class="learn-more"><h3>Learn More</h3></div>
+          </div>
+        </a>
+            </div>
+          </div>
+        </section>
 
-<section id="why-partner" class="light-grey">
-  <div class="container text-center" style="max-width: 800px;">
-    <div style="margin-bottom: 40px;">
-      <h2>Why Partner with Aubyte?</h2>
-    </div>
+        <section class="bg-secondary">
+            <div class="container">
+                <div class="why-grid">
+                    <div> 
+                      <h2>Our Mission</h2>
+                      <p>At Aubyte, our mission is to empower businesses of all sizes to scale confidently, reduce operational strain, and deliver exceptional IT service experiences. We handle logistics, coordination, and on-site execution so you can focus on your core priorities and strategic growth. With a commitment to exceptional service, we leverage industry best practices and proactive support to optimise operations, reduce risk, and enhance security. By implementing efficient technology infrastructures, we drive productivity, lower costs, and streamline processes to support your continued success.</p>
+                    </div>
+                    <div>
+                      <h2>Why Aubyte?</h2>
+                      <p><b>Flexible Solutions: </b>We scale with your operational requirements, whether for one-time support, ongoing services, or extra coverage during peak periods.</p>
+                      <p><b>Certified Technicians: </b>Our skilled technicians are meticulously selected, trained, and held to the highest standards.</p>
+                      <p><b>Seamless Integration: </b>We integrate fully with your systems and processes, ensuring a smooth experience for your end users.</p>
+                    </div>
+                  </div>
+            </div>
+        </section>
 
-    <div style="text-align: centre;">
-      <p><b>Scalable IT Service Delivery</b></p>
-      <p>From hands-on technical support to complex deployments, we provide the people and processes so you can deliver reliable IT services anywhere in SA—without stretching your internal resources.</p>
-<div style="margin-bottom: 20px;"></div>
-      <p><b>Fully Integrated Collaboration</b></p>
-      <p>We operate under your brand and processes, offering a seamless client experience that aligns with your standards and reputation.</p>
-<div style="margin-bottom: 20px;"></div>
-      <p><b>Strategic Growth Enablement</b></p>
-      <p>Focus on expanding your business while we handle the day-to-day technical execution. Whether you're scaling into new regions or launching new services, Aubyte is here to support your vision.</p>
-<div style="margin-bottom: 20px;"></div>
-      <p><b>Tailored for All Business Types</b></p>
-      <p>Our flexible partnership model suits any business looking to enhance or outsource their IT capabilities while maintaining brand integrity and customer ownership.</p>
-    </div>
-
-    <a href="/partner" class="btn btn-primary" style="margin-top: 20px;">Learn more</a>
-  </div>
-</section>
-
-<section id="team" class="light-grey">
-  <div class="container text-center" style="max-width: 800px;">
-    <h2>The Team Behind Your Team</h2>
-    <p>
-      Aubyte was founded on a simple principle: to be the gold standard in IT field services.
-      We saw a recurring challenge for MSPs: the difficulty of providing fast, cost-effective
-      on-site support. We built this company to be the perfect solution—a dedicated, expert
-      field team that MSPs can rely on as their own.
-    </p>
-    <div class="cta-button-container">
-      <a href="https://www.aubyte.co.za/why-us" class="btn btn-primary">Our Story & Mission</a>
-    </div>
-  </div>
-</section>
-
+         <section id="contact">
+                <div class="container">
+                  <h2>Contact Us </h2>
+                    <div class="contact-grid">
+                        <div class="contact-info">
+                            <h3>Ready to elevate your IT solutions? </h3> 
+                            <p>We’re here to provide curated, cost-effective solutions that align with your IT needs. From fully managed IT support to white-label services and more, we’ve got you covered.</p>
+                            <p>Fill out the form, and one of our consultants will be in touch to discuss how we can help drive your business forward.</p>
+                            <p>Let’s build a partnership that supports your growth.</p>
+                        
+                          </div>
+                        <form class="contact-form" action="https://formsubmit.co/info@aubyte.co.za" method="POST">
+                            <div class="form-group"><input type="text" name="name" placeholder="Your Full Name" required></div>
+                            <div class="form-group"><input type="text" name="company" placeholder="Your Company Name" required></div>
+                            <div class="form-group"><input type="email" name="email" placeholder="Your Email Address" required></div>
+                            <div class="form-group"><input type="tel" id="phone" name="number" placeholder="Your Contact Number"></div>
+                            <div class="form-group"><textarea name="message" rows="5" placeholder="How can we help you?" required></textarea></div>
+                            <input type="hidden" name="_next" value="https://aubyte.co.za/thankyou">
+                            <input type="hidden" name="_captcha" value="false">
+                            <button type="submit" class="btn btn-submit">Send Message</button>
+                        </form>
+                    </div>
+                </div>
+            </section>
     </main>
 
-       <div id="footer-placeholder"></div>
+    <div id="footer-placeholder"></div>
 
-    <script src="/js/global.js" defer></script>
+  <!-- FIXED: Paths are now root-relative -->
+  <script src="/js/vendor/intlTelInput.min.js"></script> 
+  
+  <!-- FIXED: Removed the duplicate script tag. Only this one remains. -->
+  <!-- The 'defer' attribute is good practice; it tells the browser to wait until the HTML is parsed before running the script. -->
+  <script src="/js/global.js" defer></script> 
 </body>
 </html>

@@ -39,17 +39,31 @@
 .value-card-partnership { background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('../images/value-partnership.jpg'); }*/
 
 .about-grid {
-    display: grid;
-    grid-template-columns: 1.2fr 1fr;
-    gap: 60px;
-    align-items: left;
-    margin-top: 40px;
-    align-items: start;
- text-align: left;   /* ensures text in both columns aligns left */
+  display: grid;
+  grid-template-columns: 1.55fr 1fr;
+  gap: 10px;
+  align-items: center;
+  text-align: right;
 }
+
+
+.about-grid > :first-child {
+  margin-top: 0px; /* Your desired margin for the first column */
+  margin-bottom: 0px;
+
+}
+
+
+.about-grid > :last-child {
+  margin-top: 0px; /* Your desired margin for the second column */
+  margin-bottom: 0px;
+}
+
 .about-image img {
-    width: 100%;
-    border-radius: 8px;
+  width: 90%;
+  height: auto;
+  border-radius: 8px;
+  
 }
 
 /* Values Grid Section (3x2 Circles) */
@@ -101,7 +115,9 @@
 .value-card h4 { font-size: 1.5rem; }
 .value-card p { font-size: 0.95rem; margin: 10px 0 0; }
 
-.about-text,
+.about-text{
+  text-align: Justify;
+}
 .partner-benefits {
   text-align: left;
 }
@@ -314,8 +330,7 @@
   background-repeat: no-repeat;
   display: grid;
   place-items: center;
-  overflow: hidden; /* Ensures overlay respects border-radius */
-  color: white; /* Set default text color */
+  overflow: hidden; 
   text-align: center;
 }
 
@@ -336,7 +351,15 @@
   position: relative;
   z-index: 2;
   transition: opacity 0.3s ease, visibility 0.3s ease;
-  padding: 15px; /* Add some padding */
+  padding: 15px;
+}
+
+/* FIX: Specific rules to make ALL text white, overriding global.css */
+.process-card h3,
+.process-card h4,
+.process-card p {
+    color: var(--white);
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.8);
 }
 
 /* Styling for the hidden hover content */
@@ -345,21 +368,22 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  opacity: 0; /* Hide by default */
-  visibility: hidden; /* Make it inaccessible by default */
-  position: absolute; /* Take it out of the layout flow */
-}
+  opacity: 0;
+  visibility: hidden;
+  position: absolute;
+  padding: 45px 45px;
 
-/* Styling for text within the hover content */
-.process-card .learn-more h4,
-.process-card .learn-more p {
-  color: white;
-  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
 }
 
 .process-card .learn-more h4 {
-    font-size: 1.5rem;
+    font-size: 1.3rem;
     margin-bottom: 10px;
+    text-align: center;
+}
+.process-card .learn-more p {
+    font-size: 0.9rem;
+    margin-bottom: 10px;
+   text-align: center;
 }
 
 /* --- HOVER BEHAVIOR --- */
@@ -447,7 +471,7 @@
 }
 
 .key-features-list li::before {
-    font-family: "Font Awesome 5 Free"; /* Use the Font Awesome font library */
+    font-family: "Font Awesome 7 Free"; /* Use the Font Awesome font library */
     font-weight: 900;                   /* This is required for solid icons */
     content: "\f085";                   /* This is the specific code for the 'fa-arrow-pointer' icon */
     color: var(--secondary-colour);

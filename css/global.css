@@ -118,7 +118,7 @@ p { margin-bottom: 15px; color: var(--medium-grey); }
 .hero {
     background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('../images/hero-background1.jpg') no-repeat center center/cover;
     color: var(--white);
-    height: 85vh;
+    height: 72vh;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -127,7 +127,7 @@ p { margin-bottom: 15px; color: var(--medium-grey); }
 .hero h1 { color: var(--white); font-size: 3.5rem; }
 .hero p {
     font-size: 1.2rem;
-    max-width: 600px;
+    max-width: 800px;
     margin: 20px auto 30px;
     color: rgba(255,255,255,0.9);
 }

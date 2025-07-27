@@ -1,15 +1,17 @@
-
+/* ==========================================================================
+   Partner Page General Styles
+   ========================================================================== */
 .partner-benefits ul {
   list-style: disc;
   padding-left: 20px;
 }
 
 .partner-benefits ul li {
-  color: var(--dark-grey); /* Optional: sets text color if needed */
+  color: var(--dark-grey);
 }
 
 .partner-benefits ul li::marker {
-  color: var(--secondary-colour); /* Makes bullet (dot) gold */
+  color: var(--secondary-colour);
 }
 
 .about-text,
@@ -17,64 +19,82 @@
   text-align: left;
 }
 
-
-/* Image-backed Circle Customizations */
-.process-step-onboarding, .process-step-request, .process-step-execution{
-    background-size: cover;
-    background-position: center;
-    border-color: transparent !important;
-}
-
-.process-step-onboarding:hover, .process-step-request:hover, .process-step-execution:hover {
-    border-color: var(--secondary-colour) !important;
-}
-
-.process-step-onboarding .value-card-front h4,
-.process-step-request .value-card-front h4,
-.process-step-execution .value-card-front h4{
-    color: var(--white); 
-    text-shadow: 1px 1px 3px rgba(0,0,0,0.8);
-}
-
-.process-step-onboarding .value-card-back,
-.process-step-request .value-card-back,
-.process-step-execution .value-card-back{
-    background: var(--white); 
-    border-radius: 50%; 
-}
-
-.process-step-onboarding { background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('../images/process-onboarding.jpg'); }
-.process-step-request { background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('../images/process-request.jpg'); }
-.process-step-execution { background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('../images/process-execution.jpg'); }
-
 .about-grid {
   display: grid;
-  grid-template-columns: 0.8fr 1.25fr;
-  gap: 10px;
+  grid-template-columns: 1fr 1.55fr;
+  gap: 55px;
   align-items: center;
-  text-align: justify;
-}
-
-/* Target the first column (the .about-image div) */
-.about-grid > :first-child {
-  margin-top: 0px; /* Your desired margin for the first column */
-  margin-bottom: 0px;
-}
-
-/* Target the second column (the .about-content div) */
-.about-grid > :last-child {
-  margin-top: 0px; /* Your desired margin for the second column */
-  margin-bottom: 0px;
+  text-align: right;
 }
 
 .about-image img {
-  width: 80%;
+  width: 75%;
   height: auto;
   border-radius: 8px;
 }
 
-/* Values Grid Section (3x2 Circles) */
-.values-grid {
+/* ==========================================================================
+   Features Grid Section (6 Boxes)
+   ========================================================================== */
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(2, auto);
+  gap: 0;
+  padding: 0;
+}
+
+.feature-box {
+  padding: 40px;
+  color: #fff;
+  text-align: center;
+}
+
+.feature-box img {
+  height: 80px;
+  width: auto;
+  margin-bottom: 25px;
+}
+
+/* Gold Boxes */
+.features-grid .box-1,
+.features-grid .box-3,
+.features-grid .box-5 {
+  background-color: #F5BD02;
+}
+
+.features-grid .box-1 h2, .features-grid .box-1 p,
+.features-grid .box-3 h2, .features-grid .box-3 p,
+.features-grid .box-5 h2, .features-grid .box-5 p {
+   color: #ffffff;
+}
+
+/* White Boxes */
+.features-grid .box-2,
+.features-grid .box-4,
+.features-grid .box-6 {
+  background-color: #ffffff;
+}
+
+.features-grid .box-2 h2, .features-grid .box-2 p,
+.features-grid .box-4 h2, .features-grid .box-4 p,
+.features-grid .box-6 h2, .features-grid .box-6 p {
+   color: #1a1a1a;
+}
+
+/* Typography for Feature Boxes */
+.feature-box h2 {
+   font-size: 1.6rem;
+}
+
+.feature-box p {
+   font-size: 1.1rem;
+}
+
+/* ==========================================================================
+   "How It Works" Process Cards (Corrected)
+   ========================================================================== */
+.services-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 30px;
@@ -82,76 +102,9 @@
     margin-top: 40px;
 }
 
-.value-card {
-    background: var(--white);
-    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
-    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.4s ease;
-    position: relative;
-    overflow: hidden; 
-    width: 280px;
-    height: 280px;
-    border-radius: 50%;
-    border: 3px solid transparent;
+.service-card-link {
+    text-decoration: none; /* Removes underline from links */
 }
-
-.value-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 25px rgba(0,0,0,0.12);
-    border-color: var(--secondary-colour);
-}
-
-.value-card-front, .value-card-back {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    backface-visibility: hidden;
-    transition: opacity 0.4s ease-in-out;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    padding: 30px;
-}
-
-.value-card-front { opacity: 1; }
-.value-card-back { opacity: 0; }
-.value-card:hover .value-card-front { opacity: 0; }
-.value-card:hover .value-card-back { opacity: 1; }
-.value-card h4 { font-size: 1.5rem; }
-.value-card p { font-size: 0.95rem; margin: 10px 0 0; }
-
-.partner-content {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 50px;
-    align-items: center;
-    margin-top: 40px;
-}
-
-.partner-content ul {
-    list-style: none;
-    padding-left: 0;
-}
-
-.partner-content li {
-    font-size: 1.1rem;
-    margin-bottom: 15px;
-    padding-left: 30px;
-    position: relative;
-}
-
-.partner-content li::before {
-    content: '✓';
-    color: var(--secondary-colour);
-    font-weight: 700;
-    position: absolute;
-    left: 0;
-    top: 0;
-}
-/* --- Partner Page Card Styles (Corrected & Final) --- */
 
 /* Base Card Structure */
 .onboarding-card,
@@ -175,43 +128,50 @@
   content: "";
   position: absolute;
   inset: 0;
-  background-color: rgba(0, 0, 0, 0.3); /* Use background-color */
+  background-color: rgba(0, 0, 0, 0.3);
   border-radius: 8px;
   z-index: 1;
   transition: background-color 0.3s ease;
 }
 
-/* Content Containers (for both initial and hover states) */
+/* Generic Content Containers */
 .onboarding-card .card-content, .onboarding-card .learn-more,
 .service-request-card .card-content, .service-request-card .learn-more,
 .execution-card .card-content, .execution-card .learn-more {
-  /* Stacks the divs on top of each other */
   grid-column: 1 / -1;
   grid-row: 1 / -1;
-  
-  /* Centers the text within the divs */
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-
   width: 100%;
   height: 100%;
-  padding: 15px;
   z-index: 2;
   transition: opacity 0.3s ease, visibility 0.3s ease;
 }
 
-/* FIX #2: Force ALL text inside these cards to be white */
+/* --- PADDING FIX --- */
+/* Different padding for initial and hover states */
+.onboarding-card .card-content,
+.service-request-card .card-content,
+.execution-card .card-content {
+  padding: 15px;
+}
+
+.onboarding-card .learn-more,
+.service-request-card .learn-more,
+.execution-card .learn-more {
+  padding: 45px; /* Increased padding to match "About" page */
+}
+
+
+/* Force ALL text inside these cards to be white */
 .onboarding-card h3, .onboarding-card h4, .onboarding-card p,
 .service-request-card h3, .service-request-card h4, .service-request-card p,
 .execution-card h3, .execution-card h4, .execution-card p {
     color: var(--white);
     text-shadow: 1px 1px 3px rgba(0,0,0,0.7);
 }
-
-
-/* --- HOVER BEHAVIOR --- */
 
 /* By default, the hover content is hidden */
 .onboarding-card .learn-more,
@@ -237,113 +197,83 @@
   visibility: visible;
 }
 
-/* FIX #1: On hover, change the overlay to be golden */
+/* On hover, change the overlay to be golden */
 .onboarding-card:hover::before,
 .service-request-card:hover::before,
 .execution-card:hover::before {
   background-color: rgba(245, 189, 2, 0.85); /* The gold overlay */
 }
 
-
-/* --- Specific Background Images --- */
+/* Specific Background Images */
 .onboarding-card { background-image: url('/images/process-onboarding.jpg'); }
 .service-request-card { background-image: url('/images/process-request.jpg'); }
 .execution-card { background-image: url('/images/process-execution.jpg'); }
 
-/* --- Styling for "How It Works" Hover Content --- */
-
-/* Corrected font size for non-hover paragraph */
+/* Typography for card content */
 .service-card .card-content p {
     font-size: 1rem;
 }
 
-.service-card .learn-more {
-  /* Override old "Learn More" button styles */
-  text-transform: none;
-  letter-spacing: normal;
-  text-align: center;
-  align-items: center; /* Vertically center content */
-  padding: 2px;
-  display: flex; /* Ensure flex properties apply */
-  flex-direction: column; /* Stack h4 and p vertically */
-  justify-content: center;
-  z-index: 3; /* Ensure this is on top of the overlay */
-}
-
-/* Ensure heading and paragraph text inside the hover state is white */
-.service-card .learn-more h4,
-.service-card .learn-more p {
-  color: var(--white);
-  text-shadow: 1px 1px 2px rgba(0,0,0,0.5); /* Adds readability */
-}
-
-/* Corrected font size for hover paragraph */
-.service-card .learn-more p {
-    font-size: 1rem;
-}
-
-/* Corrected font size for hover heading */
 .service-card .learn-more h4 {
     font-size: 1.8rem;
     margin-bottom: 10px;
 }
 
-/* --- Key Features Section --- */
-.key-features-section {
-    padding: 60px 20px;
-    background-color: var(--white); /* Or use var(--light-grey) for alternating colors */
-}
-
-.key-features-section h2 {
-    text-align: center;
-    margin-bottom: 40px;
-}
-
-.key-features-list {
-    max-width: 1000px;
-    margin: 0 auto;
-    list-style: none; /* Remove default bullet points */
-    padding-left: 0;
-}
-
-.key-features-list li {
+.service-card .learn-more p {
     font-size: 1.1rem;
-    color: var(--medium-grey); /* UPDATED: This makes non-strong text grey */
-    margin-bottom: 25px;
-    padding-bottom: 25px;
-    border-bottom: 1px solid #eee;
-    padding-left: 35px;
-    position: relative;
-    line-height: 1.5;
 }
 
-.key-features-list li:last-child {
-    border-bottom: none;
-    margin-bottom: 0;
-    padding-bottom: 0;
+/* ==========================================================================
+   Contact Section
+   ========================================================================== */
+.contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
+    gap: 50px;
+    margin-top: 40px;
 }
-
-.key-features-list li::before {
-    font-family: "Font Awesome 5 Free"; /* Use the Font Awesome font library */
-    font-weight: 900;                   /* This is required for solid icons */
-    content: "\f085";                   /* This is the specific code for the 'fa-arrow-pointer' icon */
-    color: var(--secondary-colour);
-    font-size: 1.1rem;                  /* Adjust size as needed */
-    position: absolute;
-    left: 0;
-    top: 4px;                           /* Adjust vertical alignment */
+.contact-info p {
+    font-size: 1.1rem;
 }
-
-.key-features-list li strong {
+.contact-form .form-group {
+    margin-bottom: 20px;
+}
+.contact-form input, .contact-form textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-family: 'Poppins', sans-serif;
+}
+.contact-form input:focus, .contact-form textarea:focus {
+    outline: none;
+    border-color: var(--secondary-colour);
+}
+.btn-submit {
+    width: 100%;
+    background: var(--secondary-colour);
     color: var(--primary-colour);
-    font-size: 1.3rem; /* Added this line to make the bold text bigger */
+    border: none;
+    cursor: pointer;
+}
+.btn-submit:hover {
+    background: #E0AC02;
 }
 
-/* --- Contact Section --- */
-.contact-grid { display: grid; grid-template-columns: 1fr 1.5fr; gap: 50px; margin-top: 40px; }
-.contact-info p { font-size: 1.1rem; }
-.contact-form .form-group { margin-bottom: 20px; }
-.contact-form input, .contact-form textarea { width: 100%; padding: 12px; border: 1px solid #ccc; border-radius: 5px; font-family: 'Poppins', sans-serif; }
-.contact-form input:focus, .contact-form textarea:focus { outline: none; border-color: var(--secondary-colour); }
-.btn-submit { width: 100%; background: var(--secondary-colour); color: var(--primary-colour); border: none; cursor: pointer; }
-.btn-submit:hover { background: #E0AC02; }
+/* ==========================================================================
+   Card Content Uniformity Fix
+   ========================================================================== */
+
+/* Add a bottom margin to the heading for better spacing */
+.service-card .card-content h3 {
+    margin-bottom: 15px;
+    font-size: 1.8rem; /* You can adjust this if needed */
+}
+
+/* Adjust the paragraph to create a more uniform block of text */
+.service-card .card-content p {
+    font-size: 1rem;
+    line-height: 1.6;     /* Increases the space between lines of text */
+    max-width: 90%;       /* Narrows the text block, encouraging wrapping */
+    margin: 0 auto;       /* Ensures the narrowed block stays centered */
+}

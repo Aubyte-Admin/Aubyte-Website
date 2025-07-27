@@ -84,10 +84,10 @@
 
 .about-grid {
   display: grid;
-  grid-template-columns: 0.8fr 1.25fr;
-  gap: 10px;
+  grid-template-columns: 1.55fr 1fr;
+  gap: 55px;
   align-items: center;
-  text-align: justify;
+  text-align: right;
 }
 
 /* Target the first column (the .about-image div) */
@@ -103,7 +103,7 @@
 }
 
 .about-image img {
-  width: 80%;
+  width: 90%;
   height: auto;
   border-radius: 8px;
 }
@@ -159,6 +159,7 @@
     margin: 0 0 15px 0;
     font-size: 0.9rem;
     line-height: 1.5;
+    text-align: left;
 }
 
 /* --- FINAL UPDATED RULE --- */
@@ -270,3 +271,6 @@
 .contact-form input:focus, .contact-form textarea:focus { outline: none; border-color: var(--secondary-colour); }
 .btn-submit { width: 100%; background: var(--secondary-colour); color: var(--primary-colour); border: none; cursor: pointer; }
 .btn-submit:hover { background: #E0AC02; }
+.grid-item p {
+    text-align: left;
+}

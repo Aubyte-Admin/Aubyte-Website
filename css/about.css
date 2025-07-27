@@ -376,12 +376,12 @@
 }
 
 .process-card .learn-more h4 {
-    font-size: 1.4rem;
+    font-size: 1.5rem;
     margin-bottom: 10px;
     text-align: center;
 }
 .process-card .learn-more p {
-    font-size: 0.97rem;
+    font-size: 1.1rem;
     margin-bottom: 10px;
    text-align: center;
 }
@@ -484,4 +484,39 @@
 .key-features-list li strong {
     color: var(--primary-colour);
     font-size: 1.3rem; /* Added this line to make the bold text bigger */
+}
+.integrity-card .card-content h3{
+    color: white;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+    font-size: 1.6rem;
+}
+
+.excellence-card .card-content h3{
+    color: white;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+    font-size: 1.6rem;
+}
+
+.partnership-card .card-content h3{
+    color: white;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+    font-size: 1.6rem;
+}
+
+.reliable-card .card-content h3{
+    color: white;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+    font-size: 1.6rem;
+}
+
+.agility-card .card-content h3{
+    color: white;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+    font-size: 1.6rem;
+}
+
+.clarity-card .card-content h3{
+    color: white;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+    font-size: 1.6rem;
 }

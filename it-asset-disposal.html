@@ -108,5 +108,23 @@
        <div id="footer-placeholder"></div>
 
     <script src="/js/global.js" defer></script>
+    <script> const buttons = document.querySelectorAll('button.learn-more-btn');
+        buttons.forEach(button => {
+            button.addEventListener('click', () => {
+                const gridItem = button.closest('.grid-item');
+                gridItem.classList.toggle('expanded');
+                if (gridItem.classList.contains('expanded')) {
+                    button.textContent = 'Show less';
+                    gridItem.appendChild(button);
+                } else {
+                    button.textContent = 'Show more';
+                }
+            });
+                   }); 
+            
+            
+            </script>
+
+
 </body>
 </html>

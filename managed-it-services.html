@@ -28,12 +28,17 @@
       <h2 class="left-heading">IT Support Across South Africa</h2>
       <p>At Aubyte, we offer comprehensive managed IT services designed to optimise your business operations, enhance productivity, and protect your critical data—all while reducing IT-related costs. </p>
       <p>By partnering with us for your Managed IT Services, you gain access to a dedicated team who will manage your IT infrastructure, we provide onsite support and technical troubleshooting to resolve any issues promptly, ensuring minimal disruption to your business operations.</p>
-     <p>Our team of certified IT engineers are equipped to handle a wide range of support needs and deliver expert solutions.</p><br>  
-        <p class="black-paragraph"><strong> Elevate your IT solutions</strong></p>
-      <a href="/contact" class="btn btn-primary" style="margin-top: 0px;">Partner with us</a>
+      <p>Our team of certified IT engineers are equipped to handle a wide range of support needs and deliver expert solutions.</p><br>  
+      <p class="black-paragraph"><strong> Elevate your IT solutions</strong></p>
+      
+      <!-- This new div will align its content (the button) to the left -->
+      <div style="text-align: left;">
+        <a href="/contact" class="btn btn-primary" style="margin-top: 0px;">Partner with us</a>
+      </div>
+
     </div>
 
-   <div class="about-image">
+    <div class="about-image">
       <img src="images/mits2.png" alt="Managed IT Services Image" style="max-width: 100%; height: auto;" />
     </div> 
 
@@ -135,5 +140,24 @@
        <div id="footer-placeholder"></div>
 
  <script src="/js/global.js" defer></script>
+<script> const buttons = document.querySelectorAll('button.learn-more-btn');
+        buttons.forEach(button => {
+            button.addEventListener('click', () => {
+                const gridItem = button.closest('.grid-item');
+                gridItem.classList.toggle('expanded');
+                if (gridItem.classList.contains('expanded')) {
+                    button.textContent = 'Show less';
+                    gridItem.appendChild(button);
+                } else {
+                    button.textContent = 'Show more';
+                }
+            });
+                   }); 
+            
+            
+            </script>
+
+
+
 </body>
 </html>

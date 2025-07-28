@@ -109,18 +109,18 @@ p { margin-bottom: 15px; color: var(--medium-grey); text-align: justify;font-siz
 }
 .navbar .logo {
     position: absolute; /* Takes the logo out of the normal flow */
-    top: -50px;          /* Adjust to move the logo down from the top edge */
+    top: 0px;          /* Adjust to move the logo down from the top edge */
     z-index: 1001;      /* Ensures the logo is on top of other elements */
 }
 
 .navbar .logo img {
-    height: 160px;      /* This is your desired logo size */
+    height: 60px;      /* This is your desired logo size */
     transition: transform 0.3s ease; 
 }
 
 /* ADDED: Rule to enlarge the logo on hover */
 .navbar .logo:hover img {
-    transform: scale(1.2); /* Enlarge the logo by 10% */
+    transform: scale(1.1); /* Enlarge the logo by 10% */
 }
 .navbar nav {
     margin-left: auto; 

@@ -13,9 +13,7 @@ document.addEventListener('DOMContentLoaded', function() {
       },
       preferredCountries: ["za", "in", "us"],
       
-      // --- THE MOST IMPORTANT CHANGE IS HERE ---
       // This option prevents the library from creating an example number placeholder.
-      // We are telling it to generate an empty placeholder instead.
       customPlaceholder: function(selectedCountryPlaceholder, selectedCountryData) {
         return "";
       },
@@ -37,11 +35,11 @@ document.addEventListener('DOMContentLoaded', function() {
       updateInputValue();
     });
 
-    // Add event listener to update the value whenever the country is changed
+    // --- MODIFICATION ---
+    // The input.focus() call which caused the scroll has been removed.
+    // The input's value will still be correctly updated when the country is changed.
     input.addEventListener('countrychange', function() {
       updateInputValue();
-      // Optional: Automatically focus the input for better user experience
-      input.focus();
     });
 
     // Your existing input filter remains useful

@@ -47,7 +47,7 @@ body {
 
 
 section { padding: 60px 0; }
-section:nth-child(even) { background-color: var(--light-grey); }
+section:nth-child(even) { background-color: #ededed; }
 
 .page-header {
     background: url('../images/page-header-bg.jpg') no-repeat center center/cover;
@@ -114,7 +114,7 @@ p { margin-bottom: 15px; color: var(--medium-grey); text-align: justify;font-siz
 }
 
 .navbar .logo img {
-    height: 40px;      /* This is your desired logo size */
+    height: 30px;      /* This is your desired logo size */
     transition: transform 0.3s ease; 
 }
 
@@ -743,3 +743,21 @@ section.bg-secondary {
 .iti--container:hover {
   cursor: pointer;}
 
+/* --- NEW: Styles for the clickable "About Aubyte" h2 --- */
+.about-title-link {
+    text-decoration: none; /* Removes the default underline from the link */
+    display: inline-block; /* Prevents the link from spanning the full width */
+    text-align: center;
+}
+
+.about-title-link h2 {
+    transition: color 0.3s ease; /* Adds a smooth color change effect */
+}
+
+.about-title-link:hover h2 {
+    color: var(--secondary-colour); /* Changes the h2 color to gold on hover */
+}
+
+.about-text {
+    text-align: center; /* Centers the child <a> tag */
+}

@@ -124,12 +124,13 @@
 
 /* Excellence Card */
 .excellence-card {
-  background-image: url('/images/excellence.jpg'); /* Replace with your image path */
+    background-image: url('/images/exec.jpg');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
   position: relative;
   border-radius: 8px;
+  
 }
 
 .excellence-card::before {
@@ -147,9 +148,6 @@
   z-index: 3;
 }
 
-.excellence-card:hover {
-  background-color: rgba(245, 189, 2, 0.85);
-}
 
 .excellence-card:hover::before {
   background: transparent;
@@ -406,12 +404,6 @@
 }
 
 
-/* Specific Card Background Images.excellence-card {
-  background-image: url('/images/value-excellence.jpeg');
-} */
-.excellence-card {
-  background-image: url('/images/value-excellence.jpeg');
-}
 
 .partnership-card {
   background-image: url('/images/partnership.jpg');

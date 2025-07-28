@@ -115,6 +115,12 @@ p { margin-bottom: 15px; color: var(--medium-grey); text-align: justify;font-siz
 
 .navbar .logo img {
     height: 160px;      /* This is your desired logo size */
+    transition: transform 0.3s ease; 
+}
+
+/* ADDED: Rule to enlarge the logo on hover */
+.navbar .logo:hover img {
+    transform: scale(1.2); /* Enlarge the logo by 10% */
 }
 .navbar nav {
     margin-left: auto; 
@@ -498,12 +504,12 @@ p { margin-bottom: 15px; color: var(--medium-grey); text-align: justify;font-siz
 
 .nav-links li a:hover,
 .nav-links li a.active {
-    color: #FFD700; /* This is a gold color */
+    color: #F5BD02; /* This is a gold color */
 }
 
 /* Optional: Style for the dropdown toggle when active */
 .dropdown .dropdown-toggle.active {
-    color: #FFD700;
+    color: #F5BD02;
 }
 
 .about-grid {

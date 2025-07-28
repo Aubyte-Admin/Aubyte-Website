@@ -109,7 +109,7 @@ p { margin-bottom: 15px; color: var(--medium-grey); text-align: justify;font-siz
 }
 .navbar .logo {
     position: absolute; /* Takes the logo out of the normal flow */
-    top: 10px;          /* Adjust to move the logo down from the top edge */
+    top: 15px;          /* Adjust to move the logo down from the top edge */
     z-index: 1001;      /* Ensures the logo is on top of other elements */
 }
 

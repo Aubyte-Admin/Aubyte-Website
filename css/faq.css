@@ -4,3 +4,12 @@
 .faq-item summary::after { content: '+'; position: absolute; right: 10px; font-size: 1.8rem; color: var(--secondary-colour); transition: transform 0.3s ease; }
 .faq-item[open] summary::after { transform: rotate(45deg); }
 .faq-item div { padding: 0 10px 20px; }
+
+section:nth-child(odd) {
+  background-color: var(--white);
+}
+
+/* Overrides the global rule to make even-numbered <section> elements white */
+section:nth-child(even) {
+  background-color: var(--white);
+}

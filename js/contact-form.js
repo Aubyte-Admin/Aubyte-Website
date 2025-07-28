@@ -14,5 +14,15 @@ document.addEventListener('DOMContentLoaded', function() {
       // THIS IS THE NEW LINE YOU NEED TO ADD
       preferredCountries: ["za", "in", "us"] 
     });
+
+
+
+    // --- NEW CODE STARTS HERE ---
+    // This event listener will prevent non-numeric characters
+    input.addEventListener('input', function() {
+      // Replace any character that is not a digit, space, parenthesis, plus, or hyphen
+      this.value = this.value.replace(/[^\d\s()+\-]/g, '');
+    });
+    // --- NEW CODE ENDS HERE ---
   }
 });

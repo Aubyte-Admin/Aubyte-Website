@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Aubyte | Contact us</title>
     <link rel="stylesheet" href="/css/global.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/css/intlTelInput.css"/>
     <link rel="stylesheet" href="/css/contact.css">
     <link rel="icon" href="/images/favicon.png" type="image/png">
     <link rel="shortcut icon" href="/images/favicon.png" type="image/png">
@@ -31,7 +32,7 @@
                         <div class="form-group"><input type="text" name="name" placeholder="Your Full Name" required></div>
                         <div class="form-group"><input type="text" name="company" placeholder="Your Company Name" required></div>
                         <div class="form-group"><input type="email" name="email" placeholder="Your Email Address" required></div>
-                        <div class="form-group"><input type="number" name="number" placeholder="Your Contact Number"></div>
+                        <div class="form-group"><input type="tel"id="phone" name="number" placeholder="Your Contact Number"></div>
                         <div class="form-group"><textarea name="message" rows="5" placeholder="How can we help you?" required></textarea></div>
                         <input type="hidden" name="_next" value="https://aubyte.co.za/thankyou">
                         <input type="hidden" name="_captcha" value="false">
@@ -43,7 +44,8 @@
     </main>
     
    <div id="footer-placeholder"></div>
-
+    <script src="/js/vendor/intlTelInput.min.js"></script>
     <script src="/js/global.js" defer></script>
+    <script src="/js/contact-form.js" defer></script>
 </body>
 </html>

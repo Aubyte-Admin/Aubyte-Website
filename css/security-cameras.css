@@ -274,3 +274,12 @@
 .grid-item p {
     text-align: left;
 }
+
+section:nth-child(odd) {
+  background-color: #ededed;
+}
+
+/* Overrides the global rule to make even-numbered <section> elements white */
+section:nth-child(even) {
+  background-color: var(--white);
+}
